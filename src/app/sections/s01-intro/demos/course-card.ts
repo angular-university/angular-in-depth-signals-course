@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CurrencyPipe } from '@angular/common';
 import { MOCK_COURSES } from '../../../shared/mock-courses';
 
 /**
@@ -8,7 +7,6 @@ import { MOCK_COURSES } from '../../../shared/mock-courses';
  */
 @Component({
   selector: 'course-card',
-  imports: [CurrencyPipe],
   template: `
     <article class="card">
 
@@ -20,7 +18,6 @@ import { MOCK_COURSES } from '../../../shared/mock-courses';
         <span class="card-category">{{ course.category }}</span>
         <h4 class="card-title">{{ course.title }}</h4>
         <p class="card-description">{{ course.description }}</p>
-        <p class="card-price">{{ course.price | currency }}</p>
       </div>
 
     </article>
