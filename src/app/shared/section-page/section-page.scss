@@ -21,7 +21,7 @@
   border-radius: var(--radius-lg);
   background: var(--gradient-brand);
   box-shadow: var(--glow-brand);
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   color: #fff;
@@ -29,7 +29,7 @@
 
 .section-title {
   margin: 0;
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--color-text);
@@ -49,11 +49,11 @@
   .section-number {
     width: 42px;
     height: 42px;
-    font-size: 18px;
+    font-size: 20px;
     border-radius: var(--radius-md);
   }
 
   .section-title {
-    font-size: 19px;
+    font-size: 21px;
   }
 }
