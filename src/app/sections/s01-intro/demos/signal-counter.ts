@@ -7,7 +7,7 @@ import { Component, OnDestroy, signal } from '@angular/core';
 @Component({
   selector: 'signal-counter',
   template: `
-    <div class="demo-panel">
+    <div class="demo-panel demo-panel-live">
       <h4 class="demo-heading">Signal</h4>
       <p class="demo-counter">
         @for (value of [count()]; track value) {

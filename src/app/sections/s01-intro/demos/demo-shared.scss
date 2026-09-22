@@ -32,8 +32,16 @@
 .demo-panel {
   padding: 20px;
   border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-bg);
+  transition: border-color var(--transition);
+}
+
+/* Color as information, not decoration: the panel that is actually wired to the view
+   carries the brand color on its edge, the dead one stays flat grey. */
+.demo-panel-live {
+  border-left-color: var(--color-primary-light);
 }
 
 .demo-counter {

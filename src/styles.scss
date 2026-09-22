@@ -12,11 +12,13 @@ html, body {
 
 body {
   font-family: var(--font);
-  /* Two soft brand glows, fixed, so the page has depth without competing with the demos. */
+  /* Three saturated brand blobs, fixed, so the page reads as color from across a room —
+     the demo panels stay dark and neutral, which is what keeps this from fighting them. */
   background-color: var(--color-bg);
   background-image:
-    radial-gradient(62rem 40rem at 10% -8%, rgba(228, 0, 53, 0.17), transparent 62%),
-    radial-gradient(54rem 36rem at 90% 4%, rgba(151, 23, 231, 0.15), transparent 62%);
+    radial-gradient(46rem 34rem at 8% -6%, rgba(228, 0, 53, 0.42), transparent 60%),
+    radial-gradient(50rem 40rem at 96% 8%, rgba(151, 23, 231, 0.38), transparent 62%),
+    radial-gradient(60rem 46rem at 50% 115%, rgba(108, 0, 245, 0.28), transparent 65%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   color: var(--color-text);
@@ -53,7 +55,7 @@ img {
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: background var(--transition), opacity var(--transition), transform 0.1s;
+  transition: background var(--transition), background-position 0.35s ease, box-shadow var(--transition), opacity var(--transition), transform 0.1s;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -78,11 +80,15 @@ img {
 
 .btn-primary {
   background: var(--gradient-brand);
+  background-size: 160% 160%;
+  background-position: 0% 50%;
   color: #fff;
+  box-shadow: 0 4px 18px rgba(228, 0, 53, 0.35);
 }
 
 .btn-primary:hover {
-  opacity: 0.9;
+  background-position: 100% 50%;
+  box-shadow: 0 6px 24px rgba(151, 23, 231, 0.45);
   color: #fff;
 }
 

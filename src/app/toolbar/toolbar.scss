@@ -5,9 +5,20 @@
   right: 0;
   z-index: 100;
   height: var(--nav-height);
-  background: rgba(15, 15, 15, 0.72);
+  background: rgba(12, 10, 16, 0.72);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid #1d1d1d;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.top-nav::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: var(--gradient-brand);
+  opacity: 0.6;
 }
 
 .nav-inner {
