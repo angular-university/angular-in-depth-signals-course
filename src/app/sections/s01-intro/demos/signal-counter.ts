@@ -9,7 +9,11 @@ import { Component, OnDestroy, signal } from '@angular/core';
   template: `
     <div class="demo-panel">
       <h4 class="demo-heading">Signal</h4>
-      <p class="demo-counter">{{ count() }}</p>
+      <p class="demo-counter">
+        @for (value of [count()]; track value) {
+          <span>{{ value }}</span>
+        }
+      </p>
       <button class="btn btn-primary" [disabled]="timer !== undefined" (click)="start()">
         Start ticking
       </button>

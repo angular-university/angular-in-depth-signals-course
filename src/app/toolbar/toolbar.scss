@@ -5,7 +5,8 @@
   right: 0;
   z-index: 100;
   height: var(--nav-height);
-  background: #0f0f0f;
+  background: rgba(15, 15, 15, 0.72);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid #1d1d1d;
 }
 

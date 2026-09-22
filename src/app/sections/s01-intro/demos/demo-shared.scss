@@ -50,3 +50,21 @@
   font-size: 13px;
   color: var(--color-text-muted);
 }
+
+/* The counter node is replaced when its value changes, so this plays only on a real
+   re-render — which is exactly what the plain-vs-signal demo is about. */
+@keyframes counter-pop {
+  from {
+    transform: scale(1.4);
+    color: var(--color-primary-light);
+  }
+  to {
+    transform: scale(1);
+    color: var(--color-text);
+  }
+}
+
+.demo-counter span {
+  display: inline-block;
+  animation: counter-pop 0.3s ease-out;
+}

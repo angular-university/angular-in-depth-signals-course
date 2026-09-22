@@ -10,6 +10,4 @@ export class DemoBlock {
   /** Named `heading` rather than `title` so a static value does not also become a DOM tooltip. */
   heading = input.required<string>();
 
-  lessons = input('');
-
 }
