@@ -12,11 +12,7 @@ export const routes: Routes = [
   },
   {
     path: 's01',
-    loadComponent: () => import('./sections/s01-setup/s01-setup').then((m) => m.S01Setup),
-  },
-  {
-    path: 's02',
-    loadComponent: () => import('./sections/s02-intro/s02-intro').then((m) => m.S02Intro),
+    loadComponent: () => import('./sections/s01-intro/s01-intro').then((m) => m.S01Intro),
   },
   { path: '**', redirectTo: '' },
 ];

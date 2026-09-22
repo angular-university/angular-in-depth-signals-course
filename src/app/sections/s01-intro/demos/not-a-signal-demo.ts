@@ -3,7 +3,7 @@ import { PlainCounter } from './plain-counter';
 import { SignalCounter } from './signal-counter';
 
 /**
- * Lesson 2.4: the same counter twice, in two separate components, both incremented by a
+ * Lesson 1.4: the same counter twice, in two separate components, both incremented by a
  * timer. Only the signal-backed one updates on screen.
  *
  * Two details that matter, and that a naive version of this demo gets wrong:

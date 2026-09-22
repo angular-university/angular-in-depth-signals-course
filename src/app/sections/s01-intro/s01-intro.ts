@@ -7,17 +7,17 @@ import { FirstSignalDemo } from './demos/first-signal-demo';
 import { NotASignalDemo } from './demos/not-a-signal-demo';
 
 @Component({
-  selector: 's02-intro',
+  selector: 's01-intro',
   imports: [DemoBlock, DemoPicker, FirstComponentDemo, FirstSignalDemo, NotASignalDemo],
-  templateUrl: './s02-intro.html',
-  styleUrl: './s02-intro.scss',
+  templateUrl: './s01-intro.html',
+  styleUrl: './s01-intro.scss',
 })
-export class S02Intro {
+export class S01Intro {
 
   protected readonly demos: DemoInfo[] = [
-    { id: 'first-component', title: 'Our first component', lessons: '2.1-2.2' },
-    { id: 'first-signal', title: 'Our first signal — set() and update()', lessons: '2.3' },
-    { id: 'not-a-signal', title: 'What happens when data is not in a signal', lessons: '2.4' },
+    { id: 'first-component', title: 'Our first component', lessons: '1.1-1.2' },
+    { id: 'first-signal', title: 'Our first signal — set() and update()', lessons: '1.3' },
+    { id: 'not-a-signal', title: 'What happens when data is not in a signal', lessons: '1.4' },
   ];
 
   protected selected = signal('first-component');

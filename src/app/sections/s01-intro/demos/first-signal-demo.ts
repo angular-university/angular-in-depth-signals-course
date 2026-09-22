@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { MOCK_COURSES } from '../../../shared/mock-courses';
 
 /**
- * Lesson 2.3: a signal is a value you read by calling it, and change with set() or update().
+ * Lesson 1.3: a signal is a value you read by calling it, and change with set() or update().
  */
 @Component({
   selector: 'first-signal-demo',

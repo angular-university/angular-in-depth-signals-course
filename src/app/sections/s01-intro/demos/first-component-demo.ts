@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MOCK_COURSES } from '../../../shared/mock-courses';
 
 /**
- * Lessons 2.1 - 2.2: a component is a custom HTML element. The class is the model,
+ * Lessons 1.1 - 1.2: a component is a custom HTML element. The class is the model,
  * the template is the view, and interpolation is what connects the two.
  */
 @Component({
