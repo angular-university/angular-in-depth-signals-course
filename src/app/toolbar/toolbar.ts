@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AngularLogo } from '../shared/angular-logo/angular-logo';
-import { SECTIONS } from '../sections/sections';
+import { sectionLinks } from '../shared/sections';
 
 @Component({
   selector: 'toolbar',
@@ -13,7 +13,7 @@ export class Toolbar {
 
   private router = inject(Router);
 
-  protected readonly sections = SECTIONS;
+  protected readonly sections = sectionLinks(this.router);
 
   protected onSectionSelected(event: Event) {
     const slug = (event.target as HTMLSelectElement).value;

@@ -7,7 +7,8 @@ import { Component, input } from '@angular/core';
 })
 export class DemoBlock {
 
-  title = input.required<string>();
+  /** Named `heading` rather than `title` so a static value does not also become a DOM tooltip. */
+  heading = input.required<string>();
 
   lessons = input('');
 

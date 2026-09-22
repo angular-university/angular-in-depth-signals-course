@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { SECTIONS } from '../sections';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { sectionLinks } from '../../shared/sections';
 
 @Component({
   selector: 'section-index',
@@ -10,6 +10,6 @@ import { SECTIONS } from '../sections';
 })
 export class SectionIndex {
 
-  protected readonly sections = SECTIONS;
+  protected readonly sections = sectionLinks(inject(Router));
 
 }
