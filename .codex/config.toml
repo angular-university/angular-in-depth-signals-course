@@ -1,0 +1,8 @@
+[mcp_servers.angular-cli]
+command = "node"
+args = [
+    "node_modules/@angular/cli/bin/ng.js",
+    "mcp",
+    "--experimental-tool",
+    "devserver",
+]
