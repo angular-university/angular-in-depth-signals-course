@@ -6,15 +6,21 @@ This course repository is updated to Angular v22.
 
 # Repository Branches
 
-This repository has two branches:
+Each section of the course is independent, and so is its code.
 
-- `main` — the completed application, with all the code that we write during the course.
-- `1-start` — the starting point of the course. This is where you begin: you build the
-  application from there as you follow along with the lessons.
+- `main` — every section, stacked on one page in the order of the course.
+- `1-start` — the starting point: the shared building blocks and none of the demos.
+  Begin here and build a section's demos as you follow along.
+- `section-01`, `section-02`, ... — one branch per section, each holding just that
+  section's finished demos. Jump straight to the section you came for.
 
 After cloning, switch to the starting point with:
 
     git checkout 1-start
+
+or go straight to a section with:
+
+    git checkout section-01
 
 # Installation pre-requisites
 
