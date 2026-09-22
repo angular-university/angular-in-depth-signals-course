@@ -2,7 +2,7 @@
  * One entry per section that has a demo page. Drives the section index and the toolbar picker;
  * the matching lazy route lives in app.routes.ts.
  *
- * Section 1 is setup only and has no demos of its own — the section index *is* its artifact.
+ * Section 1 has no demos — its page is a check that the setup worked, plus a repo tour.
  */
 export interface SectionInfo {
   number: number;
@@ -12,6 +12,12 @@ export interface SectionInfo {
 }
 
 export const SECTIONS: SectionInfo[] = [
+  {
+    number: 1,
+    slug: 's01',
+    title: 'Course Introduction and Setup',
+    summary: 'No demos here — check that your setup works, and see how the repo is organised.',
+  },
   {
     number: 2,
     slug: 's02',
