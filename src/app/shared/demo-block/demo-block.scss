@@ -1,7 +1,7 @@
 .demo-block {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  background: var(--color-surface);
+  background: var(--color-card);
   overflow: hidden;
 }
 
@@ -11,22 +11,25 @@
   justify-content: space-between;
   gap: 16px;
   padding: 14px 20px;
+  background: var(--color-surface-2);
   border-bottom: 1px solid var(--color-border);
 }
 
 .demo-title {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--color-text);
 }
 
 .demo-lessons {
   font-size: 12px;
   color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
 .demo-body {
-  padding: 20px;
+  padding: 24px 20px;
 }

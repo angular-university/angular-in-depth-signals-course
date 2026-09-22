@@ -24,20 +24,24 @@
 
 .demo-split {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 20px;
 }
 
+/* Inset against the demo-block surface, so panels read as recessed rather than stacked. */
 .demo-panel {
-  padding: 18px;
+  padding: 20px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
+  background: var(--color-bg);
 }
 
 .demo-counter {
   margin: 0 0 12px;
-  font-size: 34px;
+  font-size: 40px;
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
   color: var(--color-text);
 }
 

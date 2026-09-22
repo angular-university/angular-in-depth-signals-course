@@ -65,7 +65,40 @@
   padding: 6px 10px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  background: var(--color-surface);
+  background: var(--color-input-bg);
   color: var(--color-text);
+  font-family: var(--font);
   font-size: 13px;
+  max-width: 230px;
+  cursor: pointer;
+}
+
+.nav-brand {
+  min-width: 0;
+}
+
+.brand-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-links {
+  flex: none;
+}
+
+/* The full course name does not fit beside the controls on a phone; the logo carries it. */
+@media (max-width: 720px) {
+  .nav-inner {
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .brand-text {
+    display: none;
+  }
+
+  .section-select {
+    max-width: 180px;
+  }
 }

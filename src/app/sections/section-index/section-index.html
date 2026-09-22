@@ -1,29 +1,29 @@
 <div class="page-container">
 
-  <div class="index-header">
-    <div class="section-icon">
-      <span class="material-icons">menu_book</span>
-    </div>
-    <div>
-      <h2 class="index-title">Course Demos</h2>
-      <p class="index-subtitle">
-        One page per section. Each page holds the demos for that section's lessons.
-      </p>
-    </div>
-  </div>
+  <header class="index-intro">
+    <h2 class="index-title">Course demos</h2>
+    <p class="index-lead">
+      One page per section, and every section stands on its own. Pick a section, then pick a
+      demo inside it.
+    </p>
+  </header>
 
-  <div class="index-grid">
+  <ol class="contents">
     @for (section of sections; track section.slug) {
 
-      <a class="index-card" [routerLink]="['/', section.slug]">
-        <span class="index-card-number">Section {{ section.number }}</span>
-        <span class="index-card-title">{{ section.title }}</span>
-        <span class="index-card-summary">{{ section.summary }}</span>
-      </a>
+      <li>
+        <a class="contents-row" [routerLink]="['/', section.slug]">
+          <span class="contents-number">{{ section.number }}</span>
+          <span class="contents-body">
+            <span class="contents-title">{{ section.title }}</span>
+            <span class="contents-summary">{{ section.summary }}</span>
+          </span>
+        </a>
+      </li>
 
     } @empty {
-      <p class="index-empty">No section demos yet.</p>
+      <li class="contents-empty">No section demos yet.</li>
     }
-  </div>
+  </ol>
 
 </div>
