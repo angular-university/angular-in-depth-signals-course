@@ -13,14 +13,18 @@ import { MOCK_COURSES } from '../../../shared/mock-courses';
     <div class="demo-actions">
       <button class="btn btn-primary" (click)="enrolOne()">Enrol one student</button>
       <button class="btn btn-ghost" (click)="reset()">Reset to 0</button>
-      <button class="btn btn-ghost" (click)="renameCourse()">Rename the course</button>
+      <button class="btn btn-ghost" (click)="flipTitle()">Flip the course name</button>
     </div>
   `,
   styleUrl: './demo-shared.scss',
 })
 export class FirstSignalDemo {
 
-  title = signal(MOCK_COURSES[0].title);
+  // Starts on "In Depth"; flipping shows "For Beginners" — the two courses this
+  // course's demos are drawn from.
+  private readonly titles = [MOCK_COURSES[1].title, MOCK_COURSES[0].title] as const;
+
+  title = signal<string>(this.titles[0]);
 
   students = signal(0);
 
@@ -34,8 +38,9 @@ export class FirstSignalDemo {
     this.students.set(0);
   }
 
-  renameCourse() {
-    this.title.set('Angular In Depth (Signals Edition)');
+  flipTitle() {
+    // update() derives the next value from the current one — here, the other name in the pair
+    this.title.update((current) => (current === this.titles[0] ? this.titles[1] : this.titles[0]));
   }
 
 }
