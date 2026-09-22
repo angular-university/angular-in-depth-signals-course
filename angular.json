@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "angular-for-beginners-signals-course": {
+    "angular-in-depth-signals-course": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -63,10 +63,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "angular-for-beginners-signals-course:build:production"
+              "buildTarget": "angular-in-depth-signals-course:build:production"
             },
             "development": {
-              "buildTarget": "angular-for-beginners-signals-course:build:development"
+              "buildTarget": "angular-in-depth-signals-course:build:development"
             }
           },
           "defaultConfiguration": "development"
