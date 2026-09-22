@@ -9,7 +9,7 @@ import { NotASignalDemo } from './demos/not-a-signal-demo';
   selector: 's01-intro',
   imports: [SectionPage, DemoBlock, FirstComponentDemo, FirstSignalDemo, NotASignalDemo],
   template: `
-    <section-page>
+    <section-page [number]="1" heading="Introduction to Angular, with Signals From the Beginning">
 
       <demo-block heading="Our first component" lessons="1.1-1.2">
         <first-component-demo />

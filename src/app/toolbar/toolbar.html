@@ -18,18 +18,5 @@
     </svg>
       <span class="brand-text">Angular In Depth (Signals Edition)</span>
     </div>
-
-    <nav class="nav-links">
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Sections</a>
-
-      @if (sections.length) {
-        <select class="section-select" (change)="onSectionSelected($event)">
-          <option value="">Section demos&hellip;</option>
-          @for (section of sections; track section.slug) {
-            <option [value]="section.slug">{{ section.number }} &mdash; {{ section.title }}</option>
-          }
-        </select>
-      }
-    </nav>
   </div>
 </header>
