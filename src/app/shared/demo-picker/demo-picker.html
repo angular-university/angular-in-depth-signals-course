@@ -1,0 +1,11 @@
+<label class="demo-picker">
+
+  <span class="demo-picker-label">Demo</span>
+
+  <select class="demo-picker-select" [value]="selected()" (change)="onChange($event)">
+    @for (demo of demos(); track demo.id) {
+      <option [value]="demo.id">{{ demo.title }}</option>
+    }
+  </select>
+
+</label>

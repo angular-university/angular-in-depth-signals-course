@@ -1,0 +1,34 @@
+<div class="page-container">
+
+  <div class="section-header">
+    <div class="section-icon">
+      <span class="material-icons">play_circle</span>
+    </div>
+    <h2 class="section-title">Section 2 — Introduction to Angular, with Signals From the Beginning</h2>
+  </div>
+
+  <demo-picker [demos]="demos" [(selected)]="selected" />
+
+  @switch (selected()) {
+
+    @case ('first-component') {
+      <demo-block title="Our first component" lessons="2.1-2.2">
+        <first-component-demo />
+      </demo-block>
+    }
+
+    @case ('first-signal') {
+      <demo-block title="Our first signal — set() and update()" lessons="2.3">
+        <first-signal-demo />
+      </demo-block>
+    }
+
+    @case ('not-a-signal') {
+      <demo-block title="What happens when data is not in a signal" lessons="2.4">
+        <not-a-signal-demo />
+      </demo-block>
+    }
+
+  }
+
+</div>

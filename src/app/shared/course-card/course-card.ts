@@ -1,6 +1,6 @@
 import { Component, input, output } from '@angular/core';
 import {CurrencyPipe, TitleCasePipe, UpperCasePipe} from '@angular/common';
-import { Course, CourseCategory } from '../model/course';
+import { Course, CourseCategory } from '../../model/course';
 
 @Component({
   selector: 'course-card',

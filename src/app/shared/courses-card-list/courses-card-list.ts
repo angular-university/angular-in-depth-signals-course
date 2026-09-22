@@ -1,5 +1,5 @@
 import { Component, input, output, signal } from '@angular/core';
-import { Course } from '../model/course';
+import { Course } from '../../model/course';
 import { CourseCard } from '../course-card/course-card';
 
 @Component({
