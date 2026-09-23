@@ -1,32 +1,8 @@
-<div class="demo-split">
-  <div class="demo-panel">
-    <h4 class="demo-heading">Property binding</h4>
-    <p class="demo-label"><code>[disabled]="!enrolmentOpen()"</code></p>
-    <div class="demo-actions">
-      <button class="btn btn-primary" [disabled]="!enrolmentOpen()">Enrol now</button>
-      <button class="btn btn-ghost" (click)="enrolmentOpen.set(!enrolmentOpen())">
-        {{ enrolmentOpen() ? 'Close' : 'Open' }} enrolment
-      </button>
-    </div>
-  </div>
+<p class="demo-label" [attr.role]="soldOut() ? 'alert' : null">
+  {{ soldOut() ? 'This course is sold out' : 'Seats available' }}
+</p>
 
-  <div class="demo-panel">
-    <h4 class="demo-heading">Attribute binding</h4>
-    <p class="demo-label"><code>[attr.colspan]="span()"</code></p>
-    <table class="schedule">
-      <tr>
-        <td>Mon</td>
-        <td>Tue</td>
-        <td>Wed</td>
-      </tr>
-      <tr>
-        <td class="workshop" [attr.colspan]="span()">Workshop</td>
-      </tr>
-    </table>
-    <div class="demo-actions">
-      <button class="btn btn-ghost" (click)="span.set(1)">1 day</button>
-      <button class="btn btn-ghost" (click)="span.set(2)">2 days</button>
-      <button class="btn btn-ghost" (click)="span.set(3)">3 days</button>
-    </div>
-  </div>
+<div class="demo-actions">
+  <button class="btn btn-primary" [disabled]="soldOut()">Enrol now</button>
+  <button class="btn btn-ghost" (click)="soldOut.set(!soldOut())">Toggle sold out</button>
 </div>
