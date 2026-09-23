@@ -15,6 +15,13 @@
   color: var(--color-text);
 }
 
-.demo-split {
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.event-list .form-control,
+.hover-box {
+  max-width: 360px;
 }
