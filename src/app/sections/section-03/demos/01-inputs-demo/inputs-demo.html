@@ -1,0 +1,37 @@
+<div class="stack">
+  <div class="panel">
+    <h4>input()</h4>
+    <greeting [name]="name()" />
+    <div class="actions">
+      <input #nameInput [value]="name()" />
+      <button (click)="apply(nameInput.value)">Apply Input</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>input.required()</h4>
+    <required-label text="Always bound by the parent" />
+  </div>
+
+  <div class="panel">
+    <h4>Alias</h4>
+    <aliased-label label="Bound through the alias" />
+  </div>
+
+  <div class="panel">
+    <h4>Default value</h4>
+    <default-label />
+    <default-label text="Overridden by the parent" />
+  </div>
+
+  <div class="panel">
+    <h4>booleanAttribute</h4>
+    <on-off on />
+    <on-off />
+  </div>
+
+  <div class="panel">
+    <h4>numberAttribute</h4>
+    <doubler value="21" />
+  </div>
+</div>
