@@ -3,7 +3,6 @@ import { Component, signal } from '@angular/core';
 @Component({
   selector: 'event-binding-demo',
   templateUrl: './event-binding-demo.html',
-  styleUrl: './event-binding-demo.scss',
 })
 export class EventBindingDemo {
 
