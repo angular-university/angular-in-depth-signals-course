@@ -1,6 +1,6 @@
 <div class="stack">
   <div class="panel">
-    <h4>&#64;if</h4>
+    <h4>plain if</h4>
     @if (showLogo()) {
       <img src="angular-logo.svg" alt="Angular logo" width="84" height="89" />
     }
@@ -10,14 +10,14 @@
   </div>
 
   <div class="panel">
-    <h4>&#64;if, &#64;else if and &#64;else</h4>
-    <p class="counter">{{ count() }}</p>
+    <h4>if, else if and else</h4>
+    <p>Count: {{ count() }}</p>
     @if (count() === 0) {
-      <p>Zero</p>
+      <p class="counter featured">Zero</p>
     } @else if (count() < 5) {
-      <p>Less than 5</p>
+      <p class="counter featured">Less than 5</p>
     } @else {
-      <p>5 or more</p>
+      <p class="counter featured">5 or more</p>
     }
     <div class="actions">
       <button (click)="increment()">Increment</button>
