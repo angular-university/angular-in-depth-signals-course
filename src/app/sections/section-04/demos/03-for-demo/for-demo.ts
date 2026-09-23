@@ -23,9 +23,9 @@ function nextId(items: Item[]) {
 })
 export class ForDemo {
 
-  items = signal(createItems(3));
+  items = signal<Item[]>([]);
 
-  variables = signal(createItems(3));
+  variables = signal(createItems(6));
 
   tracked = signal(createItems(3));
 
