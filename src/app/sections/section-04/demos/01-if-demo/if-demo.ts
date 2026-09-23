@@ -6,7 +6,13 @@ import { Component, signal } from '@angular/core';
 })
 export class IfDemo {
 
+  showLogo = signal(true);
+
   count = signal(0);
+
+  toggleLogo() {
+    this.showLogo.update((current) => !current);
+  }
 
   increment() {
     this.count.update((current) => current + 1);

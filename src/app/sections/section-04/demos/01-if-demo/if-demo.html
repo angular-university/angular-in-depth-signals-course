@@ -1,12 +1,27 @@
-<div class="panel">
-  @if (count(); as counter) {
-    <p class="counter">{{ counter }}</p>
-  } @else {
-    <p>Zero</p>
-  }
-</div>
+<div class="stack">
+  <div class="panel">
+    <h4>&#64;if</h4>
+    @if (showLogo()) {
+      <img src="angular-logo.svg" alt="Angular logo" width="84" height="89" />
+    }
+    <div class="actions">
+      <button (click)="toggleLogo()">Toggle</button>
+    </div>
+  </div>
 
-<div class="actions">
-  <button (click)="increment()">Increment</button>
-  <button (click)="reset()">Reset</button>
+  <div class="panel">
+    <h4>&#64;if, &#64;else if and &#64;else</h4>
+    <p class="counter">{{ count() }}</p>
+    @if (count() === 0) {
+      <p>Zero</p>
+    } @else if (count() < 5) {
+      <p>Less than 5</p>
+    } @else {
+      <p>5 or more</p>
+    }
+    <div class="actions">
+      <button (click)="increment()">Increment</button>
+      <button (click)="reset()">Reset</button>
+    </div>
+  </div>
 </div>
