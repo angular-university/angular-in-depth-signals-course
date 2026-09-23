@@ -1,15 +1,81 @@
 <div
-  class="demo-panel demo-panel-live"
-  (window:resize)="show('window:resize')"
-  (document:click)="show('document:click at x = ' + $event.clientX)"
+  class="demo-split"
+  (window:resize)="onResize()"
+  (document:click)="countPageClick()"
 >
-  <input
-    class="form-control"
-    placeholder="Press Enter, Shift + Enter or W"
-    (keyup.enter)="show('keyup.enter')"
-    (keyup.shift.enter)="show('keyup.shift.enter')"
-    (keydown.code.keyw)="show('keydown.code.keyw')"
-  />
-  <p class="demo-label">Last event</p>
-  <p class="demo-value">{{ lastEvent() }}</p>
+  <div class="demo-panel">
+    <h4 class="demo-heading">(click)</h4>
+    <button class="btn btn-primary" (click)="countClick()">Click me</button>
+    <p class="demo-value">Clicks: {{ clicks() }}</p>
+  </div>
+
+  <div class="demo-panel">
+    <h4 class="demo-heading">(mouseenter) and (mouseleave)</h4>
+    <div
+      class="hover-box"
+      (mouseenter)="hovering.set(true)"
+      (mouseleave)="hovering.set(false)"
+    >
+      Hover me
+    </div>
+    <p class="demo-value">{{ hovering() ? 'Inside' : 'Outside' }}</p>
+  </div>
+
+  <div class="demo-panel">
+    <h4 class="demo-heading">(change)</h4>
+    <select #levelSelect class="form-control" (change)="level.set(levelSelect.value)">
+      <option>Beginner</option>
+      <option>Intermediate</option>
+      <option>Advanced</option>
+    </select>
+    <p class="demo-value">{{ level() }}</p>
+  </div>
+
+  <div class="demo-panel">
+    <h4 class="demo-heading">(keyup) and $event</h4>
+    <input class="form-control" placeholder="Press any key" (keyup)="key.set($event.key)" />
+    <p class="demo-value">{{ key() }}</p>
+  </div>
+
+  <div class="demo-panel">
+    <h4 class="demo-heading">(keyup.enter)</h4>
+    <input
+      #enterInput
+      class="form-control"
+      placeholder="Type, then Enter"
+      (keyup.enter)="submitted.set(enterInput.value)"
+    />
+    <p class="demo-value">{{ submitted() }}</p>
+  </div>
+
+  <div class="demo-panel">
+    <h4 class="demo-heading">(keyup.shift.enter)</h4>
+    <input
+      #shiftInput
+      class="form-control"
+      placeholder="Type, then Shift + Enter"
+      (keyup.shift.enter)="shiftSubmitted.set(shiftInput.value)"
+    />
+    <p class="demo-value">{{ shiftSubmitted() }}</p>
+  </div>
+
+  <div class="demo-panel">
+    <h4 class="demo-heading">(keydown.code.keyw)</h4>
+    <input
+      class="form-control"
+      placeholder="Press the W key"
+      (keydown.code.keyw)="wPresses.set(wPresses() + 1)"
+    />
+    <p class="demo-value">W presses: {{ wPresses() }}</p>
+  </div>
+
+  <div class="demo-panel">
+    <h4 class="demo-heading">(window:resize)</h4>
+    <p class="demo-value">Width: {{ width() }}px</p>
+  </div>
+
+  <div class="demo-panel">
+    <h4 class="demo-heading">(document:click)</h4>
+    <p class="demo-value">Page clicks: {{ pageClicks() }}</p>
+  </div>
 </div>

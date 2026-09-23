@@ -1,0 +1,20 @@
+.hover-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 64px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.hover-box:hover {
+  border-color: var(--color-primary-light);
+  color: var(--color-text);
+}
+
+.demo-split {
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
