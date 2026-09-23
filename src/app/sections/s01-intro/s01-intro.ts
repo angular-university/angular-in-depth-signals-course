@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { CourseCard } from './demos/course-card';
-import { FirstSignalDemo } from './demos/first-signal-demo';
-import { NotASignalDemo } from './demos/not-a-signal-demo';
+import { CourseCard } from './demos/01-course-card/course-card';
+import { FirstSignalDemo } from './demos/02-first-signal-demo/first-signal-demo';
+import { NotASignalDemo } from './demos/03-not-a-signal-demo/not-a-signal-demo';
 
 @Component({
   selector: 's01-intro',

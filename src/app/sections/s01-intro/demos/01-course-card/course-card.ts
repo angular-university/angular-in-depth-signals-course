@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MOCK_COURSES } from '../../../shared/mock-courses';
+import { MOCK_COURSES } from '../../../../shared/mock-courses';
 
 @Component({
   selector: 'course-card',
