@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Toolbar } from './toolbar/toolbar';
-import { S01Intro } from './sections/s01-intro/s01-intro';
+import { Section01 } from './sections/section-01/section-01';
 
 @Component({
   selector: 'root',
-  imports: [Toolbar, S01Intro],
+  imports: [Toolbar, Section01],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
