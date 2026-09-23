@@ -6,13 +6,8 @@ import { Component } from '@angular/core';
 })
 export class InterpolationDemo {
 
-  course = {
-    title: 'Angular In Depth (Signals Edition)',
-    price: 50,
-  };
+  title = 'Angular In Depth (Signals Edition)';
 
-  discounted(price: number, percent: number) {
-    return price - (price * percent) / 100;
-  }
+  price = 50;
 
 }

@@ -1,17 +1,9 @@
-<div class="demo-rows">
-  <code>selected()?.title</code>
-  <span>{{ selected()?.title }}</span>
-
-  <code>selected()?.title ?? 'No course selected'</code>
-  <span>{{ selected()?.title ?? 'No course selected' }}</span>
-
-  @if (selected()) {
-    <code>selected()!.title</code>
-    <span>{{ selected()!.title }}</span>
-  }
-</div>
+<p>{{ course()?.title }}</p>
+<p>{{ course()?.title ?? 'No course selected' }}</p>
+@if (course()) {
+  <p>{{ course()!.title }}</p>
+}
 
 <div class="demo-actions">
-  <button class="btn btn-primary" (click)="select()">Select a course</button>
-  <button class="btn btn-ghost" (click)="clear()">Clear selection</button>
+  <button class="btn btn-ghost" (click)="toggleCourse()">Toggle course</button>
 </div>

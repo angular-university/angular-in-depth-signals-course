@@ -1,26 +1,14 @@
-<div (window:resize)="onResize()" (document:click)="onPageClick()">
-  <div class="demo-actions">
-    <input
-      class="form-control"
-      placeholder="Press some keys"
-      (keyup)="key.set($event.key)"
-      (keyup.enter)="shortcut.set('Enter')"
-      (keyup.shift.enter)="shortcut.set('Shift + Enter')"
-      (keydown.code.keyw)="shortcut.set('W key position')"
-    />
-  </div>
+<div
+  (window:resize)="show('window:resize')"
+  (document:click)="show('document:click at x = ' + $event.clientX)"
+>
+  <input
+    class="form-control"
+    placeholder="Press Enter, Shift + Enter or W"
+    (keyup.enter)="show('keyup.enter')"
+    (keyup.shift.enter)="show('keyup.shift.enter')"
+    (keydown.code.keyw)="show('keydown.code.keyw')"
+  />
 
-  <div class="demo-rows">
-    <span class="demo-label">Key</span>
-    <span>{{ key() }}</span>
-
-    <span class="demo-label">Shortcut</span>
-    <span>{{ shortcut() }}</span>
-
-    <span class="demo-label">Window width</span>
-    <span>{{ width() }}px</span>
-
-    <span class="demo-label">Page clicks</span>
-    <span>{{ clicks() }}</span>
-  </div>
+  <p>{{ lastEvent() }}</p>
 </div>

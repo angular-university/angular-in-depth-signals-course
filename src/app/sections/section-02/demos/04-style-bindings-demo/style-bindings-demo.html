@@ -1,8 +1,5 @@
-<div class="progress">
-  <div class="progress-bar" [style.width.%]="progress()"></div>
-</div>
+<p [style.font-size.px]="fontSize()">Angular In Depth (Signals Edition)</p>
 
 <div class="demo-actions">
-  <button class="btn btn-primary" (click)="advance()">+10%</button>
-  <button class="btn btn-ghost" (click)="reset()">Reset</button>
+  <button class="btn btn-ghost" (click)="toggleSize()">Toggle size</button>
 </div>

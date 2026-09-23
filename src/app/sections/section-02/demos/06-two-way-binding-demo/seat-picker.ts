@@ -3,7 +3,6 @@ import { Component, model } from '@angular/core';
 @Component({
   selector: 'seat-picker',
   templateUrl: './seat-picker.html',
-  styleUrl: './seat-picker.scss',
 })
 export class SeatPicker {
 
@@ -11,10 +10,6 @@ export class SeatPicker {
 
   addSeat() {
     this.seats.update((current) => current + 1);
-  }
-
-  removeSeat() {
-    this.seats.update((current) => current - 1);
   }
 
 }

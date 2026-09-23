@@ -10,4 +10,8 @@ export class TwoWayBindingDemo {
 
   seats = signal(1);
 
+  reset() {
+    this.seats.set(1);
+  }
+
 }

@@ -6,20 +6,10 @@ import { Component, signal } from '@angular/core';
 })
 export class EventBindingDemo {
 
-  key = signal('');
+  lastEvent = signal('');
 
-  shortcut = signal('');
-
-  width = signal(window.innerWidth);
-
-  clicks = signal(0);
-
-  onResize() {
-    this.width.set(window.innerWidth);
-  }
-
-  onPageClick() {
-    this.clicks.update((current) => current + 1);
+  show(event: string) {
+    this.lastEvent.set(event);
   }
 
 }

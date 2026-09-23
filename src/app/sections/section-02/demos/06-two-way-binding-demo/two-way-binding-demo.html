@@ -1,3 +1,7 @@
 <seat-picker [(seats)]="seats" />
 
-<p class="demo-label">Seats in the parent: {{ seats() }}</p>
+<p>Parent seats: {{ seats() }}</p>
+
+<div class="demo-actions">
+  <button class="btn btn-ghost" (click)="reset()">Reset from the parent</button>
+</div>
