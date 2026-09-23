@@ -11,4 +11,10 @@ export class NotASignalDemo {
 
   protected started = false;
 
+  start(plain: PlainCounter, signal: SignalCounter) {
+    plain.start();
+    signal.start();
+    this.started = true;
+  }
+
 }

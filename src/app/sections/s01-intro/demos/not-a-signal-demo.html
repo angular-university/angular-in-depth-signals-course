@@ -1,14 +1,14 @@
+<div class="demo-split">
+  <plain-counter #plain />
+  <signal-counter #signal />
+</div>
+
 <div class="demo-actions">
   <button
     class="btn btn-primary"
     [disabled]="started"
-    (click)="plain.start(); signal.start(); started = true"
+    (click)="start(plain, signal)"
   >
     Start ticking
   </button>
-</div>
-
-<div class="demo-split">
-  <plain-counter #plain />
-  <signal-counter #signal />
 </div>
