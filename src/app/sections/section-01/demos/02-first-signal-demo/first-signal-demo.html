@@ -1,11 +1,11 @@
-<h4 class="demo-heading">Angular In Depth (Signals Edition)</h4>
+<h4>Angular In Depth (Signals Edition)</h4>
 
-<p class="demo-label">Students enrolled</p>
+<small>Students enrolled</small>
 <p class="demo-counter demo-counter-featured">
   {{ students() }}
 </p>
 
 <div class="demo-actions">
-  <button class="btn btn-primary" (click)="enrolOne()">Enrol one student</button>
-  <button class="btn btn-ghost" (click)="reset()">Reset to 0</button>
+  <button (click)="enrolOne()">Enrol one student</button>
+  <button (click)="reset()">Reset to 0</button>
 </div>

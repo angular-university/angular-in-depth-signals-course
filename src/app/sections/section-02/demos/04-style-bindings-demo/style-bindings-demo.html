@@ -1,8 +1,8 @@
-<div class="demo-panel demo-panel-live">
-  <p class="demo-value" [style.font-size.px]="fontSize()">Angular In Depth (Signals Edition)</p>
+<div class="demo-panel">
+  <p [style.font-size.px]="fontSize()">Angular In Depth (Signals Edition)</p>
 </div>
 
 <div class="demo-actions">
-  <input #size class="form-control" type="number" [value]="fontSize()" />
-  <button class="btn btn-primary" (click)="apply(size.valueAsNumber)">Apply</button>
+  <input #size type="number" [value]="fontSize()" />
+  <button (click)="apply(size.valueAsNumber)">Apply</button>
 </div>

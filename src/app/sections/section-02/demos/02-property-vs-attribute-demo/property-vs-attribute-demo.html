@@ -1,8 +1,8 @@
-<div class="demo-panel demo-panel-live">
-  <button class="btn btn-primary" [disabled]="disabled()" [attr.role]="role()">Button</button>
+<div class="demo-panel">
+  <button [disabled]="disabled()" [attr.role]="role()">Button</button>
 </div>
 
 <div class="demo-actions">
-  <button class="btn btn-ghost" (click)="toggleDisabled()">Toggle disabled</button>
-  <button class="btn btn-ghost" (click)="toggleRole()">Toggle role</button>
+  <button (click)="toggleDisabled()">Toggle disabled</button>
+  <button (click)="toggleRole()">Toggle role</button>
 </div>

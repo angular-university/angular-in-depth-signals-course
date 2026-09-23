@@ -1,9 +1,9 @@
-<div class="demo-panel demo-panel-live">
-  <input #title class="form-control" placeholder="Type something" />
-  <p class="demo-label">Saved</p>
-  <p class="demo-value">{{ saved() }}</p>
+<div class="demo-panel">
+  <input #title placeholder="Type something" />
+  <small>Saved</small>
+  <p>{{ saved() }}</p>
 </div>
 
 <div class="demo-actions">
-  <button class="btn btn-primary" (click)="save(title.value)">Save</button>
+  <button (click)="save(title.value)">Save</button>
 </div>

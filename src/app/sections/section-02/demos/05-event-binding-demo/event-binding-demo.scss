@@ -15,13 +15,7 @@
   color: var(--color-text);
 }
 
-.event-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.event-list .form-control,
+.demo-stack :is(input, select),
 .hover-box {
   max-width: 360px;
 }

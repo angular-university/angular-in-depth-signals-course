@@ -40,7 +40,7 @@ img {
   max-width: 100%;
 }
 
-.btn {
+.section > article :where(button) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -48,91 +48,80 @@ img {
   padding: 8px 18px;
   border: none;
   border-radius: var(--radius-sm);
-  font-family: var(--font);
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background var(--transition), background-position 0.35s ease, box-shadow var(--transition), opacity var(--transition), transform 0.1s;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-  text-decoration: none;
-}
-
-.btn:active {
-  transform: scale(0.97);
-  transform: translateY(0);
-}
-
-.btn:disabled,
-.btn[disabled] {
-  opacity: 0.4;
-  cursor: not-allowed;
-  transform: none !important;
-  pointer-events: none;
-}
-
-.btn-primary {
   background: var(--gradient-brand);
   background-size: 160% 160%;
   background-position: 0% 50%;
-  color: #fff;
   box-shadow: 0 4px 18px rgba(228, 0, 53, 0.35);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background var(--transition), background-position 0.35s ease, box-shadow var(--transition), opacity var(--transition), transform 0.1s;
 }
 
-.btn-primary:hover {
+.section > article :where(button:hover) {
+  transform: translateY(-1px);
   background-position: 100% 50%;
   box-shadow: 0 6px 24px rgba(151, 23, 231, 0.45);
-  color: #fff;
 }
 
-.btn-ghost {
-  background: var(--color-surface-2);
-  color: var(--color-text);
+.section > article :where(button:active) {
+  transform: translateY(0);
+}
+
+.section > article :where(button:disabled) {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  pointer-events: none;
+}
+
+.section > article :where(button + button) {
   border: 1px solid var(--color-border);
-}
-
-.btn-ghost:hover {
-  background: #2e2e2e;
+  background: var(--color-surface-2);
+  box-shadow: none;
   color: var(--color-text);
-  border-color: #555;
 }
 
-.form-control {
+.section > article :where(button + button:hover) {
+  border-color: #555;
+  background: #2e2e2e;
+  box-shadow: none;
+}
+
+.section > article :where(input, select) {
   width: 100%;
   padding: 9px 12px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
+  outline: none;
+  background: var(--color-input-bg);
+  color: var(--color-text);
   font-family: var(--font);
   font-size: 16px;
-  color: var(--color-text);
-  background: var(--color-input-bg);
-  transition: border-color var(--transition), box-shadow var(--transition);
-  outline: none;
   appearance: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
 }
 
-.form-control:focus {
+.section > article :where(input:focus, select:focus) {
   border-color: var(--color-accent);
   box-shadow: 0 0 0 3px rgba(228, 0, 53, 0.15);
 }
 
-.form-control::placeholder {
+.section > article :where(input::placeholder) {
   color: #555;
 }
 
-select.form-control {
+.section > article :where(select) {
+  padding-right: 36px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='%23a0aab4' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 10px center;
-  background-color: var(--color-input-bg);
-  padding-right: 36px;
 }
 
-select.form-control option {
+.section > article :where(option) {
   background: var(--color-surface-2);
   color: var(--color-text);
 }
@@ -151,7 +140,7 @@ select.form-control option {
     scroll-behavior: auto !important;
   }
 
-  .btn:hover {
+  .section > article button:hover {
     transform: none;
   }
 }
@@ -231,11 +220,17 @@ select.form-control option {
     border-radius: var(--radius-md);
   }
 }
-.demo-heading {
+.section > article :where(h4) {
   margin: 0 0 8px;
   font-size: 18px;
   font-weight: 600;
-  color: var(--color-text);
+}
+
+.section > article :where(small) {
+  display: block;
+  margin: 0 0 2px;
+  font-size: 14px;
+  color: var(--color-text-muted);
 }
 
 .demo-actions {
@@ -245,16 +240,20 @@ select.form-control option {
   margin-top: 16px;
 }
 
-.demo-label {
-  margin: 0 0 2px;
-  font-size: 14px;
-  color: var(--color-text-muted);
+.section > article .demo-actions :where(input) {
+  width: 100px;
 }
 
 .demo-split {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 20px;
+}
+
+.demo-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .demo-panel {
@@ -264,26 +263,28 @@ select.form-control option {
   gap: 6px;
   padding: 20px;
   border: 1px solid var(--color-border);
-  border-left: 3px solid var(--color-border);
+  border-left: 3px solid var(--color-primary-light);
   border-radius: var(--radius-md);
   background: var(--color-bg);
-  transition: border-color var(--transition);
+}
+
+.demo-panel-plain {
+  border-left-color: var(--color-border);
+}
+
+.demo-panel :where(p) {
+  min-height: 1.4em;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.demo-panel > :where(input, select) {
+  margin-bottom: 10px;
 }
 
 .demo-panel > .demo-actions {
   margin-top: 10px;
-}
-
-.demo-actions > .form-control {
-  width: 100px;
-}
-
-.demo-panel > .form-control {
-  margin-bottom: 10px;
-}
-
-.demo-panel-live {
-  border-left-color: var(--color-primary-light);
 }
 
 .demo-counter {
@@ -302,13 +303,6 @@ select.form-control option {
   background-clip: text;
   color: transparent;
   filter: drop-shadow(0 0 16px rgba(151, 23, 231, 0.35));
-}
-
-.demo-value {
-  min-height: 1.4em;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 1.4;
 }
 
 code {
