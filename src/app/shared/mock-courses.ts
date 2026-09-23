@@ -13,7 +13,7 @@ export const MOCK_COURSES: Course[] = [
   {
     id: 24,
     title: 'Angular In Depth (Signals Edition)',
-    description: 'A deep dive into Angular internals — change detection, DI, routing, hydration and performance using Signals',
+    description: 'A deep dive into Angular internals — change detection, DI, routing, Signals and Forms',
     iconUrl: 'https://d3vigmphadbn9b.cloudfront.net/course-images/large-images/angular-in-depth-with-signals.jpg',
     category: CourseCategory.BEGINNER,
     seqNo: 1,
