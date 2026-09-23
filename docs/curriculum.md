@@ -93,13 +93,13 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - The :host Selector In Detail
 - The :host-context Selector — The Theming Use Case
 - Bypassing View Encapsulation with ::ng-deep
-- Emulated vs ShadowDom vs None — The Three Encapsulation Modes
 - Global Styles vs Component Styles — Best Practices
 - Styling with CSS Custom Properties and Design Tokens
 - Reactive Styling — Driving CSS From Signals
   - provideCssVarNamespacing() — the compiler prefixes every CSS variable at build time so an app and a library can't collide, with --global--foo to opt one out
   - if the app enables provideCssVarNamespacing, setProperty('--foo') and getPropertyValue('--foo') silently stop matching the compiled names
   - CssVarNamespacer.namespace('--foo') is the fix, and it returns the name unchanged when no namespace is configured
+- Emulated vs ShadowDom vs None — The Three Encapsulation Modes
 
 ## Section 6 — Angular Signals Deep Dive
 
