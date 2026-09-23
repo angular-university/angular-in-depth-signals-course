@@ -8,7 +8,7 @@ export class Counter {
 
   count = model(0);
 
-  increment() {
+  addOne() {
     this.count.update((current) => current + 1);
   }
 

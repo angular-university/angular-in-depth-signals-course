@@ -10,8 +10,8 @@ export class ModelDemo {
 
   count = signal(0);
 
-  reset() {
-    this.count.set(0);
+  addTen() {
+    this.count.update((current) => current + 10);
   }
 
 }
