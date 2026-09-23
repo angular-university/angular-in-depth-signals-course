@@ -1,4 +1,5 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { START_TICKING_EVENT } from './start-ticking-event';
 
 /**
  * A counter kept in a plain property and incremented from a timer — that is, from outside
@@ -14,9 +15,6 @@ import { Component, OnDestroy } from '@angular/core';
           <span>{{ value }}</span>
         }
       </p>
-      <button class="btn btn-ghost" [disabled]="timer !== undefined" (click)="start()">
-        Start ticking
-      </button>
       <p class="demo-note">
         The value really is going up — watch the console. The view never hears about it.
       </p>
@@ -24,20 +22,27 @@ import { Component, OnDestroy } from '@angular/core';
   `,
   styleUrl: './demo-shared.scss',
 })
-export class PlainCounter implements OnDestroy {
+export class PlainCounter implements OnInit, OnDestroy {
 
   count = 0;
 
-  protected timer: ReturnType<typeof setInterval> | undefined;
+  private timer: ReturnType<typeof setInterval> | undefined;
 
-  start() {
+  private readonly start = () => {
+    if (this.timer !== undefined) return;
+
     this.timer = setInterval(() => {
       this.count++;
       console.log(`plain count is now ${this.count}, but the view still shows 0`);
     }, 1000);
+  };
+
+  ngOnInit() {
+    document.addEventListener(START_TICKING_EVENT, this.start);
   }
 
   ngOnDestroy() {
+    document.removeEventListener(START_TICKING_EVENT, this.start);
     clearInterval(this.timer);
   }
 

@@ -1,4 +1,5 @@
-import { Component, OnDestroy, signal } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal } from '@angular/core';
+import { START_TICKING_EVENT } from './start-ticking-event';
 
 /**
  * The same counter, in a signal. The timer is still outside any template listener, but
@@ -14,9 +15,6 @@ import { Component, OnDestroy, signal } from '@angular/core';
           <span>{{ value }}</span>
         }
       </p>
-      <button class="btn btn-primary" [disabled]="timer !== undefined" (click)="start()">
-        Start ticking
-      </button>
       <p class="demo-note">
         Reading a signal in the template is what connects this view to that piece of state.
       </p>
@@ -24,17 +22,24 @@ import { Component, OnDestroy, signal } from '@angular/core';
   `,
   styleUrl: './demo-shared.scss',
 })
-export class SignalCounter implements OnDestroy {
+export class SignalCounter implements OnInit, OnDestroy {
 
   count = signal(0);
 
-  protected timer: ReturnType<typeof setInterval> | undefined;
+  private timer: ReturnType<typeof setInterval> | undefined;
 
-  start() {
+  private readonly start = () => {
+    if (this.timer !== undefined) return;
+
     this.timer = setInterval(() => this.count.update((current) => current + 1), 1000);
+  };
+
+  ngOnInit() {
+    document.addEventListener(START_TICKING_EVENT, this.start);
   }
 
   ngOnDestroy() {
+    document.removeEventListener(START_TICKING_EVENT, this.start);
     clearInterval(this.timer);
   }
 

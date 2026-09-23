@@ -8,7 +8,13 @@ import { MOCK_COURSES } from '../../../shared/mock-courses';
   selector: 'first-signal-demo',
   template: `
     <h4 class="demo-heading">{{ title() }}</h4>
-    <p class="demo-meta">Students enrolled: {{ students() }}</p>
+
+    <p class="demo-label">Students enrolled</p>
+    <p class="demo-counter demo-counter-featured">
+      @for (value of [students()]; track value) {
+        <span>{{ value }}</span>
+      }
+    </p>
 
     <div class="demo-actions">
       <button class="btn btn-primary" (click)="enrolOne()">Enrol one student</button>

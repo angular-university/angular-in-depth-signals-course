@@ -20,6 +20,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-top: 4px;
+}
+
+.demo-label {
+  margin: 0 0 2px;
+  font-size: 14px;
+  color: var(--color-text-muted);
 }
 
 .demo-split {
@@ -53,6 +60,20 @@
   color: var(--color-text);
 }
 
+/* The brand-gradient treatment, reserved for the one counter a demo wants to draw the
+   eye to first — same technique the card price used. width: fit-content matters here:
+   without it the gradient spans the full (block-level) container width, and a couple of
+   digits sitting at the left edge only ever show the gradient's reddest sliver — a solid
+   smudge, not a gradient. Shrinking the box to the digits is what makes the sweep visible. */
+.demo-counter-featured {
+  width: fit-content;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 16px rgba(151, 23, 231, 0.35));
+}
+
 .demo-note {
   margin: 12px 0 0;
   font-size: 14px;
@@ -60,15 +81,18 @@
 }
 
 /* The counter node is replaced when its value changes, so this plays only on a real
-   re-render — which is exactly what the plain-vs-signal demo is about. */
+   re-render — which is exactly what the plain-vs-signal demo is about.
+   Deliberately animates transform and filter only, never color: the featured counter
+   below renders its digits transparent so a gradient background shows through them,
+   and a keyframe that touched color would paint over that gradient on every tick. */
 @keyframes counter-pop {
-  from {
+  0% {
     transform: scale(1.4);
-    color: var(--color-primary-light);
+    filter: drop-shadow(0 0 18px rgba(151, 23, 231, 0.7));
   }
-  to {
+  100% {
     transform: scale(1);
-    color: var(--color-text);
+    filter: drop-shadow(0 0 0 rgba(151, 23, 231, 0));
   }
 }
 
