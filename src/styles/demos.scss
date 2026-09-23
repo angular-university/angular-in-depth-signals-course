@@ -4,6 +4,23 @@
   padding: 48px 24px;
 }
 
+* + * > .section {
+  position: relative;
+}
+
+* + * > .section::before {
+  content: '';
+  position: absolute;
+  top: -36px;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--gradient-brand);
+  box-shadow: var(--glow-brand);
+  mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+}
+
 .section > h2 {
   display: flex;
   align-items: center;

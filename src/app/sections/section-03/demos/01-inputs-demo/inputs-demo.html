@@ -4,34 +4,56 @@
     <greeting [name]="name()" />
     <div class="actions">
       <input #nameInput [value]="name()" />
-      <button (click)="apply(nameInput.value)">Apply Input</button>
+      <button (click)="applyName(nameInput.value)">Apply</button>
     </div>
   </div>
 
   <div class="panel">
     <h4>input.required()</h4>
-    <required-label text="Always bound by the parent" />
+    <required-label [text]="required()" />
+    <div class="actions">
+      <input #requiredInput [value]="required()" />
+      <button (click)="applyRequired(requiredInput.value)">Apply</button>
+    </div>
   </div>
 
   <div class="panel">
     <h4>Alias</h4>
-    <aliased-label label="Bound through the alias" />
+    <aliased-label [label]="aliased()" />
+    <div class="actions">
+      <input #aliasedInput [value]="aliased()" />
+      <button (click)="applyAliased(aliasedInput.value)">Apply</button>
+    </div>
   </div>
 
   <div class="panel">
     <h4>Default value</h4>
     <default-label />
-    <default-label text="Overridden by the parent" />
+    <default-label [text]="overridden()" />
+    <div class="actions">
+      <input #overriddenInput [value]="overridden()" />
+      <button (click)="applyOverridden(overriddenInput.value)">Apply</button>
+    </div>
   </div>
 
   <div class="panel">
     <h4>booleanAttribute</h4>
-    <on-off on />
-    <on-off />
+    <on-off [on]="on()" />
+    <div class="actions">
+      <select #onSelect>
+        <option value="true">true</option>
+        <option value="false">false</option>
+      </select>
+      <button (click)="applyOn(onSelect.value)">Apply</button>
+    </div>
   </div>
 
   <div class="panel">
     <h4>numberAttribute</h4>
-    <doubler value="21" />
+    <doubler [value]="value()" />
+    <div class="actions">
+      <input #valueInput type="number" [value]="value()" />
+      <button (click)="applyValue(valueInput.value)">Apply</button>
+    </div>
   </div>
 </div>
