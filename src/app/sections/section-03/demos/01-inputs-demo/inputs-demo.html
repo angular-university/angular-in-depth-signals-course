@@ -9,34 +9,6 @@
   </div>
 
   <div class="panel">
-    <h4>input.required()</h4>
-    <required-label [text]="required()" />
-    <div class="actions">
-      <input #requiredInput [value]="required()" />
-      <button (click)="applyRequired(requiredInput.value)">Apply</button>
-    </div>
-  </div>
-
-  <div class="panel">
-    <h4>Alias</h4>
-    <aliased-label [label]="aliased()" />
-    <div class="actions">
-      <input #aliasedInput [value]="aliased()" />
-      <button (click)="applyAliased(aliasedInput.value)">Apply</button>
-    </div>
-  </div>
-
-  <div class="panel">
-    <h4>Default value</h4>
-    <default-label />
-    <default-label [text]="overridden()" />
-    <div class="actions">
-      <input #overriddenInput [value]="overridden()" />
-      <button (click)="applyOverridden(overriddenInput.value)">Apply</button>
-    </div>
-  </div>
-
-  <div class="panel">
     <h4>booleanAttribute</h4>
     <on-off [on]="on()" />
     <div class="actions">
@@ -54,6 +26,15 @@
     <div class="actions">
       <input #valueInput type="number" [value]="value()" />
       <button (click)="applyValue(valueInput.value)">Apply</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>Custom transform</h4>
+    <uppercased [text]="text()" />
+    <div class="actions">
+      <input #textInput [value]="text()" />
+      <button (click)="applyText(textInput.value)">Apply</button>
     </div>
   </div>
 </div>

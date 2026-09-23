@@ -110,8 +110,19 @@
   margin-top: 16px;
 }
 
-.demo .actions :where(input) {
-  width: 180px;
+.demo .actions:has(> :where(input, select)) {
+  flex-wrap: nowrap;
+  max-width: 100%;
+}
+
+.demo .actions > :where(input, select) {
+  flex: 0 1 auto;
+  width: 220px;
+  min-width: 0;
+}
+
+.demo .actions > :where(button) {
+  flex: none;
 }
 
 .demo .split {
