@@ -1,7 +1,9 @@
-<input #title class="form-control" placeholder="Type something" />
-
-<div class="demo-actions">
-  <button class="btn btn-ghost" (click)="save(title.value)">Save</button>
+<div class="demo-panel demo-panel-live">
+  <input #title class="form-control" placeholder="Type something" />
+  <p class="demo-label">Saved</p>
+  <p class="demo-value">{{ saved() }}</p>
 </div>
 
-<p>{{ saved() }}</p>
+<div class="demo-actions">
+  <button class="btn btn-primary" (click)="save(title.value)">Save</button>
+</div>

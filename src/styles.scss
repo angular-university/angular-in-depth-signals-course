@@ -228,8 +228,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 4px;
-  margin-bottom: 20px;
+  margin-top: 16px;
 }
 
 .demo-label {
@@ -242,10 +241,13 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 20px;
-  margin-bottom: 16px;
 }
 
 .demo-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
   padding: 20px;
   border: 1px solid var(--color-border);
   border-left: 3px solid var(--color-border);
@@ -254,12 +256,20 @@ img {
   transition: border-color var(--transition);
 }
 
+.demo-panel > .demo-actions {
+  margin-top: 10px;
+}
+
+.demo-panel > .form-control {
+  margin-bottom: 10px;
+}
+
 .demo-panel-live {
   border-left-color: var(--color-primary-light);
 }
 
 .demo-counter {
-  margin: 0 0 12px;
+  margin: 0;
   font-size: 48px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
@@ -274,4 +284,11 @@ img {
   background-clip: text;
   color: transparent;
   filter: drop-shadow(0 0 16px rgba(151, 23, 231, 0.35));
+}
+
+.demo-value {
+  min-height: 1.4em;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
 }

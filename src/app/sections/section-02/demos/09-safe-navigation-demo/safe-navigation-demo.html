@@ -1,9 +1,11 @@
-<p>{{ data()?.title }}</p>
-<p>{{ data()?.title ?? 'No data' }}</p>
-@if (data()) {
-  <p>{{ data()!.title }}</p>
-}
+<div class="demo-panel demo-panel-live">
+  <p class="demo-value">{{ data()?.title }}</p>
+  <p class="demo-value">{{ data()?.title ?? 'No data' }}</p>
+  @if (data()) {
+    <p class="demo-value">{{ data()!.title }}</p>
+  }
+</div>
 
 <div class="demo-actions">
-  <button class="btn btn-ghost" (click)="toggleData()">Toggle null</button>
+  <button class="btn btn-primary" (click)="toggleData()">Toggle null</button>
 </div>

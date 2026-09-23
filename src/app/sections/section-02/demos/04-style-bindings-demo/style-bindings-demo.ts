@@ -6,10 +6,10 @@ import { Component, signal } from '@angular/core';
 })
 export class StyleBindingsDemo {
 
-  fontSize = signal(17);
+  fontSize = signal(22);
 
   toggleSize() {
-    this.fontSize.update((current) => (current === 17 ? 32 : 17));
+    this.fontSize.update((current) => (current === 22 ? 40 : 22));
   }
 
 }

@@ -6,7 +6,7 @@ import { Component, signal } from '@angular/core';
 })
 export class EventBindingDemo {
 
-  lastEvent = signal('');
+  lastEvent = signal('none yet');
 
   show(event: string) {
     this.lastEvent.set(event);

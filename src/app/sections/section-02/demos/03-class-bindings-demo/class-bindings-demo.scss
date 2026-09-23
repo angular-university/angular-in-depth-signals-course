@@ -1,4 +1,6 @@
 .highlighted {
-  color: var(--color-accent);
-  font-weight: 700;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

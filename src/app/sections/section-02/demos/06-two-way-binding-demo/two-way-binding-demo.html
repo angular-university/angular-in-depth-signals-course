@@ -1,7 +1,11 @@
-<counter [(count)]="count" />
+<div class="demo-split">
+  <counter [(count)]="count" />
 
-<p>Parent: {{ count() }}</p>
-
-<div class="demo-actions">
-  <button class="btn btn-ghost" (click)="reset()">Reset from the parent</button>
+  <div class="demo-panel">
+    <h4 class="demo-heading">Parent</h4>
+    <p class="demo-counter">{{ count() }}</p>
+    <div class="demo-actions">
+      <button class="btn btn-ghost" (click)="reset()">Reset</button>
+    </div>
+  </div>
 </div>

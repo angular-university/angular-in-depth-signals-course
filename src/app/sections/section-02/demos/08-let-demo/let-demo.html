@@ -1,7 +1,10 @@
 @let doubled = count() * 2;
 
-<p>{{ count() }} × 2 = {{ doubled }}</p>
+<div class="demo-panel demo-panel-live">
+  <p class="demo-label">{{ count() }} × 2</p>
+  <p class="demo-counter demo-counter-featured">{{ doubled }}</p>
+</div>
 
 <div class="demo-actions">
-  <button class="btn btn-ghost" (click)="increment()">Increment</button>
+  <button class="btn btn-primary" (click)="increment()">Increment</button>
 </div>

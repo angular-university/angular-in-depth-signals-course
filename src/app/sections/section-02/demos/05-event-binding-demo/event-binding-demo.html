@@ -1,4 +1,5 @@
 <div
+  class="demo-panel demo-panel-live"
   (window:resize)="show('window:resize')"
   (document:click)="show('document:click at x = ' + $event.clientX)"
 >
@@ -9,6 +10,6 @@
     (keyup.shift.enter)="show('keyup.shift.enter')"
     (keydown.code.keyw)="show('keydown.code.keyw')"
   />
-
-  <p>{{ lastEvent() }}</p>
+  <p class="demo-label">Last event</p>
+  <p class="demo-value">{{ lastEvent() }}</p>
 </div>

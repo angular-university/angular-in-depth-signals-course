@@ -1,6 +1,7 @@
-<div class="demo-panel">
-  <p>Child: {{ count() }}</p>
+<div class="demo-panel demo-panel-live">
+  <h4 class="demo-heading">Child</h4>
+  <p class="demo-counter">{{ count() }}</p>
   <div class="demo-actions">
-    <button class="btn btn-ghost" (click)="increment()">Increment</button>
+    <button class="btn btn-primary" (click)="increment()">Increment</button>
   </div>
 </div>
