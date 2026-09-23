@@ -1,0 +1,28 @@
+<div class="stack">
+  <div class="panel">
+    <h4>viewChild()</h4>
+    <input #box value="Focus me" />
+    <div class="actions">
+      <button (click)="focus()">Focus</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>viewChildren()</h4>
+    <input #field value="One" />
+    <input #field value="Two" />
+    <input #field value="Three" />
+    <div class="actions">
+      <button (click)="clearAll()">Clear all</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>read: ElementRef</h4>
+    <hello #hello />
+    <p>{{ tagName() }}</p>
+    <div class="actions">
+      <button (click)="readTagName()">Read tag name</button>
+    </div>
+  </div>
+</div>
