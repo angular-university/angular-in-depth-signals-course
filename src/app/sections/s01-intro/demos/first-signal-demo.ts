@@ -6,12 +6,7 @@ import { Component, signal } from '@angular/core';
 })
 export class FirstSignalDemo {
 
-  private readonly titles = [
-    'Angular In Depth (Signals Edition)',
-    'Angular For Beginners (Signals Edition)',
-  ] as const;
-
-  title = signal<string>(this.titles[0]);
+  title = signal('Angular In Depth (Signals Edition)');
 
   students = signal(0);
 
@@ -21,10 +16,6 @@ export class FirstSignalDemo {
 
   reset() {
     this.students.set(0);
-  }
-
-  flipTitle() {
-    this.title.update((current) => (current === this.titles[0] ? this.titles[1] : this.titles[0]));
   }
 
 }
