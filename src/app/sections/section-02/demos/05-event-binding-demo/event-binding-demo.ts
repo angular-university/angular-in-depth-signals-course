@@ -19,8 +19,6 @@ export class EventBindingDemo {
 
   shiftSubmitted = signal('');
 
-  wPresses = signal(0);
-
   width = signal(window.innerWidth);
 
   pageClicks = signal(0);
