@@ -10,24 +10,34 @@ export class ViewQueriesDemo {
 
   box = viewChild.required<ElementRef<HTMLInputElement>>('box');
 
-  fields = viewChildren<ElementRef<HTMLInputElement>>('field');
+  children = viewChildren('child');
 
-  hello = viewChild.required('hello', { read: ElementRef });
+  ids = signal([1, 2, 3]);
 
-  tagName = signal('');
+  helloComponent = viewChild.required<Hello>('hello');
+
+  helloElement = viewChild.required('hello', { read: ElementRef });
+
+  result = signal('');
 
   focus() {
     this.box().nativeElement.focus();
   }
 
-  clearAll() {
-    for (const field of this.fields()) {
-      field.nativeElement.value = '';
-    }
+  add() {
+    this.ids.update((current) => [...current, current.length + 1]);
   }
 
-  readTagName() {
-    this.tagName.set(this.hello().nativeElement.tagName);
+  remove() {
+    this.ids.update((current) => current.slice(0, -1));
+  }
+
+  readComponent() {
+    this.result.set(this.helloComponent().name);
+  }
+
+  readElement() {
+    this.result.set(this.helloElement().nativeElement.outerHTML);
   }
 
 }

@@ -9,20 +9,23 @@
 
   <div class="panel">
     <h4>viewChildren()</h4>
-    <input #field value="One" />
-    <input #field value="Two" />
-    <input #field value="Three" />
+    <p class="counter">{{ children().length }}</p>
+    @for (id of ids(); track id) {
+      <small #child>Child {{ id }}</small>
+    }
     <div class="actions">
-      <button (click)="clearAll()">Clear all</button>
+      <button (click)="add()">Add</button>
+      <button (click)="remove()">Remove</button>
     </div>
   </div>
 
   <div class="panel">
-    <h4>read: ElementRef</h4>
+    <h4>read</h4>
     <hello #hello />
-    <p>{{ tagName() }}</p>
+    <p>{{ result() }}</p>
     <div class="actions">
-      <button (click)="readTagName()">Read tag name</button>
+      <button (click)="readComponent()">Read component</button>
+      <button (click)="readElement()">Read ElementRef</button>
     </div>
   </div>
 </div>
