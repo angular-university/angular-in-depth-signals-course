@@ -1,29 +1,58 @@
 import { Component } from '@angular/core';
-import { SectionPage } from '../../shared/section-page/section-page';
-import { DemoBlock } from '../../shared/demo-block/demo-block';
 import { CourseCard } from './demos/course-card';
 import { FirstSignalDemo } from './demos/first-signal-demo';
 import { NotASignalDemo } from './demos/not-a-signal-demo';
 
+/**
+ * Plain markup styled from the shared classes in styles.scss, not wrapper components —
+ * a beginner reading this file should see only what Section 1 is actually teaching, not
+ * an unexplained <ng-content> from a lesson still ten sections away.
+ */
 @Component({
   selector: 's01-intro',
-  imports: [SectionPage, DemoBlock, CourseCard, FirstSignalDemo, NotASignalDemo],
+  imports: [CourseCard, FirstSignalDemo, NotASignalDemo],
   template: `
-    <section-page [number]="1" heading="Introduction to Angular, with Signals From the Beginning">
+    <section class="section" id="s1">
+      <div class="page-container">
 
-      <demo-block heading="Our first component — a course card">
-        <course-card />
-      </demo-block>
+        <header class="section-head">
+          <span class="section-number">1</span>
+          <h2 class="section-title">Introduction to Angular, with Signals From the Beginning</h2>
+        </header>
 
-      <demo-block heading="Our first signal — set() and update()">
-        <first-signal-demo />
-      </demo-block>
+        <div class="section-demos">
 
-      <demo-block heading="What happens when data is not in a signal">
-        <not-a-signal-demo />
-      </demo-block>
+          <section class="demo-block">
+            <header class="demo-header">
+              <h3 class="demo-title">Our first component — a course card</h3>
+            </header>
+            <div class="demo-body">
+              <course-card />
+            </div>
+          </section>
 
-    </section-page>
+          <section class="demo-block">
+            <header class="demo-header">
+              <h3 class="demo-title">Our first signal — set() and update()</h3>
+            </header>
+            <div class="demo-body">
+              <first-signal-demo />
+            </div>
+          </section>
+
+          <section class="demo-block">
+            <header class="demo-header">
+              <h3 class="demo-title">What happens when data is not in a signal</h3>
+            </header>
+            <div class="demo-body">
+              <not-a-signal-demo />
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+    </section>
   `,
 })
 export class S01Intro {

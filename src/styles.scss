@@ -274,3 +274,110 @@ select.form-control option {
     transform: none;
   }
 }
+
+/* ─── Section and Demo Layout ────────────────────────────────── */
+/* Plain, reusable classes instead of wrapper components — a section page is just markup
+   styled from here, so a beginner reading a section file sees only what it teaches. */
+
+.section {
+  padding: 48px 0;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+/* The one badge every section repeats — a filled gradient chip with a glow behind it,
+   so it reads instantly on video even as a thumbnail. */
+.section-number {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg);
+  background: var(--gradient-brand);
+  box-shadow: var(--glow-brand);
+  font-size: 25px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.section-demos {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.demo-block {
+  position: relative;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-card);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+/* One thin brand-gradient seam along the top of every block — the recurring signature
+   that says "this is part of the course," without repainting the whole card. */
+.demo-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-brand);
+}
+
+.demo-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 22px;
+  background: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.demo-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.demo-body {
+  padding: 28px 22px;
+}
+
+@media (max-width: 640px) {
+  .section-head {
+    gap: 14px;
+  }
+
+  .section-number {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+    border-radius: var(--radius-md);
+  }
+
+  .section-title {
+    font-size: 21px;
+  }
+}
