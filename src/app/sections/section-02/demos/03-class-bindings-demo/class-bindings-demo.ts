@@ -1,5 +1,4 @@
 import { Component, signal } from '@angular/core';
-import { MOCK_COURSES } from '../../../../shared/mock-courses';
 
 @Component({
   selector: 'class-bindings-demo',
@@ -7,8 +6,6 @@ import { MOCK_COURSES } from '../../../../shared/mock-courses';
   styleUrl: './class-bindings-demo.scss',
 })
 export class ClassBindingsDemo {
-
-  course = MOCK_COURSES[1];
 
   featured = signal(false);
 

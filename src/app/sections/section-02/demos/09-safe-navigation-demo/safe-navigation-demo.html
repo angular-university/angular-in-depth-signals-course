@@ -5,8 +5,10 @@
   <code>selected()?.title ?? 'No course selected'</code>
   <span>{{ selected()?.title ?? 'No course selected' }}</span>
 
-  <code>findCourse(24)!.title</code>
-  <span>{{ findCourse(24)!.title }}</span>
+  @if (selected()) {
+    <code>selected()!.title</code>
+    <span>{{ selected()!.title }}</span>
+  }
 </div>
 
 <div class="demo-actions">

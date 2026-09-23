@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MOCK_COURSES } from '../../../../shared/mock-courses';
 
 @Component({
   selector: 'interpolation-demo',
@@ -7,7 +6,11 @@ import { MOCK_COURSES } from '../../../../shared/mock-courses';
 })
 export class InterpolationDemo {
 
-  course = MOCK_COURSES[1];
+  course = {
+    title: 'Angular In Depth (Signals Edition)',
+    category: 'BEGINNER',
+    price: 50,
+  };
 
   discounted(price: number, percent: number) {
     return price - (price * percent) / 100;

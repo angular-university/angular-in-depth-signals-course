@@ -1,6 +1,4 @@
 import { Component, signal } from '@angular/core';
-import { Course } from '../../../../model/course';
-import { MOCK_COURSES } from '../../../../shared/mock-courses';
 
 @Component({
   selector: 'safe-navigation-demo',
@@ -8,14 +6,10 @@ import { MOCK_COURSES } from '../../../../shared/mock-courses';
 })
 export class SafeNavigationDemo {
 
-  selected = signal<Course | null>(null);
+  selected = signal<{ title: string } | null>(null);
 
   select() {
-    this.selected.set(MOCK_COURSES[1]);
-  }
-
-  findCourse(id: number) {
-    return MOCK_COURSES.find((course) => course.id === id);
+    this.selected.set({ title: 'Angular In Depth (Signals Edition)' });
   }
 
 }

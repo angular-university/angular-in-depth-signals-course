@@ -1,5 +1,4 @@
 import { Component, signal } from '@angular/core';
-import { MOCK_COURSES } from '../../../../shared/mock-courses';
 import { SeatPicker } from './seat-picker';
 
 @Component({
@@ -9,7 +8,7 @@ import { SeatPicker } from './seat-picker';
 })
 export class TwoWayBindingDemo {
 
-  course = MOCK_COURSES[1];
+  price = 50;
 
   seats = signal(1);
 

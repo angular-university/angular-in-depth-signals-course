@@ -1,16 +1,13 @@
-@let course = courses[index()];
-@let total = seats() * course.price;
+@let total = seats() * price;
 
-<p class="demo-label"><code>&#64;let course = courses[index()];</code></p>
-<p class="demo-label"><code>&#64;let total = seats() * course.price;</code></p>
+<p class="demo-label"><code>&#64;let total = seats() * price;</code></p>
 
 <div class="demo-panel">
-  <h4 class="demo-heading">{{ course.title }}</h4>
-  <p class="demo-label">{{ course.category }}</p>
-  <p>{{ seats() }} seats × {{ course.price }} USD = {{ total === 0 ? 'Free' : total + ' USD' }}</p>
+  <p>{{ seats() }} seats × {{ price }} USD = {{ total }} USD</p>
+  <p class="demo-label">{{ total >= 200 ? 'Team discount unlocked' : 'Team discount from 200 USD' }}</p>
 </div>
 
 <div class="demo-actions">
-  <button class="btn btn-primary" (click)="nextCourse()">Next course</button>
-  <button class="btn btn-ghost" (click)="seats.set(seats() + 1)">Add a seat</button>
+  <button class="btn btn-primary" (click)="seats.set(seats() + 1)">Add a seat</button>
+  <button class="btn btn-ghost" (click)="seats.set(1)">Reset</button>
 </div>

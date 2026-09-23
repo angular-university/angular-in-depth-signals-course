@@ -1,5 +1,4 @@
 import { Component, signal } from '@angular/core';
-import { MOCK_COURSES } from '../../../../shared/mock-courses';
 
 @Component({
   selector: 'let-demo',
@@ -7,14 +6,8 @@ import { MOCK_COURSES } from '../../../../shared/mock-courses';
 })
 export class LetDemo {
 
-  courses = MOCK_COURSES;
-
-  index = signal(1);
+  price = 50;
 
   seats = signal(1);
-
-  nextCourse() {
-    this.index.update((current) => (current + 1) % this.courses.length);
-  }
 
 }
