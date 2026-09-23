@@ -13,8 +13,6 @@ html, body {
 body {
   font-family: var(--font);
   font-size: 17px;
-  /* Three saturated brand blobs, fixed, so the page reads as color from across a room —
-     the demo panels stay dark and neutral, which is what keeps this from fighting them. */
   background-color: var(--color-bg);
   background-image:
     radial-gradient(46rem 34rem at 8% -6%, rgba(228, 0, 53, 0.42), transparent 60%),
@@ -41,8 +39,6 @@ a:hover {
 img {
   max-width: 100%;
 }
-
-/* ─── Buttons ───────────────────────────────────────────────── */
 
 .btn {
   display: inline-flex;
@@ -125,9 +121,6 @@ img {
   color: #fff;
 }
 
-
-/* ─── Form Fields ────────────────────────────────────────────── */
-
 .form-group {
   display: flex;
   flex-direction: column;
@@ -194,8 +187,6 @@ select.form-control option {
   font-weight: 500;
 }
 
-/* ─── Dialog Overlay ────────────────────────────────────────── */
-
 .dialog-overlay {
   position: fixed;
   inset: 0;
@@ -213,8 +204,6 @@ select.form-control option {
   to { opacity: 1; }
 }
 
-/* ─── Section Icon ───────────────────────────────────────────── */
-
 .section-icon {
   width: 32px;
   height: 32px;
@@ -231,15 +220,11 @@ select.form-control option {
   font-size: 20px;
 }
 
-/* ─── Page Container ─────────────────────────────────────────── */
-
 .page-container {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 40px 24px;
 }
-
-/* ─── Loading Spinner ────────────────────────────────────────── */
 
 .spinner {
   width: 36px;
@@ -253,8 +238,6 @@ select.form-control option {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
-
-/* ─── Focus and motion ──────────────────────────────────────── */
 
 :focus-visible {
   outline: 2px solid var(--color-primary-light);
@@ -275,10 +258,6 @@ select.form-control option {
   }
 }
 
-/* ─── Section and Demo Layout ────────────────────────────────── */
-/* Plain, reusable classes instead of wrapper components — a section page is just markup
-   styled from here, so a beginner reading a section file sees only what it teaches. */
-
 .section {
   padding: 48px 0;
 }
@@ -290,8 +269,6 @@ select.form-control option {
   margin-bottom: 32px;
 }
 
-/* The one badge every section repeats — a filled gradient chip with a glow behind it,
-   so it reads instantly on video even as a thumbnail. */
 .section-number {
   flex: none;
   display: flex;
@@ -331,8 +308,6 @@ select.form-control option {
   overflow: hidden;
 }
 
-/* One thin brand-gradient seam along the top of every block — the recurring signature
-   that says "this is part of the course," without repainting the whole card. */
 .demo-block::before {
   content: '';
   position: absolute;
@@ -380,4 +355,84 @@ select.form-control option {
   .section-title {
     font-size: 21px;
   }
+}
+
+.demo-heading {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+
+.demo-label {
+  margin: 0 0 2px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.demo-split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 20px;
+}
+
+.demo-panel {
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  transition: border-color var(--transition);
+}
+
+.demo-panel-live {
+  border-left-color: var(--color-primary-light);
+}
+
+.demo-counter {
+  margin: 0 0 12px;
+  font-size: 48px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+.demo-counter-featured {
+  width: fit-content;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 16px rgba(151, 23, 231, 0.35));
+}
+
+.demo-note {
+  margin: 12px 0 0;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+@keyframes counter-pop {
+  0% {
+    transform: scale(1.4);
+    filter: drop-shadow(0 0 18px rgba(151, 23, 231, 0.7));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(151, 23, 231, 0));
+  }
+}
+
+.demo-counter span {
+  display: inline-block;
+  animation: counter-pop 0.3s ease-out;
 }

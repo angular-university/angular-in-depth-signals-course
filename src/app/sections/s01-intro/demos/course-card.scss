@@ -1,6 +1,4 @@
 .card {
-  /* A 1px gradient border via a double background: the padding-box layer paints the card,
-     the border-box layer paints the gradient, and the border itself is transparent. */
   display: flex;
   flex-direction: column;
   width: 100%;

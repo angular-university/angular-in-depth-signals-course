@@ -99,7 +99,6 @@
   flex: none;
 }
 
-/* The full course name does not fit beside the controls on a phone; the logo carries it. */
 @media (max-width: 720px) {
   .nav-inner {
     gap: 16px;
