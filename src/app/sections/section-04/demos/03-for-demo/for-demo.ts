@@ -27,8 +27,6 @@ export class ForDemo {
 
   variables = signal(createItems(3));
 
-  emptyItems = signal<Item[]>([]);
-
   tracked = signal(createItems(3));
 
   add() {
@@ -45,14 +43,6 @@ export class ForDemo {
 
   removeVariable() {
     this.variables.update((current) => current.slice(0, -1));
-  }
-
-  addEmptyItem() {
-    this.emptyItems.update((current) => [...current, createItem(nextId(current))]);
-  }
-
-  clearEmptyItems() {
-    this.emptyItems.set([]);
   }
 
   prepend() {

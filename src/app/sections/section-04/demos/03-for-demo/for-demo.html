@@ -1,9 +1,26 @@
 <div class="stack">
   <div class="panel">
-    <h4>for and track</h4>
-    @for (item of items(); track item.id) {
-      <span>{{ item.label }}</span>
-    }
+    <h4>for, track and empty</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>label</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of items(); track item.id) {
+          <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.label }}</td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="2">No items</td>
+          </tr>
+        }
+      </tbody>
+    </table>
     <div class="actions">
       <button (click)="add()">Add</button>
       <button (click)="remove()">Remove</button>
@@ -12,31 +29,28 @@
 
   <div class="panel">
     <h4>$index, $count, $first, $last, $even, $odd</h4>
-    @for (item of variables(); track item.id) {
-      <span>
-        {{ $index }} of {{ $count }}: {{ item.label }}
-        @if ($first) { · $first }
-        @if ($last) { · $last }
-        @if ($even) { · $even }
-        @if ($odd) { · $odd }
-      </span>
-    }
+    <div class="list">
+      @for (item of variables(); track item.id) {
+        <div [class.even]="$even" [class.odd]="$odd" [class.first]="$first" [class.last]="$last">
+          <span>{{ $index }} of {{ $count }}: {{ item.label }}</span>
+          @if ($first) {
+            <small>$first</small>
+          }
+          @if ($last) {
+            <small>$last</small>
+          }
+          @if ($even) {
+            <small>$even</small>
+          }
+          @if ($odd) {
+            <small>$odd</small>
+          }
+        </div>
+      }
+    </div>
     <div class="actions">
       <button (click)="addVariable()">Add</button>
       <button (click)="removeVariable()">Remove</button>
-    </div>
-  </div>
-
-  <div class="panel">
-    <h4>empty</h4>
-    @for (item of emptyItems(); track item.id) {
-      <span>{{ item.label }}</span>
-    } @empty {
-      <p>No items</p>
-    }
-    <div class="actions">
-      <button (click)="addEmptyItem()">Add</button>
-      <button (click)="clearEmptyItems()">Clear</button>
     </div>
   </div>
 

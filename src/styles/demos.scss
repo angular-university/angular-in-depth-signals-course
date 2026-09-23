@@ -291,6 +291,78 @@
   max-width: 360px;
 }
 
+.demo :where(table) {
+  align-self: stretch;
+  border-collapse: collapse;
+  border: 1px solid var(--color-border);
+  font-variant-numeric: tabular-nums;
+}
+
+.demo :where(th, td) {
+  padding: 8px 14px;
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.demo :where(th:first-child, td:first-child) {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.demo :where(th) {
+  background: var(--color-surface-2);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.demo .list {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.demo .list:empty {
+  display: none;
+}
+
+.demo .list > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-left: 3px solid transparent;
+}
+
+.demo .list > div + div {
+  border-top: 1px solid var(--color-border);
+}
+
+.demo .list > .odd {
+  background: var(--color-surface-2);
+}
+
+.demo .list > .first {
+  border-left-color: var(--color-accent);
+}
+
+.demo .list > .last {
+  border-left-color: var(--color-primary-light);
+}
+
+.demo .list small {
+  margin: 0;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 13px;
+}
+
 .demo .hover-box {
   display: flex;
   align-items: center;
