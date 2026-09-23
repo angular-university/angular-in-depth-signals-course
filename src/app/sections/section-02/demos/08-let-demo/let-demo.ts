@@ -10,4 +10,8 @@ export class LetDemo {
 
   seats = signal(1);
 
+  addSeat() {
+    this.seats.update((current) => current + 1);
+  }
+
 }

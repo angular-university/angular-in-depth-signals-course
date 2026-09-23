@@ -9,8 +9,12 @@ export class StyleBindingsDemo {
 
   progress = signal(30);
 
-  change(delta: number) {
-    this.progress.update((current) => Math.min(100, Math.max(0, current + delta)));
+  advance() {
+    this.progress.update((current) => current + 10);
+  }
+
+  reset() {
+    this.progress.set(0);
   }
 
 }

@@ -7,8 +7,10 @@ import { Component, signal } from '@angular/core';
 })
 export class ClassBindingsDemo {
 
-  featured = signal(false);
-
   soldOut = signal(false);
+
+  toggleSoldOut() {
+    this.soldOut.update((current) => !current);
+  }
 
 }

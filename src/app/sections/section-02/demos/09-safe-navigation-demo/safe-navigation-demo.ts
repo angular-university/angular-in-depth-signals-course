@@ -12,4 +12,8 @@ export class SafeNavigationDemo {
     this.selected.set({ title: 'Angular In Depth (Signals Edition)' });
   }
 
+  clear() {
+    this.selected.set(null);
+  }
+
 }

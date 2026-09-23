@@ -8,8 +8,6 @@ import { SeatPicker } from './seat-picker';
 })
 export class TwoWayBindingDemo {
 
-  price = 50;
-
   seats = signal(1);
 
 }

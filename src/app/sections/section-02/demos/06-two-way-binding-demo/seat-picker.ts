@@ -9,8 +9,12 @@ export class SeatPicker {
 
   seats = model(1);
 
-  change(delta: number) {
-    this.seats.update((current) => Math.max(1, current + delta));
+  addSeat() {
+    this.seats.update((current) => current + 1);
+  }
+
+  removeSeat() {
+    this.seats.update((current) => current - 1);
   }
 
 }

@@ -1,19 +1,5 @@
-<div class="demo-split">
-  <div class="demo-panel">
-    <p class="demo-label"><code>[class.featured]</code> and <code>[class.sold-out]</code></p>
-    <span class="tag" [class.featured]="featured()" [class.sold-out]="soldOut()">
-      Angular In Depth (Signals Edition)
-    </span>
-  </div>
-  <div class="demo-panel">
-    <p class="demo-label"><code>[class]</code> with an object</p>
-    <span class="tag" [class]="{ featured: featured(), 'sold-out': soldOut() }">
-      Angular In Depth (Signals Edition)
-    </span>
-  </div>
-</div>
+<span class="tag" [class.sold-out]="soldOut()">Angular In Depth (Signals Edition)</span>
 
 <div class="demo-actions">
-  <button class="btn btn-primary" (click)="featured.set(!featured())">Toggle featured</button>
-  <button class="btn btn-ghost" (click)="soldOut.set(!soldOut())">Toggle sold out</button>
+  <button class="btn btn-primary" (click)="toggleSoldOut()">Toggle sold out</button>
 </div>

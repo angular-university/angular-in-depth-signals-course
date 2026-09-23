@@ -3,22 +3,23 @@ import { Component, signal } from '@angular/core';
 @Component({
   selector: 'event-binding-demo',
   templateUrl: './event-binding-demo.html',
-  styleUrl: './event-binding-demo.scss',
 })
 export class EventBindingDemo {
 
-  pointer = signal({ x: 0, y: 0 });
+  key = signal('');
 
-  lastKey = signal('none yet');
+  shortcut = signal('');
 
-  lastShortcut = signal('none yet');
+  width = signal(window.innerWidth);
 
-  windowWidth = signal(window.innerWidth);
-
-  pageClicks = signal(0);
+  clicks = signal(0);
 
   onResize() {
-    this.windowWidth.set(window.innerWidth);
+    this.width.set(window.innerWidth);
+  }
+
+  onPageClick() {
+    this.clicks.update((current) => current + 1);
   }
 
 }

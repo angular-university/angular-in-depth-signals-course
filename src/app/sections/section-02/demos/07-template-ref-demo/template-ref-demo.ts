@@ -6,6 +6,10 @@ import { Component, signal } from '@angular/core';
 })
 export class TemplateRefDemo {
 
-  saved = signal('nothing yet');
+  saved = signal('');
+
+  save(title: string) {
+    this.saved.set(title);
+  }
 
 }

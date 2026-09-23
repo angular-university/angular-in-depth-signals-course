@@ -1,13 +1,7 @@
 @let total = seats() * price;
 
-<p class="demo-label"><code>&#64;let total = seats() * price;</code></p>
-
-<div class="demo-panel">
-  <p>{{ seats() }} seats × {{ price }} USD = {{ total }} USD</p>
-  <p class="demo-label">{{ total >= 200 ? 'Team discount unlocked' : 'Team discount from 200 USD' }}</p>
-</div>
+<p>{{ seats() }} seats × {{ price }} USD = {{ total }} USD</p>
 
 <div class="demo-actions">
-  <button class="btn btn-primary" (click)="seats.set(seats() + 1)">Add a seat</button>
-  <button class="btn btn-ghost" (click)="seats.set(1)">Reset</button>
+  <button class="btn btn-primary" (click)="addSeat()">Add a seat</button>
 </div>

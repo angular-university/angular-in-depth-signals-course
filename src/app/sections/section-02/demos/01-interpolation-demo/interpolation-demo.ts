@@ -8,7 +8,6 @@ export class InterpolationDemo {
 
   course = {
     title: 'Angular In Depth (Signals Edition)',
-    category: 'BEGINNER',
     price: 50,
   };
 

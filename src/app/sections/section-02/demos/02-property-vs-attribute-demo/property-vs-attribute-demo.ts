@@ -6,6 +6,16 @@ import { Component, signal } from '@angular/core';
 })
 export class PropertyVsAttributeDemo {
 
-  soldOut = signal(false);
+  disabled = signal(false);
+
+  role = signal('button');
+
+  toggleDisabled() {
+    this.disabled.update((current) => !current);
+  }
+
+  toggleRole() {
+    this.role.update((current) => (current === 'button' ? 'switch' : 'button'));
+  }
 
 }
