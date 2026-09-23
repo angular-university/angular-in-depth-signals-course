@@ -3,5 +3,6 @@
 </div>
 
 <div class="demo-actions">
-  <button class="btn btn-primary" (click)="toggleSize()">Toggle size</button>
+  <input #size class="form-control" type="number" [value]="fontSize()" />
+  <button class="btn btn-primary" (click)="apply(size.valueAsNumber)">Apply</button>
 </div>

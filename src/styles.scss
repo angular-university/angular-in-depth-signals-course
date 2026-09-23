@@ -176,8 +176,9 @@ img {
 
 .section > article {
   position: relative;
-  margin-bottom: 24px;
-  padding: 0 22px 28px;
+  min-height: 300px;
+  margin-bottom: 72px;
+  padding: 0 22px 40px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-card);
@@ -260,6 +261,10 @@ img {
   margin-top: 10px;
 }
 
+.demo-actions > .form-control {
+  width: 100px;
+}
+
 .demo-panel > .form-control {
   margin-bottom: 10px;
 }
@@ -291,4 +296,32 @@ img {
   font-size: 22px;
   font-weight: 600;
   line-height: 1.4;
+}
+
+code {
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-2);
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  color: #e9c6ff;
+  overflow-wrap: anywhere;
+}
+
+.demo-rows {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px 24px;
+  align-items: baseline;
+}
+
+@media (max-width: 640px) {
+  .demo-rows {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+
+  .demo-rows span {
+    margin-bottom: 10px;
+  }
 }
