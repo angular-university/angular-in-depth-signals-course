@@ -30,20 +30,18 @@
   </div>
 
   <div class="panel">
-    <h4>track $index vs track item.id</h4>
+    <h4>track</h4>
     <div class="split">
       <div class="panel plain">
         <h4>track $index</h4>
         @for (item of tracked(); track $index) {
-          <small>{{ item.label }}</small>
-          <input />
+          <label><input type="checkbox" /> {{ item.label }}</label>
         }
       </div>
       <div class="panel plain">
         <h4>track item.id</h4>
         @for (item of tracked(); track item.id) {
-          <small>{{ item.label }}</small>
-          <input />
+          <label><input type="checkbox" /> {{ item.label }}</label>
         }
       </div>
     </div>

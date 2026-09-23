@@ -151,6 +151,10 @@
   margin-bottom: 10px;
 }
 
+.demo .panel > .split {
+  align-self: stretch;
+}
+
 .demo .panel > .actions {
   margin-top: 10px;
 }
@@ -331,6 +335,23 @@
 
 .demo .list > .last {
   border-left-color: var(--color-primary-light);
+}
+
+.demo :where(label) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.demo input[type='checkbox'] {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  appearance: auto;
+  accent-color: var(--color-primary-light);
+  cursor: pointer;
 }
 
 .demo .hover-box {
