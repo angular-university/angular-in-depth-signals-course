@@ -255,10 +255,10 @@
 .demo :where(input, select) {
   width: 100%;
   padding: 9px 12px;
-  border: 1px solid var(--color-border);
+  border: 1px solid #6a5d80;
   border-radius: var(--radius-sm);
   outline: none;
-  background: var(--color-input-bg);
+  background: #2e2839;
   color: var(--color-text);
   font-family: var(--font);
   font-size: 16px;
