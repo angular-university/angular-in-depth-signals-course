@@ -10,6 +10,8 @@ export class IfDemo {
 
   count = signal(0);
 
+  value = signal(0);
+
   toggleLogo() {
     this.showLogo.update((current) => !current);
   }
@@ -20,6 +22,14 @@ export class IfDemo {
 
   reset() {
     this.count.set(0);
+  }
+
+  incrementValue() {
+    this.value.update((current) => current + 1);
+  }
+
+  resetValue() {
+    this.value.set(0);
   }
 
 }

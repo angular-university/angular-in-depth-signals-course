@@ -24,4 +24,17 @@
       <button (click)="reset()">Reset</button>
     </div>
   </div>
+
+  <div class="panel">
+    <h4>as</h4>
+    @if (value(); as counter) {
+      <p class="counter featured">{{ counter }}</p>
+    } @else {
+      <p class="counter featured">Zero</p>
+    }
+    <div class="actions">
+      <button (click)="incrementValue()">Increment</button>
+      <button (click)="resetValue()">Reset</button>
+    </div>
+  </div>
 </div>
