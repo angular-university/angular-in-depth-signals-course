@@ -16,9 +16,3 @@
     <p>{{ title.value }}</p>
   </div>
 </div>
-
-<p class="demo-note">
-  #title points at the input element itself, so its methods and properties are available anywhere
-  in the template. Reading title.value directly does not update as you type: it is not a signal, so
-  it only refreshes when something else re-renders the view, such as pressing Save.
-</p>
