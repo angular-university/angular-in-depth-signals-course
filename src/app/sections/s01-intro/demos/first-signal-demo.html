@@ -1,10 +1,8 @@
-<h4 class="demo-heading">{{ title() }}</h4>
+<h4 class="demo-heading">Angular In Depth (Signals Edition)</h4>
 
 <p class="demo-label">Students enrolled</p>
 <p class="demo-counter demo-counter-featured">
-  @for (value of [students()]; track value) {
-    <span>{{ value }}</span>
-  }
+  {{ students() }}
 </p>
 
 <div class="demo-actions">

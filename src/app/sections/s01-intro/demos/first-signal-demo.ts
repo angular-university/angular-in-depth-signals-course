@@ -6,8 +6,6 @@ import { Component, signal } from '@angular/core';
 })
 export class FirstSignalDemo {
 
-  title = signal('Angular In Depth (Signals Edition)');
-
   students = signal(0);
 
   enrolOne() {

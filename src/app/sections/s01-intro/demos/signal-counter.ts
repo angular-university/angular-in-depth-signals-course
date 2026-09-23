@@ -8,10 +8,8 @@ export class SignalCounter {
 
   count = signal(0);
 
-  private timer: ReturnType<typeof setInterval> | undefined;
-
   start() {
-    this.timer = setInterval(() => this.count.update((current) => current + 1), 1000);
+    setInterval(() => this.count.update((current) => current + 1), 1000);
   }
 
 }

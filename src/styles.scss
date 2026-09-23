@@ -420,19 +420,3 @@ select.form-control option {
   font-size: 14px;
   color: var(--color-text-muted);
 }
-
-@keyframes counter-pop {
-  0% {
-    transform: scale(1.4);
-    filter: drop-shadow(0 0 18px rgba(151, 23, 231, 0.7));
-  }
-  100% {
-    transform: scale(1);
-    filter: drop-shadow(0 0 0 rgba(151, 23, 231, 0));
-  }
-}
-
-.demo-counter span {
-  display: inline-block;
-  animation: counter-pop 0.3s ease-out;
-}
