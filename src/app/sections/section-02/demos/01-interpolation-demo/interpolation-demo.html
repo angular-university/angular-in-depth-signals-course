@@ -1,0 +1,18 @@
+<div class="demo-rows">
+  <code>course.title</code>
+  <span>{{ course.title }}</span>
+
+  <code>course.category.toLowerCase()</code>
+  <span>{{ course.category.toLowerCase() }}</span>
+
+  <code>course.price === 0 ? 'Free' : course.price + ' USD'</code>
+  <span>{{ course.price === 0 ? 'Free' : course.price + ' USD' }}</span>
+
+  <code>discounted(course.price, 20)</code>
+  <span>{{ discounted(course.price, 20) }}</span>
+</div>
+
+<p class="demo-note">
+  Template expressions read state, they never change it, and only the component's own members are
+  in scope. That is why assignments, ++, new and globals like Math are rejected by the compiler.
+</p>

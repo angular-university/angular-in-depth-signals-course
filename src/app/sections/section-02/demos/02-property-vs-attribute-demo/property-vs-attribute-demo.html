@@ -1,0 +1,22 @@
+<div class="demo-split">
+  <div class="demo-panel demo-panel-live">
+    <h4 class="demo-heading">Property binding</h4>
+    <p class="demo-label"><code>[value]="course().title"</code></p>
+    <input class="form-control" [value]="course().title" />
+  </div>
+  <div class="demo-panel">
+    <h4 class="demo-heading">Attribute binding</h4>
+    <p class="demo-label"><code>[attr.value]="course().title"</code></p>
+    <input class="form-control" [attr.value]="course().title" />
+  </div>
+</div>
+
+<div class="demo-actions">
+  <button class="btn btn-primary" (click)="nextCourse()">Next course</button>
+</div>
+
+<p class="demo-note">
+  Type in both inputs, then press Next course. The value property is what the input shows right
+  now. The value attribute is only its starting value, so once you have typed, changing it does
+  nothing you can see.
+</p>

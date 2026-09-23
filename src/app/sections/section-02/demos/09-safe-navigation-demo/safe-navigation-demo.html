@@ -1,0 +1,21 @@
+<div class="demo-rows">
+  <code>selected()?.title</code>
+  <span>{{ selected()?.title }}</span>
+
+  <code>selected()?.title ?? 'No course selected'</code>
+  <span>{{ selected()?.title ?? 'No course selected' }}</span>
+
+  <code>findCourse(24)!.title</code>
+  <span>{{ findCourse(24)!.title }}</span>
+</div>
+
+<div class="demo-actions">
+  <button class="btn btn-primary" (click)="select()">Select a course</button>
+  <button class="btn btn-ghost" (click)="selected.set(null)">Clear selection</button>
+</div>
+
+<p class="demo-note">
+  ?. stops at null and gives undefined, which renders as nothing. ?? supplies a fallback for null
+  or undefined. ! only silences the compiler: use it when you know the value is there, as with
+  course 24 here. selected()!.title would throw the moment the selection is cleared.
+</p>

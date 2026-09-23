@@ -1,0 +1,45 @@
+<div
+  class="demo-split"
+  (window:resize)="onResize()"
+  (document:click)="pageClicks.set(pageClicks() + 1)"
+>
+  <div class="demo-panel">
+    <h4 class="demo-heading">The $event object</h4>
+    <p class="demo-label"><code>$event.offsetX</code> and <code>$event.offsetY</code> from <code>(mousemove)</code></p>
+    <div
+      class="pointer-area"
+      (mousemove)="pointer.set({ x: $event.offsetX, y: $event.offsetY })"
+    >
+      Move the mouse here
+    </div>
+    <p class="demo-note">x {{ pointer().x }}, y {{ pointer().y }}</p>
+  </div>
+
+  <div class="demo-panel">
+    <h4 class="demo-heading">Key events</h4>
+    <input
+      class="form-control"
+      placeholder="Focus here and press keys"
+      (keyup)="lastKey.set($event.key)"
+      (keyup.enter)="lastShortcut.set('keyup.enter')"
+      (keyup.shift.enter)="lastShortcut.set('keyup.shift.enter')"
+      (keydown.code.keyw)="lastShortcut.set('keydown.code.keyw')"
+    />
+    <p class="demo-note">Last key: {{ lastKey() }}</p>
+    <p class="demo-note">Last shortcut: {{ lastShortcut() }}</p>
+  </div>
+
+  <div class="demo-panel">
+    <h4 class="demo-heading">Global targets</h4>
+    <p class="demo-label"><code>(window:resize)</code></p>
+    <p>Window width: {{ windowWidth() }}px</p>
+    <p class="demo-label"><code>(document:click)</code></p>
+    <p>Clicks anywhere on the page: {{ pageClicks() }}</p>
+  </div>
+</div>
+
+<p class="demo-note">
+  <code>keyup.enter</code> only fires with no modifier held, so Shift + Enter triggers
+  <code>keyup.shift.enter</code> instead. <code>keydown.code.keyw</code> matches the key in the W
+  position whatever it types, which is Z on a French AZERTY keyboard.
+</p>

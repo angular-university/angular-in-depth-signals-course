@@ -1,0 +1,24 @@
+<div class="demo-split">
+  <div class="demo-panel">
+    <p class="demo-label"><code>[class.featured]</code> and <code>[class.sold-out]</code></p>
+    <span class="tag" [class.featured]="featured()" [class.sold-out]="soldOut()">
+      {{ course.title }}
+    </span>
+  </div>
+  <div class="demo-panel">
+    <p class="demo-label"><code>[class]</code> with an object</p>
+    <span class="tag" [class]="{ featured: featured(), 'sold-out': soldOut() }">
+      {{ course.title }}
+    </span>
+  </div>
+</div>
+
+<div class="demo-actions">
+  <button class="btn btn-primary" (click)="featured.set(!featured())">Toggle featured</button>
+  <button class="btn btn-ghost" (click)="soldOut.set(!soldOut())">Toggle sold out</button>
+</div>
+
+<p class="demo-note">
+  Both forms do the same job. The static class="tag" is never touched: a class binding only adds
+  and removes the classes it names.
+</p>

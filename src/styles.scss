@@ -421,3 +421,32 @@ select.form-control option {
   font-size: 14px;
   color: var(--color-text-muted);
 }
+
+code {
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-2);
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  color: #e9c6ff;
+  overflow-wrap: anywhere;
+}
+
+.demo-rows {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px 24px;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .demo-rows {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+
+  .demo-rows span {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,21 @@
+@let course = courses[index()];
+@let total = seats() * course.price;
+
+<p class="demo-label"><code>&#64;let course = courses[index()];</code></p>
+<p class="demo-label"><code>&#64;let total = seats() * course.price;</code></p>
+
+<div class="demo-panel">
+  <h4 class="demo-heading">{{ course.title }}</h4>
+  <p class="demo-label">{{ course.category }}</p>
+  <p>{{ seats() }} seats × {{ course.price }} USD = {{ total === 0 ? 'Free' : total + ' USD' }}</p>
+</div>
+
+<div class="demo-actions">
+  <button class="btn btn-primary" (click)="nextCourse()">Next course</button>
+  <button class="btn btn-ghost" (click)="seats.set(seats() + 1)">Add a seat</button>
+</div>
+
+<p class="demo-note">
+  &#64;let names an expression once and reuses it below. It is re-evaluated on every render, so
+  course and total always follow the signals they read.
+</p>

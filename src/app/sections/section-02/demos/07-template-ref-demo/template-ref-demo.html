@@ -1,0 +1,24 @@
+<p class="demo-label"><code>&lt;input #title /&gt;</code></p>
+<input #title class="form-control" placeholder="Type a course title" />
+
+<div class="demo-actions">
+  <button class="btn btn-ghost" (click)="title.focus()">Focus the input</button>
+  <button class="btn btn-primary" (click)="saved.set(title.value)">Save</button>
+</div>
+
+<div class="demo-split">
+  <div class="demo-panel demo-panel-live">
+    <p class="demo-label"><code>saved()</code></p>
+    <p>{{ saved() }}</p>
+  </div>
+  <div class="demo-panel">
+    <p class="demo-label"><code>title.value</code></p>
+    <p>{{ title.value }}</p>
+  </div>
+</div>
+
+<p class="demo-note">
+  #title points at the input element itself, so its methods and properties are available anywhere
+  in the template. Reading title.value directly does not update as you type: it is not a signal, so
+  it only refreshes when something else re-renders the view, such as pressing Save.
+</p>
