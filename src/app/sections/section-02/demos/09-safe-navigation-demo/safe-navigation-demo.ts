@@ -6,10 +6,10 @@ import { Component, signal } from '@angular/core';
 })
 export class SafeNavigationDemo {
 
-  course = signal<{ title: string } | null>(null);
+  data = signal<{ title: string } | null>(null);
 
-  toggleCourse() {
-    this.course.update((current) => (current ? null : { title: 'Angular In Depth (Signals Edition)' }));
+  toggleData() {
+    this.data.update((current) => (current ? null : { title: 'Angular In Depth (Signals Edition)' }));
   }
 
 }

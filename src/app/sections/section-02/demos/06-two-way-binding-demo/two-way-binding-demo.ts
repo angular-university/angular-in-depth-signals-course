@@ -1,17 +1,17 @@
 import { Component, signal } from '@angular/core';
-import { SeatPicker } from './seat-picker';
+import { Counter } from './counter';
 
 @Component({
   selector: 'two-way-binding-demo',
-  imports: [SeatPicker],
+  imports: [Counter],
   templateUrl: './two-way-binding-demo.html',
 })
 export class TwoWayBindingDemo {
 
-  seats = signal(1);
+  count = signal(0);
 
   reset() {
-    this.seats.set(1);
+    this.count.set(0);
   }
 
 }

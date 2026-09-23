@@ -7,10 +7,10 @@ import { Component, signal } from '@angular/core';
 })
 export class ClassBindingsDemo {
 
-  soldOut = signal(false);
+  highlighted = signal(false);
 
-  toggleSoldOut() {
-    this.soldOut.update((current) => !current);
+  toggleHighlighted() {
+    this.highlighted.update((current) => !current);
   }
 
 }

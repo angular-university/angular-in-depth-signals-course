@@ -6,12 +6,10 @@ import { Component, signal } from '@angular/core';
 })
 export class LetDemo {
 
-  price = 50;
+  count = signal(1);
 
-  seats = signal(1);
-
-  addSeat() {
-    this.seats.update((current) => current + 1);
+  increment() {
+    this.count.update((current) => current + 1);
   }
 
 }

@@ -8,6 +8,4 @@ export class InterpolationDemo {
 
   title = 'Angular In Depth (Signals Edition)';
 
-  price = 50;
-
 }
