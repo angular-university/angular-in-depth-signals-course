@@ -149,6 +149,10 @@
   background: var(--color-bg);
 }
 
+.demo .panel > * {
+  max-width: 100%;
+}
+
 .demo .panel.plain {
   border-left-color: var(--color-border);
 }

@@ -1,8 +1,5 @@
-<div class="split">
-  <answer-buttons (answered)="onAnswered($event)" />
-
-  <div class="panel plain">
-    <h4>Parent</h4>
-    <p>{{ answer() }}</p>
-  </div>
+<div class="panel">
+  <h4>output() demo</h4>
+  <p>{{ message() }}</p>
+  <message-form (sent)="onSent($event)" />
 </div>

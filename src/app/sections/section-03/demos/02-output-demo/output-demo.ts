@@ -1,17 +1,17 @@
 import { Component, signal } from '@angular/core';
-import { AnswerButtons } from './answer-buttons';
+import { MessageForm } from './message-form';
 
 @Component({
   selector: 'output-demo',
-  imports: [AnswerButtons],
+  imports: [MessageForm],
   templateUrl: './output-demo.html',
 })
 export class OutputDemo {
 
-  answer = signal('none yet');
+  message = signal('');
 
-  onAnswered(answer: string) {
-    this.answer.set(answer);
+  onSent(message: string) {
+    this.message.set(message);
   }
 
 }
