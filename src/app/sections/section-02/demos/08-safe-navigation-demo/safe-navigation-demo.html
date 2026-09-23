@@ -1,21 +1,21 @@
-<div class="demo-stack">
-  <div class="demo-panel">
+<div class="stack">
+  <div class="panel">
     <h4>Safe navigation ?.</h4>
     <p>{{ course()?.title }}</p>
-    <div class="demo-actions">
+    <div class="actions">
       <button (click)="toggleCourse()">Toggle null</button>
     </div>
   </div>
 
-  <div class="demo-panel">
+  <div class="panel">
     <h4>Nullish coalescing ??</h4>
     <p>{{ nickname() ?? 'Anonymous' }}</p>
-    <div class="demo-actions">
+    <div class="actions">
       <button (click)="toggleNickname()">Toggle null</button>
     </div>
   </div>
 
-  <div class="demo-panel">
+  <div class="panel">
     <h4>Non-null assertion !</h4>
     <p>{{ lesson()!.title }}</p>
   </div>

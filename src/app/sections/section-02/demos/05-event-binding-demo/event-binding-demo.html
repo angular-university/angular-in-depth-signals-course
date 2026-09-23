@@ -1,15 +1,15 @@
 <div
-  class="demo-stack"
+  class="stack"
   (window:resize)="onResize()"
   (document:click)="countPageClick()"
 >
-  <div class="demo-panel">
+  <div class="panel">
     <h4>(click)</h4>
     <button (click)="countClick()">Click me</button>
     <p>Clicks: {{ clicks() }}</p>
   </div>
 
-  <div class="demo-panel">
+  <div class="panel">
     <h4>(mouseenter) and (mouseleave)</h4>
     <div
       class="hover-box"
@@ -21,7 +21,7 @@
     <p>{{ hovering() ? 'Inside' : 'Outside' }}</p>
   </div>
 
-  <div class="demo-panel">
+  <div class="panel">
     <h4>(change)</h4>
     <select #levelSelect (change)="level.set(levelSelect.value)">
       <option>Beginner</option>
@@ -31,13 +31,13 @@
     <p>{{ level() }}</p>
   </div>
 
-  <div class="demo-panel">
+  <div class="panel">
     <h4>(keyup) and $event</h4>
     <input placeholder="Press any key" (keyup)="key.set($event.key)" />
     <p>{{ key() }}</p>
   </div>
 
-  <div class="demo-panel">
+  <div class="panel">
     <h4>(keyup.enter)</h4>
     <input
       #enterInput
@@ -48,7 +48,7 @@
     <p>{{ submitted() }}</p>
   </div>
 
-  <div class="demo-panel">
+  <div class="panel">
     <h4>(keyup.shift.enter)</h4>
     <input
       #shiftInput
@@ -59,12 +59,12 @@
     <p>{{ shiftSubmitted() }}</p>
   </div>
 
-  <div class="demo-panel">
+  <div class="panel">
     <h4>(window:resize)</h4>
     <p>Width: {{ width() }}px</p>
   </div>
 
-  <div class="demo-panel">
+  <div class="panel">
     <h4>(document:click)</h4>
     <p>Page clicks: {{ pageClicks() }}</p>
   </div>
