@@ -1,0 +1,18 @@
+<div class="stack">
+  <div class="panel">
+    <h4>viewChild.required()</h4>
+    <input #box value="Clear me" />
+    <div class="actions">
+      <button (click)="clear()">Clear</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>read: ElementRef</h4>
+    <hello #hello />
+    <p>{{ tagName() }}</p>
+    <div class="actions">
+      <button (click)="readTagName()">Read tag name</button>
+    </div>
+  </div>
+</div>
