@@ -1,0 +1,65 @@
+<div class="stack">
+  <div class="panel">
+    <h4>&#64;for and track</h4>
+    @for (item of items(); track item.id) {
+      <span>{{ item.label }}</span>
+    }
+    <div class="actions">
+      <button (click)="add()">Add</button>
+      <button (click)="remove()">Remove</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>$index, $count, $first, $last, $even, $odd</h4>
+    @for (item of variables(); track item.id) {
+      <span>
+        {{ $index }} of {{ $count }}: {{ item.label }}
+        @if ($first) { · $first }
+        @if ($last) { · $last }
+        @if ($even) { · $even }
+        @if ($odd) { · $odd }
+      </span>
+    }
+    <div class="actions">
+      <button (click)="addVariable()">Add</button>
+      <button (click)="removeVariable()">Remove</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>&#64;empty</h4>
+    @for (item of emptyItems(); track item.id) {
+      <span>{{ item.label }}</span>
+    } @empty {
+      <p>No items</p>
+    }
+    <div class="actions">
+      <button (click)="addEmptyItem()">Add</button>
+      <button (click)="clearEmptyItems()">Clear</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>track $index vs track item.id</h4>
+    <div class="split">
+      <div class="panel plain">
+        <h4>track $index</h4>
+        @for (item of tracked(); track $index) {
+          <small>{{ item.label }}</small>
+          <input />
+        }
+      </div>
+      <div class="panel plain">
+        <h4>track item.id</h4>
+        @for (item of tracked(); track item.id) {
+          <small>{{ item.label }}</small>
+          <input />
+        }
+      </div>
+    </div>
+    <div class="actions">
+      <button (click)="prepend()">Prepend</button>
+    </div>
+  </div>
+</div>

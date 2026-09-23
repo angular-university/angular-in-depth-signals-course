@@ -1,0 +1,25 @@
+<div class="panel">
+  @switch (status()) {
+    @case ('loading') {
+      <p>Loading...</p>
+    }
+    @case ('success') {
+      <p>Done</p>
+    }
+    @case ('error') {
+      <p>Something went wrong</p>
+    }
+    @default {
+      <p>Waiting</p>
+    }
+  }
+</div>
+
+<div class="actions">
+  <select #statusSelect (change)="status.set(statusSelect.value)">
+    <option>idle</option>
+    <option>loading</option>
+    <option>success</option>
+    <option>error</option>
+  </select>
+</div>

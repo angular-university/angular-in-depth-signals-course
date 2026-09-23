@@ -1,0 +1,41 @@
+<div class="stack">
+  <div class="panel">
+    <h4>&#64;if and &#64;else</h4>
+    @if (visible()) {
+      <p>Visible</p>
+    } @else {
+      <p>Hidden</p>
+    }
+    <div class="actions">
+      <button (click)="toggleVisible()">Toggle</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>&#64;else if</h4>
+    <p class="counter">{{ count() }}</p>
+    @if (count() === 0) {
+      <p>Zero</p>
+    } @else if (count() < 3) {
+      <p>Less than 3</p>
+    } @else {
+      <p>3 or more</p>
+    }
+    <div class="actions">
+      <button (click)="increment()">Increment</button>
+      <button (click)="reset()">Reset</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>as</h4>
+    @if (data(); as value) {
+      <p>{{ value.title }}</p>
+    } @else {
+      <p>No data</p>
+    }
+    <div class="actions">
+      <button (click)="toggleData()">Toggle null</button>
+    </div>
+  </div>
+</div>
