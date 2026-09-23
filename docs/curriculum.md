@@ -80,6 +80,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - The @for Block — Iterating Over Collections
 - @for Contextual Variables — $index, $first, $last, $even, $odd, $count
 - Understanding @for Tracking Functions and Why track Is Mandatory
+  - the rendered text looks the same whichever track you use, but the DOM underneath doesn't: tick a checkbox, prepend an item, and the tick stays on its item with track item.id but jumps to the new top row with track $index, because Angular reuses DOM elements by position
 - The @empty Block — Handling Empty Collections
 - The @switch, @case and @default Blocks
 - Control Flow and Signals — How Blocks React to State Changes
