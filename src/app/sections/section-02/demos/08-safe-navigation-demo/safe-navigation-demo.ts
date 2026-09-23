@@ -13,11 +13,21 @@ export class SafeNavigationDemo {
   lesson = signal<{ title: string } | undefined>({ title: 'Signals Deep Dive' });
 
   toggleCourse() {
-    this.course.update((current) => (current ? null : { title: 'Angular In Depth' }));
+    if (this.course()) {
+      this.course.set(null);
+      return;
+    }
+
+    this.course.set({ title: 'Angular In Depth' });
   }
 
   toggleNickname() {
-    this.nickname.update((current) => (current ? null : 'Ada'));
+    if (this.nickname()) {
+      this.nickname.set(null);
+      return;
+    }
+
+    this.nickname.set('Ada');
   }
 
 }

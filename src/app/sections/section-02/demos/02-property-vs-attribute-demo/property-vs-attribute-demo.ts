@@ -15,7 +15,12 @@ export class PropertyVsAttributeDemo {
   }
 
   toggleRole() {
-    this.role.update((current) => (current === 'button' ? 'switch' : 'button'));
+    if (this.role() === 'button') {
+      this.role.set('switch');
+      return;
+    }
+
+    this.role.set('button');
   }
 
 }
