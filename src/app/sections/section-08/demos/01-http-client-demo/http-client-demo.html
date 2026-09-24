@@ -1,0 +1,18 @@
+<div class="stack">
+  <div class="panel">
+    <h4>get()</h4>
+    <p>{{ loaded()?.title }}</p>
+    <div class="actions">
+      <button (click)="load()">Load</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>put()</h4>
+    <p>{{ saved()?.title }}</p>
+    <div class="actions">
+      <input #titleInput value="New title" />
+      <button (click)="save(titleInput.value)">Save</button>
+    </div>
+  </div>
+</div>

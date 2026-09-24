@@ -145,7 +145,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - The HttpClient — Section Introduction
   - the Observable-based client underneath httpResource(), and the only way to write data today
   - choosing between them: httpResource() for HTTP reads, resource() for reads from any other async source, HttpClient for writes and imperative calls like uploads
-  - just enough RxJS: .subscribe() for calls, pipe() with tap and catchError in interceptors; the RxJS section covers the rest
+  - each call is converted straight to a Promise with firstValueFrom() and awaited; only streams subscribe (the event stream, uploads), and interceptors pipe() the response; the RxJS section covers the rest
 - Calling HttpClient Directly — GET, POST, PUT, PATCH and DELETE
 - Error Handling Strategies for HTTP Calls
   - errors from HttpClient calls, handled where the call is made
@@ -154,6 +154,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
   - HttpEventType, HttpStatusCode, HttpSentEvent and HttpUserEvent — the prerequisite for progress events
 - Uploading Files with Progress
   - posting a file as FormData, with reportUploadProgress and reportDownloadProgress turning on progress events
+  - upload progress needs provideHttpClient(withXhr()), since the default fetch backend can't report it
   - exposing progress and errors as signals, and cancelling the upload by unsubscribing
 - Functional HTTP Interceptors Explained
   - registered with provideHttpClient(withInterceptors([...])) — the provider is only needed to configure HttpClient

@@ -1,0 +1,16 @@
+<div class="split">
+  <div class="panel">
+    <small>progress</small>
+    <p class="counter featured">{{ progress() }}%</p>
+  </div>
+  <div class="panel plain">
+    <small>error</small>
+    <p>{{ error() }}</p>
+  </div>
+</div>
+
+<div class="actions">
+  <input #fileInput type="file" />
+  <button [disabled]="uploading()" (click)="start(fileInput.files)">Upload</button>
+  <button [disabled]="!uploading()" (click)="cancel()">Cancel</button>
+</div>

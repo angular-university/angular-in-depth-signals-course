@@ -1,0 +1,15 @@
+<div class="split">
+  <div class="panel plain">
+    <small>caught at the call site</small>
+    <p class="counter">{{ caught() }}</p>
+  </div>
+  <div class="panel">
+    <small>counted by the interceptor</small>
+    <p class="counter featured">{{ counted() }}</p>
+  </div>
+</div>
+
+<div class="actions">
+  <button (click)="request()">Request</button>
+  <button (click)="requestSkipped()">Request with SKIP_ERROR_COUNT</button>
+</div>

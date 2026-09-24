@@ -7,10 +7,11 @@ import { Section04 } from './sections/section-04/section-04';
 import { Section05 } from './sections/section-05/section-05';
 import { Section06 } from './sections/section-06/section-06';
 import { Section07 } from './sections/section-07/section-07';
+import { Section08 } from './sections/section-08/section-08';
 
 @Component({
   selector: 'root',
-  imports: [Toolbar, Section01, Section02, Section03, Section04, Section05, Section06, Section07],
+  imports: [Toolbar, Section01, Section02, Section03, Section04, Section05, Section06, Section07, Section08],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
