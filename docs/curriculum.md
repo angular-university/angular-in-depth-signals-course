@@ -96,7 +96,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - The :host-context Selector — The Theming Use Case
 - Bypassing View Encapsulation with ::ng-deep
 - Global Styles vs Component Styles — Best Practices
-- provideCssVarNamespacing() — the compiler prefixes every CSS variable at build time so an app and a library can't collide, with --global--foo to opt one out
+- provideCssVarNamespacing() — every CSS variable in component styles gets one prefix per app, so apps sharing a page (micro-frontends, embedded Angular Elements) can't collide, with --global--foo to opt one out
   - if the app enables provideCssVarNamespacing, setProperty('--foo') and getPropertyValue('--foo') silently stop matching the compiled names
   - CssVarNamespacer.namespace('--foo') is the fix, and it returns the name unchanged when no namespace is configured
 
