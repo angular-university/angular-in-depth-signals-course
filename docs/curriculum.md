@@ -134,8 +134,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
   - the same API as resource(), with the request going through HttpClient and its interceptors, which is why real apps use it rather than fetch()
   - HttpClient is provided in root, so no provideHttpClient() is needed to start using it
 - httpResource() Request Objects and Response Parsing
-  - the method option is for reads that go out as another verb, like a search API that takes its query as a POST body; PUT, PATCH and DELETE compile, but writes go through HttpClient
-- Request Cancellation and Race Conditions Explained
+  - method accepts verbs other than GET, but only for non-standard APIs that don't do reads via GET, like a search that takes its query as a POST body; writes still go through HttpClient
 - debounced() — Time-Based Derived State
   - a source signal plus a wait duration, or a custom () => Promise<void>
   - it returns a Resource: the 'loading' status while the timer runs, and why the last resolved value is retained

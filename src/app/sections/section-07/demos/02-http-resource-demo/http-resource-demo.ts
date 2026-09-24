@@ -10,7 +10,17 @@ export class HttpResourceDemo {
 
   id = signal(1);
 
-  course = httpResource<Course>(() => `/api/courses/${this.id()}`);
+  course = httpResource(() => `/api/courses/${this.id()}`, {
+    parse: (response) => this.parseCourse(response),
+  });
+
+  parseCourse(response: unknown): Course {
+    const course = response as Course;
+    if (typeof course.title !== 'string') {
+      throw new Error('Invalid course');
+    }
+    return course;
+  }
 
   next() {
     this.id.update((current) => current + 1);
