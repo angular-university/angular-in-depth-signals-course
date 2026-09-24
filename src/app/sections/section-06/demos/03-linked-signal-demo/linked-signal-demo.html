@@ -1,25 +1,15 @@
 <div class="split">
-  <div class="panel">
-    <h4>Computation</h4>
-    <select #firstSelect (change)="select(firstSelect.value)">
-      @for (option of options(); track option) {
-        <option [selected]="option === selected()">{{ option }}</option>
-      }
-    </select>
-    <p>{{ selected() }}</p>
+  <div class="panel plain">
+    <small>count</small>
+    <p class="counter">{{ count() }}</p>
   </div>
-
   <div class="panel">
-    <h4>Source and computation</h4>
-    <select #keptSelect (change)="selectKept(keptSelect.value)">
-      @for (option of options(); track option) {
-        <option [selected]="option === kept()">{{ option }}</option>
-      }
-    </select>
-    <p>{{ kept() }}</p>
+    <small>doubled</small>
+    <p class="counter featured">{{ doubled() }}</p>
   </div>
 </div>
 
 <div class="actions">
-  <button (click)="replaceOptions()">Replace options</button>
+  <button (click)="increment()">Increment</button>
+  <button (click)="setDoubled()">Set doubled to 100</button>
 </div>
