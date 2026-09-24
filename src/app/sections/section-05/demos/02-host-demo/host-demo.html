@@ -8,7 +8,20 @@
     <h4>:host(.active)</h4>
     <host-box [class.active]="active()" />
     <div class="actions">
-      <button (click)="toggle()">Toggle</button>
+      <button (click)="toggleActive()">Toggle</button>
     </div>
+  </div>
+
+  <div class="panel" [class.light]="light()">
+    <h4>:host-context(.light)</h4>
+    <themed-text />
+    <div class="actions">
+      <button (click)="toggleLight()">Toggle theme</button>
+    </div>
+  </div>
+
+  <div class="panel deep">
+    <h4>::ng-deep</h4>
+    <inner-text />
   </div>
 </div>

@@ -1,7 +1,3 @@
-.scoped p {
-  color: var(--color-accent);
-}
-
 .deep ::ng-deep p {
   color: var(--color-accent);
 }
