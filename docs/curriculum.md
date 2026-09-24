@@ -144,9 +144,9 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 
 - The HttpClient — Section Introduction
   - the Observable-based client underneath httpResource(), and the only way to write data today
+  - choosing between them: httpResource() for HTTP reads, resource() for reads from any other async source, HttpClient for writes and imperative calls like uploads
   - just enough RxJS: .subscribe() for calls, pipe() with tap and catchError in interceptors; the RxJS section covers the rest
 - Calling HttpClient Directly — GET, POST, PUT, PATCH and DELETE
-  - resources are for reading; writes go through HttpClient
 - Error Handling Strategies for HTTP Calls
   - errors from HttpClient calls, handled where the call is made
 - The observe Option and the HTTP Event Stream
@@ -155,7 +155,6 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Uploading Files with Progress
   - posting a file as FormData, with reportUploadProgress and reportDownloadProgress turning on progress events
   - exposing progress and errors as signals, and cancelling the upload by unsubscribing
-- Choosing Between resource(), httpResource() and HttpClient
 - Functional HTTP Interceptors Explained
   - registered with provideHttpClient(withInterceptors([...])) — the provider is only needed to configure HttpClient
   - interceptors run for httpResource() requests too, since it is built on HttpClient
