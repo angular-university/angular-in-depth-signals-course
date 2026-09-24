@@ -1,0 +1,18 @@
+<div class="split">
+  <div class="panel plain">
+    <small>id</small>
+    <p class="counter">{{ id() }}</p>
+  </div>
+  <div class="panel plain">
+    <small>title</small>
+    <p>{{ course.value()?.title }}</p>
+  </div>
+  <div class="panel">
+    <small>cancelled</small>
+    <p class="counter featured">{{ cancelled() }}</p>
+  </div>
+</div>
+
+<div class="actions">
+  <button (click)="next()">Next</button>
+</div>

@@ -1,0 +1,21 @@
+<div class="split">
+  <div class="panel plain">
+    <small>id</small>
+    <p class="counter">{{ id() }}</p>
+  </div>
+  <div class="panel">
+    <small>{{ course.status() }}</small>
+    @if (course.isLoading()) {
+      <p>Loading...</p>
+    } @else if (course.error()) {
+      <p>{{ course.error()?.message }}</p>
+    } @else if (course.hasValue()) {
+      <p>{{ course.value().title }}</p>
+    }
+  </div>
+</div>
+
+<div class="actions">
+  <button (click)="next()">Next</button>
+  <button (click)="reload()">Reload</button>
+</div>

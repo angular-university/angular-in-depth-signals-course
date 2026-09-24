@@ -1,0 +1,18 @@
+<div class="split">
+  <div class="panel plain">
+    <small>query</small>
+    <p>{{ query() }}</p>
+  </div>
+  <div class="panel">
+    <small>debounced</small>
+    <p>{{ debouncedQuery.value() }}</p>
+  </div>
+  <div class="panel plain">
+    <small>status()</small>
+    <p>{{ debouncedQuery.status() }}</p>
+  </div>
+</div>
+
+<div class="actions">
+  <input #queryInput (input)="setQuery(queryInput.value)" />
+</div>
