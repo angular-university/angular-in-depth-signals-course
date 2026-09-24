@@ -1,8 +1,27 @@
-<div class="panel">
-  <small>count</small>
-  <p class="counter featured">{{ count() }}</p>
-</div>
+<div class="stack">
+  <div class="panel">
+    <h4>console.log</h4>
+    <small>count</small>
+    <p class="counter featured">{{ count() }}</p>
+    <div class="actions">
+      <button (click)="increment()">Increment</button>
+    </div>
+  </div>
 
-<div class="actions">
-  <button (click)="increment()">Increment</button>
+  <div class="panel">
+    <h4>An effect writing a signal</h4>
+    <div class="split">
+      <div class="panel plain">
+        <small>source</small>
+        <p class="counter">{{ source() }}</p>
+      </div>
+      <div class="panel plain">
+        <small>doubled</small>
+        <p class="counter">{{ doubled() }}</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button (click)="incrementSource()">Increment</button>
+    </div>
+  </div>
 </div>

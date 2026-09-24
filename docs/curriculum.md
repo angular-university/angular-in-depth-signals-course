@@ -109,12 +109,14 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - linkedSignal() with the source / computation Form
 - The effect() API — When To Use Effects
   - an effect is created in a constructor or field initializer, and destroyed with its component
+  - the docs' own example is a console.log of a signal: an effect is just a way to get notified each time a signal's value changes
 - When Not To Use Effects — Common Mistakes
-- Custom Equality Functions with the equal Option
+  - an effect that sets another signal re-implements computed() by hand: the copy is stale until the effect runs, it is writable so it can drift from its source, and each write costs an extra change detection pass
 - How Dependencies Between Signals Are Created and Destroyed
   - what counts as a reactive context — computed(), linkedSignal(), effect() and template rendering
   - tracking is synchronous only — a signal read after an await is never tracked, which is why effects silently stop reacting
   - debugName on signal(), computed(), effect() and linkedSignal() — what labels the nodes in the DevTools signal graph
+- Custom Equality Functions with the equal Option
 - Breaking Dependencies with untracked()
 - Effect Cleanup Functions
   - destroying an effect by hand through its EffectRef, for the rare effect that must stop before its component
