@@ -1,0 +1,12 @@
+<div class="panel">
+  <emulated-mode />
+  <shadow-dom-mode />
+  @if (showNone()) {
+    <none-mode />
+  }
+  <strong>Outside</strong>
+</div>
+
+<div class="actions">
+  <button (click)="toggleNone()">Toggle None</button>
+</div>

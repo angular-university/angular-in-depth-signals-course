@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  padding: 16px 24px;
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+:host(.active) {
+  border-style: solid;
+  border-color: var(--color-primary-light);
+  background: rgba(151, 23, 231, 0.15);
+}

@@ -1,0 +1,7 @@
+:host {
+  display: block;
+  width: 160px;
+  height: 64px;
+  border-radius: var(--swatch-radius, var(--radius-md));
+  background: var(--swatch-color, var(--color-primary));
+}

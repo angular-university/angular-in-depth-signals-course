@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+  color: var(--color-text);
+}
+
+:host-context(.light) {
+  background: #ffffff;
+  color: #17131d;
+}
