@@ -1,12 +1,15 @@
 <div class="panel">
-  <emulated-mode />
-  <shadow-dom-mode />
-  @if (showNone()) {
+  @if (mode() === 'None') {
     <none-mode />
+  } @else {
+    <emulated-mode />
   }
-  <strong>Outside</strong>
+  <p class="label">Outside the component</p>
 </div>
 
 <div class="actions">
-  <button (click)="toggleNone()">Toggle None</button>
+  <select #modeSelect (change)="mode.set(modeSelect.value)">
+    <option>Emulated</option>
+    <option>None</option>
+  </select>
 </div>

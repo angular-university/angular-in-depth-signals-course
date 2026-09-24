@@ -97,13 +97,13 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Bypassing View Encapsulation with ::ng-deep
 - Global Styles vs Component Styles — Best Practices
 - Styling with CSS Custom Properties and Design Tokens
-  - plain CSS, not an Angular feature; they matter here because inherited values cross both Emulated and ShadowDom encapsulation, so a component that reads var(--x, fallback) exposes a styling API its parent can set without ::ng-deep
+  - plain CSS, not an Angular feature; they matter here because inherited values cross view encapsulation, so a component that reads var(--x, fallback) exposes a styling API its parent can set without ::ng-deep
   - they replace ::ng-deep only where the child's author exposed a variable; internals nobody exposed, as in many third-party components, still need a global stylesheet scoped by a class, or ::ng-deep
 - Reactive Styling — Driving CSS From Signals
   - provideCssVarNamespacing() — the compiler prefixes every CSS variable at build time so an app and a library can't collide, with --global--foo to opt one out
   - if the app enables provideCssVarNamespacing, setProperty('--foo') and getPropertyValue('--foo') silently stop matching the compiled names
   - CssVarNamespacer.namespace('--foo') is the fix, and it returns the name unchanged when no namespace is configured
-- Emulated vs ShadowDom vs None — The Three Encapsulation Modes
+- Emulated vs None — Choosing an Encapsulation Mode
 
 ## Section 6 — Angular Signals Deep Dive
 
