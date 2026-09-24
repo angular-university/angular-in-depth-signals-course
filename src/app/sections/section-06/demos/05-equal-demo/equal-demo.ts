@@ -1,8 +1,5 @@
-import { Component, signal } from '@angular/core';
-
-function sameIgnoringCase(a: string, b: string) {
-  return a.toLowerCase() === b.toLowerCase();
-}
+import { Component, effect, signal } from '@angular/core';
+import { isEqual } from 'es-toolkit';
 
 @Component({
   selector: 'equal-demo',
@@ -10,16 +7,26 @@ function sameIgnoringCase(a: string, b: string) {
 })
 export class EqualDemo {
 
-  plain = signal('angular');
+  plain = signal(['A', 'B']);
 
-  custom = signal<string>('angular', { equal: sameIgnoringCase });
+  custom = signal(['A', 'B'], { equal: isEqual });
 
-  applyPlain(value: string) {
-    this.plain.set(value);
+  constructor() {
+    effect(() => {
+      console.log(`plain notified: ${this.plain()}`);
+    });
+
+    effect(() => {
+      console.log(`custom notified: ${this.custom()}`);
+    });
   }
 
-  applyCustom(value: string) {
-    this.custom.set(value);
+  setPlainSame() {
+    this.plain.set(['A', 'B']);
+  }
+
+  setCustomSame() {
+    this.custom.set(['A', 'B']);
   }
 
 }

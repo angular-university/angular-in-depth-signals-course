@@ -117,6 +117,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
   - tracking is synchronous only — a signal read after an await is never tracked, which is why effects silently stop reacting
   - debugName on signal(), computed(), effect() and linkedSignal() — what labels the nodes in the DevTools signal graph
 - Custom Equality Functions with the equal Option
+  - it's just a rarely needed optimization
 - Breaking Dependencies with untracked()
 - Effect Cleanup Functions
   - destroying an effect by hand through its EffectRef, for the rare effect that must stop before its component

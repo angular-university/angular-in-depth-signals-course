@@ -1,19 +1,17 @@
 <div class="split">
   <div class="panel plain">
     <h4>Default equality</h4>
-    <p>{{ plain() }}</p>
+    <p>{{ plain().join(', ') }}</p>
     <div class="actions">
-      <input #plainInput value="ANGULAR" />
-      <button (click)="applyPlain(plainInput.value)">Apply</button>
+      <button (click)="setPlainSame()">Set same items</button>
     </div>
   </div>
 
   <div class="panel">
-    <h4>Case-insensitive equal</h4>
-    <p>{{ custom() }}</p>
+    <h4>Deep equality</h4>
+    <p>{{ custom().join(', ') }}</p>
     <div class="actions">
-      <input #customInput value="ANGULAR" />
-      <button (click)="applyCustom(customInput.value)">Apply</button>
+      <button (click)="setCustomSame()">Set same items</button>
     </div>
   </div>
 </div>
