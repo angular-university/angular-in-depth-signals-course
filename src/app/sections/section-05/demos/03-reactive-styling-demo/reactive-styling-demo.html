@@ -1,8 +1,0 @@
-<div class="panel">
-  <p>{{ hue() }}</p>
-  <hue-swatch [style.--hue]="hue()" />
-</div>
-
-<div class="actions">
-  <input #hueInput type="range" min="0" max="360" [value]="hue()" (input)="applyHue(hueInput.value)" />
-</div>
