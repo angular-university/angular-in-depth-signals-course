@@ -119,6 +119,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Custom Equality Functions with the equal Option
   - it's just a rarely needed optimization
 - Breaking Dependencies with untracked()
+  - read the current signal value, but don't make the signal become a dependency
 - Effect Cleanup Functions
   - destroying an effect by hand through its EffectRef, for the rare effect that must stop before its component
 
