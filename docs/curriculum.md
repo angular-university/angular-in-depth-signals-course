@@ -10,7 +10,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Angular In Depth (Signals Edition) — Helicopter View
 - A Tour of the Course Repository — How the Demos Are Organised
   - one folder and one page per section, each standalone, so you can start anywhere
-  - shared course card and mock data for familiarity; only the HTTP section calls the backend
+  - shared course card and mock data for familiarity; only the HTTP, HttpClient and Services sections call the backend
 - Installing Node.js and npm
 - Installing the Angular CLI
 - Creating our First Project with ng new
@@ -123,41 +123,62 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Effect Cleanup Functions
   - destroying an effect by hand through its EffectRef, for the rare effect that must stop before its component
 
-## Section 7 — HTTP and Asynchronous Data
+## Section 7 — HTTP with Signals
 
-- The Angular HTTP Client — Section Introduction
-- Setting Up provideHttpClient and the Development Backend
-- HTTP GET Calls with Request Parameters and Headers
-  - HttpParams encoding — HttpParameterCodec and HttpUrlEncodingCodec, for APIs whose encoding doesn't match Angular's default
-- HTTP POST, PUT, PATCH and DELETE In Detail
-- Custom Data Services with @Service — Fetching and Modifying Data
-  - @Service() is the default for new singletons; the DI deep dive covers @Injectable and providers
-- Signal-Based Data Services — Design Patterns
-  - a service that owns writable state and exposes it read-only with asReadonly(), with the mutation methods next to it
-  - asReadonly() stops set() and update(), it does not stop deep mutation of the value
-- Sharing Signal State Across Components
-- Functional HTTP Interceptors Explained
-  - HttpContext and HttpContextToken — per-request metadata, so a call site can configure the interceptor that will handle it
-- Error Handling Strategies for HTTP Calls
+- HTTP with Signals — Section Introduction
+- Running the Backend and Exploring Its API
 - The resource() API — Async State as Signals
+  - params and loader, with a fetch() loader against the course backend
 - resource() Status, Value, Error and Reloading
+- httpResource() — Declarative HTTP as a Signal
+  - the same API as resource(), with the request going through HttpClient and its interceptors, which is why real apps use it rather than fetch()
+  - HttpClient is provided in root, so no provideHttpClient() is needed to start using it
+- httpResource() Request Objects and Response Parsing
+  - the method option is for reads that go out as another verb, like a search API that takes its query as a POST body; PUT, PATCH and DELETE compile, but writes go through HttpClient
+- Request Cancellation and Race Conditions Explained
 - debounced() — Time-Based Derived State
   - a source signal plus a wait duration, or a custom () => Promise<void>
   - it returns a Resource: the 'loading' status while the timer runs, and why the last resolved value is retained
   - source errors going straight to 'error' without starting a timer, and the equal option
-- httpResource() — Declarative HTTP as a Signal
-- httpResource() Request Objects and Response Parsing
-- Request Cancellation and Race Conditions Explained
-- Optimistic Updates with resource() and linkedSignal()
+
+## Section 8 — The HttpClient
+
+- The HttpClient — Section Introduction
+  - the Observable-based client underneath httpResource(), and the only way to write data today
+  - just enough RxJS: .subscribe() for calls, pipe() with tap and catchError in interceptors; the RxJS section covers the rest
+- Calling HttpClient Directly — GET, POST, PUT, PATCH and DELETE
+  - resources are for reading; writes go through HttpClient
+- Error Handling Strategies for HTTP Calls
+  - errors from HttpClient calls, handled where the call is made
 - The observe Option and the HTTP Event Stream
   - observe: 'body' | 'response' | 'events', and HttpResponse / HttpHeaderResponse
   - HttpEventType, HttpStatusCode, HttpSentEvent and HttpUserEvent — the prerequisite for progress events
-- Uploading Files with the HTTP Client
-- Upload and Download Progress — reportUploadProgress and reportDownloadProgress
-- A File Upload Driven by resource() — Progress, Errors and Cancellation as Signals
-- Choosing Between resource(), httpResource() and a Manual Service
+- Uploading Files with Progress
+  - posting a file as FormData, with reportUploadProgress and reportDownloadProgress turning on progress events
+  - exposing progress and errors as signals, and cancelling the upload by unsubscribing
+- Choosing Between resource(), httpResource() and HttpClient
+- Functional HTTP Interceptors Explained
+  - registered with provideHttpClient(withInterceptors([...])) — the provider is only needed to configure HttpClient
+  - interceptors run for httpResource() requests too, since it is built on HttpClient
+  - handling HTTP errors in one place, for every call
+  - HttpContext and HttpContextToken — per-request metadata, so a call site can configure the interceptor that will handle it
 
-## Section 8 — Security
+## Section 9 — Services
+
+- Services — Section Introduction
+  - the fetching code from the HTTP section is duplicated in every component that needs it; a service makes it reusable
+- Creating a Service with @Service() and inject()
+  - @Service() is the default for new singletons; the DI deep dive covers @Injectable and providers
+- Signal-Based State Services — Design Patterns
+  - a service that owns writable state and exposes it read-only with asReadonly(), with the mutation methods next to it
+  - asReadonly() stops set() and update(), it does not stop deep mutation of the value
+- Sharing Signal State Across Components
+- Moving httpResource() Into a Data Service
+- A Data Service — Reads with httpResource(), Writes with HttpClient
+  - reloading the resource after a write
+- Optimistic Updates with resource() and linkedSignal()
+
+## Section 10 — Security
 
 - Angular Security — Section Introduction
 - How Angular Protects You By Default — Sanitization and the Security Contexts
@@ -172,7 +193,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
   - withXsrfConfiguration() and withNoXsrfProtection(), HttpXsrfTokenExtractor, and the cookie/header convention behind them
 - Security Best Practices — A Practical Checklist
 
-## Section 9 — Attribute Directives and Directive Composition
+## Section 11 — Attribute Directives and Directive Composition
 
 - Introduction to Angular Attribute Directives
 - Host Bindings In Detail — DOM Properties vs Attributes
@@ -183,7 +204,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Directive Composition with hostDirectives
   - Angular guarantees no ordering of a lifecycle hook between a component and the directives on its element
 
-## Section 10 — Pipes Deep Dive
+## Section 12 — Pipes Deep Dive
 
 - Angular Built-In Pipes — Complete Catalog
   - including I18nPluralPipe and I18nSelectPipe
@@ -199,7 +220,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Formatting Data Outside the Template — formatDate, formatNumber, formatCurrency and formatPercent
 - Pipes vs computed() — Choosing the Right Tool
 
-## Section 11 — Content Projection and Content Queries
+## Section 13 — Content Projection and Content Queries
 
 - Content Projection with ng-content In Detail
 - Multi-Slot Projection with the select Attribute
@@ -215,7 +236,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Building a Component That Coordinates Its Children
   - a parent that queries its projected children and drives their state — tabs / accordion style
 
-## Section 12 — Advanced Templates and Structural Directives
+## Section 14 — Advanced Templates and Structural Directives
 
 - Angular Templates Introduction with ng-template
 - Template Instantiation with ngTemplateOutlet
@@ -229,7 +250,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Building a Reusable Component API — A Practical Example
   - projection, templates and inputs combined so consumers can override any part of the rendering
 
-## Section 13 — Dependency Injection Deep Dive
+## Section 15 — Dependency Injection Deep Dive
 
 - Introduction to the Angular Dependency Injection System
 - Custom Services — @Service vs @Injectable
@@ -255,7 +276,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Application Bootstrapping and ApplicationConfig
 - Environment Initializers and provideAppInitializer
 
-## Section 14 — Deferred Loading and Error Boundaries
+## Section 16 — Deferred Loading and Error Boundaries
 
 - @defer — Section Introduction
 - How Does @defer Work Under the Hood?
@@ -274,7 +295,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
   - what it catches — synchronous exceptions during rendering, not async failures like a raw subscribe(); an errored resource.value() read in a template does throw during render
   - developer preview as of v22.2
 
-## Section 15 — Lifecycle and Render Hooks
+## Section 17 — Lifecycle and Render Hooks
 
 - Component Lifecycle in a Signals Application — Complete Overview
   - the hooks that survive but rarely earn their keep — ngAfterViewInit, ngAfterContentInit, ngDoCheck and the *Checked variants
@@ -289,7 +310,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Interacting with Third-Party DOM Libraries the Right Way
   - Renderer2 — createElement, setAttribute, addClass, setStyle and listen(), and when nativeElement is fine instead
 
-## Section 16 — Internationalization (i18n)
+## Section 18 — Internationalization (i18n)
 
 - Introduction to Angular Internationalization
 - Understanding i18n Unique Identifiers
@@ -299,7 +320,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Extracting and Merging Translation Files
 - Running a Translated Application with the Angular CLI
 
-## Section 17 — RxJS Interoperability
+## Section 19 — RxJS Interoperability
 
 - Observables — A Practical Introduction for Angular Developers
 - Signals vs Observables — When To Use Which
@@ -311,6 +332,6 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - takeUntilDestroyed() and Subscription Management
 - Event Streams — The Use Cases Where RxJS Still Wins
 
-## Section 18 — Conclusion
+## Section 20 — Conclusion
 
 - Course Conclusion and Key Takeaways
