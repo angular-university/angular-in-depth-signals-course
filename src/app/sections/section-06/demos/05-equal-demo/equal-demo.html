@@ -1,0 +1,19 @@
+<div class="split">
+  <div class="panel plain">
+    <h4>Default equality</h4>
+    <p>{{ plain() }}</p>
+    <div class="actions">
+      <input #plainInput value="ANGULAR" />
+      <button (click)="applyPlain(plainInput.value)">Apply</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>Case-insensitive equal</h4>
+    <p>{{ custom() }}</p>
+    <div class="actions">
+      <input #customInput value="ANGULAR" />
+      <button (click)="applyCustom(customInput.value)">Apply</button>
+    </div>
+  </div>
+</div>

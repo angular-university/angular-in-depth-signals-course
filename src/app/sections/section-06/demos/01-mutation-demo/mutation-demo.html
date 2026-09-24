@@ -1,0 +1,19 @@
+<div class="split">
+  <div class="panel plain">
+    <h4>push()</h4>
+    <small>length</small>
+    <item-count [items]="pushed()" />
+    <div class="actions">
+      <button (click)="addPushed()">Add</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>update() with a new array</h4>
+    <small>length</small>
+    <item-count [items]="updated()" />
+    <div class="actions">
+      <button (click)="addUpdated()">Add</button>
+    </div>
+  </div>
+</div>

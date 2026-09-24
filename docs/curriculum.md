@@ -101,6 +101,8 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 ## Section 6 — Angular Signals Deep Dive
 
 - Signals Deep Dive — Section Introduction
+- Signals with Objects and Arrays — Why We Never Mutate
+  - a mutated object keeps the same reference, so the signal never notifies and the view doesn't update
 - Derived State with computed() In Detail
   - a computed() only reruns when it is read and one of its dependencies changed, and caches the result in between
 - linkedSignal() — Writable State Derived From Other State
@@ -108,8 +110,6 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - The effect() API — When To Use Effects
   - an effect is created in a constructor or field initializer, and destroyed with its component
 - When Not To Use Effects — Common Mistakes
-- Signals with Objects and Arrays — Why We Never Mutate
-  - a mutated object keeps the same reference, so the signal never notifies and the view doesn't update
 - Custom Equality Functions with the equal Option
 - How Dependencies Between Signals Are Created and Destroyed
   - what counts as a reactive context — computed(), linkedSignal(), effect() and template rendering

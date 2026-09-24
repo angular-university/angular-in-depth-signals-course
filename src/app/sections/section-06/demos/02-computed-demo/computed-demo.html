@@ -1,0 +1,15 @@
+<div class="split">
+  <div class="panel plain">
+    <small>count</small>
+    <p class="counter">{{ count() }}</p>
+  </div>
+  <div class="panel">
+    <small>doubled</small>
+    <p class="counter featured">{{ doubled() }}</p>
+  </div>
+</div>
+
+<div class="actions">
+  <button (click)="increment()">Increment</button>
+  <button (click)="reset()">Reset</button>
+</div>

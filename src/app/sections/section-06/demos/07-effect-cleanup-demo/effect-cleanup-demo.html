@@ -1,0 +1,9 @@
+<div class="panel">
+  <small>seconds</small>
+  <p class="counter featured">{{ seconds() }}</p>
+</div>
+
+<div class="actions">
+  <button [disabled]="running()" (click)="start()">Start</button>
+  <button [disabled]="!running()" (click)="stop()">Stop</button>
+</div>

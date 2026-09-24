@@ -1,0 +1,19 @@
+<div class="split">
+  <div class="panel plain">
+    <small>a</small>
+    <p class="counter">{{ a() }}</p>
+  </div>
+  <div class="panel plain">
+    <small>b</small>
+    <p class="counter">{{ b() }}</p>
+  </div>
+  <div class="panel">
+    <small>sum</small>
+    <p class="counter featured">{{ sum() }}</p>
+  </div>
+</div>
+
+<div class="actions">
+  <button (click)="incrementA()">Increment a</button>
+  <button (click)="incrementB()">Increment b</button>
+</div>
