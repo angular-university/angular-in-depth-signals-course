@@ -91,6 +91,8 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Component Styles — Section Introduction
 - Angular View Encapsulation Under the Hood
 - The :host Selector In Detail
+  - :host lets a component style its own tag (<host-box>), which its CSS otherwise can't reach because the tag sits in the parent's template
+  - used to make the component a block, give it padding and a border without a wrapper div, and restyle it when the parent adds a class or attribute, like :host(.active)
 - The :host-context Selector — The Theming Use Case
 - Bypassing View Encapsulation with ::ng-deep
 - Global Styles vs Component Styles — Best Practices

@@ -1,7 +1,14 @@
-<div class="panel">
-  <host-box [class.active]="active()" />
-</div>
+<div class="stack">
+  <div class="panel">
+    <h4>:host</h4>
+    <padded-box />
+  </div>
 
-<div class="actions">
-  <button (click)="toggle()">Toggle</button>
+  <div class="panel">
+    <h4>:host(.active)</h4>
+    <host-box [class.active]="active()" />
+    <div class="actions">
+      <button (click)="toggle()">Toggle</button>
+    </div>
+  </div>
 </div>

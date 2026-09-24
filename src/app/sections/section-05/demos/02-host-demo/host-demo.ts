@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
+import { PaddedBox } from './padded-box';
 import { HostBox } from './host-box';
 
 @Component({
   selector: 'host-demo',
-  imports: [HostBox],
+  imports: [PaddedBox, HostBox],
   templateUrl: './host-demo.html',
 })
 export class HostDemo {
