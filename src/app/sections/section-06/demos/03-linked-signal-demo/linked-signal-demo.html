@@ -2,14 +2,16 @@
   <div class="panel plain">
     <small>count</small>
     <p class="counter">{{ count() }}</p>
+    <div class="actions">
+      <button (click)="increment()">Increment</button>
+    </div>
   </div>
   <div class="panel">
     <small>doubled</small>
     <p class="counter featured">{{ doubled() }}</p>
+    <div class="actions">
+      <input #doubledInput type="number" value="100" />
+      <button (click)="setDoubled(doubledInput.valueAsNumber)">Set</button>
+    </div>
   </div>
-</div>
-
-<div class="actions">
-  <button (click)="increment()">Increment</button>
-  <button (click)="setDoubled()">Set doubled to 100</button>
 </div>

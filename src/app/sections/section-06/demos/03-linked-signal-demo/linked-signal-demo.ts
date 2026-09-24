@@ -14,8 +14,8 @@ export class LinkedSignalDemo {
     this.count.update((current) => current + 1);
   }
 
-  setDoubled() {
-    this.doubled.set(100);
+  setDoubled(value: number) {
+    this.doubled.set(value);
   }
 
 }
