@@ -101,44 +101,23 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 ## Section 6 — Angular Signals Deep Dive
 
 - Signals Deep Dive — Section Introduction
-- How Signals Work Under the Hood — The Reactive Graph
-  - debugName on signal(), computed(), effect(), linkedSignal(), input() and the resources — what labels the nodes in the DevTools signal graph
-- What Actually Triggers a Re-Render — Zoneless and OnPush by Default
-  - the complete notification list: a template signal read changing, a bound template or host listener, ChangeDetectorRef.markForCheck() (which the async pipe calls for you), ComponentRef.setInput(), attaching a view already marked dirty
-  - OnPush as the v22 default, and what ChangeDetectionStrategy.Eager is when you meet it in code
-  - provideCheckNoChangesConfig({exhaustive, interval}) — catching a binding that changed without notifying Angular
-- Signals with Objects and Arrays — Why We Never Mutate
-- Read-Only Signals — Signal<T> vs WritableSignal<T>
-  - asReadonly() stops set() and update(), it does not stop deep mutation of the value
-  - isSignal() and isWritableSignal() for narrowing an unknown value
 - Derived State with computed() In Detail
-- How Dependencies Between Signals Are Created and Destroyed
-  - what counts as a reactive context — computed(), linkedSignal(), effect(), afterRenderEffect(), resource() params and loader, and template rendering including host bindings
-  - tracking is synchronous only — a signal read after an await is never tracked, which is why loaders and effects silently stop reacting
-- Lazy Evaluation, Memoization and Glitch-Free Propagation
-- Custom Equality Functions with the equal Option
-- Breaking Dependencies with untracked()
-- The effect() API — When To Use Effects
-- When Not To Use Effects — Common Mistakes
-- Effect Cleanup Functions
-- Manually Destroying an Effect
-- Injection Contexts, DestroyRef and Automatic Cleanup
-  - DestroyRef.destroyed — guarding async callbacks that resolve after the component is gone
+  - a computed() only reruns when it is read and one of its dependencies changed, and caches the result in between
 - linkedSignal() — Writable State Derived From Other State
 - linkedSignal() with the source / computation Form
-- The set Option — Intercepting Writes and Writing Back
-  - set replaces the write path: rawSet is the only call that actually writes, so not calling it vetoes the write
-  - normalizing on the way in by calling rawSet with a different value, and propagating the write upstream
-  - update() is rewritten in terms of set, and the linked computation still resets the value without routing through it
-- debounced() — Time-Based Derived State
-  - a source signal plus a wait duration, or a custom () => Promise<void>
-  - the 'loading' status while the timer runs, and why the last resolved value is retained
-  - source errors going straight to 'error' without starting a timer, and the equal option
-- Signal-Based Data Services — Design Patterns
-  - a service that owns writable state and exposes it read-only, with the mutation methods next to it
-- Sharing Signal State Across Components
-- Signal Anti-Patterns and How To Avoid Them
-  - effects that write state, mutating objects in place, exposing a WritableSignal from a service
+- The effect() API — When To Use Effects
+  - an effect is created in a constructor or field initializer, and destroyed with its component
+- When Not To Use Effects — Common Mistakes
+- Signals with Objects and Arrays — Why We Never Mutate
+  - a mutated object keeps the same reference, so the signal never notifies and the view doesn't update
+- Custom Equality Functions with the equal Option
+- How Dependencies Between Signals Are Created and Destroyed
+  - what counts as a reactive context — computed(), linkedSignal(), effect() and template rendering
+  - tracking is synchronous only — a signal read after an await is never tracked, which is why effects silently stop reacting
+  - debugName on signal(), computed(), effect() and linkedSignal() — what labels the nodes in the DevTools signal graph
+- Breaking Dependencies with untracked()
+- Effect Cleanup Functions
+  - destroying an effect by hand through its EffectRef, for the rare effect that must stop before its component
 
 ## Section 7 — HTTP and Asynchronous Data
 
@@ -149,11 +128,19 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - HTTP POST, PUT, PATCH and DELETE In Detail
 - Custom Data Services with @Service — Fetching and Modifying Data
   - @Service() is the default for new singletons; the DI deep dive covers @Injectable and providers
+- Signal-Based Data Services — Design Patterns
+  - a service that owns writable state and exposes it read-only with asReadonly(), with the mutation methods next to it
+  - asReadonly() stops set() and update(), it does not stop deep mutation of the value
+- Sharing Signal State Across Components
 - Functional HTTP Interceptors Explained
   - HttpContext and HttpContextToken — per-request metadata, so a call site can configure the interceptor that will handle it
 - Error Handling Strategies for HTTP Calls
 - The resource() API — Async State as Signals
 - resource() Status, Value, Error and Reloading
+- debounced() — Time-Based Derived State
+  - a source signal plus a wait duration, or a custom () => Promise<void>
+  - it returns a Resource: the 'loading' status while the timer runs, and why the last resolved value is retained
+  - source errors going straight to 'error' without starting a timer, and the equal option
 - httpResource() — Declarative HTTP as a Signal
 - httpResource() Request Objects and Response Parsing
 - Request Cancellation and Race Conditions Explained
