@@ -1,5 +1,5 @@
 import { Service, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, httpResource } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { Course } from '../../../../model/course';
 
@@ -8,8 +8,8 @@ export class CoursesService {
 
   http = inject(HttpClient);
 
-  loadCourse(id: number) {
-    return firstValueFrom(this.http.get<Course>(`/api/courses/${id}`));
+  courseResource(id: number) {
+    return httpResource<Course>(() => `/api/courses/${id}`);
   }
 
   saveCourse(id: number, title: string) {

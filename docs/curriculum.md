@@ -169,7 +169,8 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
   - @Service() is the default for new singletons; the DI deep dive covers @Injectable and providers
 - A Stateless Service — Moving the HTTP Calls Into a CoursesService
   - the fetching code from the HTTP sections is duplicated in every component that needs it; the service makes it reusable
-  - the service only has methods returning promises; the component keeps its own resource(), whose loader calls the service
+  - the service holds no state: courseResource() creates an httpResource() owned by the calling component
+  - it must be called in an injection context, like a field initializer, since httpResource() needs one
   - writing through the service, then reloading the component's resource
 - A Stateful Service — an Auth Service Shared Across Components
   - the service owns writable state and exposes it read-only with asReadonly(), with the mutation methods next to it

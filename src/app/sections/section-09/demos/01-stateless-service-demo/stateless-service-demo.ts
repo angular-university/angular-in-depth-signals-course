@@ -1,4 +1,4 @@
-import { Component, inject, resource } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CoursesService } from './courses-service';
 
 @Component({
@@ -9,9 +9,7 @@ export class StatelessServiceDemo {
 
   coursesService = inject(CoursesService);
 
-  course = resource({
-    loader: () => this.coursesService.loadCourse(1),
-  });
+  course = this.coursesService.courseResource(1);
 
   async save(title: string) {
     await this.coursesService.saveCourse(1, title);
