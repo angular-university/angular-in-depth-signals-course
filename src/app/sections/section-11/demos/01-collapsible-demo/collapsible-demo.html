@@ -1,0 +1,18 @@
+<div class="panel">
+  <small>{{ event() }}</small>
+  <p
+    myCollapsible
+    #content="collapsible"
+    [expanded]="false"
+    collapsedClass="clamped"
+    (opened)="setEvent('opened')"
+    (closed)="setEvent('closed')"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+  </p>
+</div>
+
+<div class="actions">
+  <button (click)="content.toggle()">Toggle</button>
+</div>

@@ -10,10 +10,11 @@ import { Section07 } from './sections/section-07/section-07';
 import { Section08 } from './sections/section-08/section-08';
 import { Section09 } from './sections/section-09/section-09';
 import { Section10 } from './sections/section-10/section-10';
+import { Section11 } from './sections/section-11/section-11';
 
 @Component({
   selector: 'root',
-  imports: [Toolbar, Section01, Section02, Section03, Section04, Section05, Section06, Section07, Section08, Section09, Section10],
+  imports: [Toolbar, Section01, Section02, Section03, Section04, Section05, Section06, Section07, Section08, Section09, Section10, Section11],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

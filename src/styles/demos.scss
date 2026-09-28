@@ -381,3 +381,21 @@
   background-clip: text;
   color: transparent;
 }
+
+.demo :where([aria-pressed='true']) {
+  outline: 2px solid var(--color-success);
+  outline-offset: 3px;
+}
+
+.demo :where(chip) {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.demo :where(.clamped) {
+  max-height: 1.4em;
+  overflow: hidden;
+}
