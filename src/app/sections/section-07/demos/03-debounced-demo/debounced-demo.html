@@ -3,13 +3,19 @@
     <small>query</small>
     <p>{{ query() }}</p>
   </div>
-  <div class="panel">
-    <small>debounced</small>
+  <div class="panel plain">
+    <small>{{ debouncedQuery.status() }}</small>
     <p>{{ debouncedQuery.value() }}</p>
   </div>
-  <div class="panel plain">
-    <small>status()</small>
-    <p>{{ debouncedQuery.status() }}</p>
+  <div class="panel">
+    <small>{{ courses.status() }}</small>
+    @if (courses.isLoading()) {
+      <p>Loading...</p>
+    } @else if (courses.hasValue()) {
+      @for (course of courses.value(); track course.id) {
+        <p>{{ course.title }}</p>
+      }
+    }
   </div>
 </div>
 

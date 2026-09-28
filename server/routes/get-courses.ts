@@ -4,7 +4,11 @@ import { COURSES } from '../db-data.js';
 const RESPONSE_DELAY_MS = 1500;
 
 export function getCourses(req: Request, res: Response) {
-  const courses = Object.values(COURSES).sort((c1, c2) => c1.seqNo - c2.seqNo);
+  const query = String(req.query['q'] ?? '').toLowerCase();
+
+  const courses = Object.values(COURSES)
+    .filter((course) => course.title.toLowerCase().includes(query))
+    .sort((c1, c2) => c1.seqNo - c2.seqNo);
 
   req.log.info(`Returning ${courses.length} courses`);
 
