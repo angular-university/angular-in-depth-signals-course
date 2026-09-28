@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { Course } from '../../../../model/course';
 
@@ -11,18 +11,35 @@ export class HttpClientDemo {
 
   http = inject(HttpClient);
 
-  loaded = signal<Course | undefined>(undefined);
+  course = signal<Course | undefined>(undefined);
 
-  saved = signal<Course | undefined>(undefined);
+  error = signal('');
 
-  async load() {
-    const course = await firstValueFrom(this.http.get<Course>('/api/courses/1'));
-    this.loaded.set(course);
+  async load(id: number) {
+    try {
+      const course = await firstValueFrom(this.http.get<Course>(`/api/courses/${id}`));
+      this.course.set(course);
+      this.error.set('');
+    } catch (error) {
+      this.error.set(this.describe(error));
+    }
   }
 
-  async save(title: string) {
-    const course = await firstValueFrom(this.http.put<Course>('/api/courses/1', { title }));
-    this.saved.set(course);
+  async save(id: number, title: string) {
+    try {
+      const course = await firstValueFrom(this.http.put<Course>(`/api/courses/${id}`, { title }));
+      this.course.set(course);
+      this.error.set('');
+    } catch (error) {
+      this.error.set(this.describe(error));
+    }
+  }
+
+  describe(error: unknown): string {
+    if (error instanceof HttpErrorResponse) {
+      return `${error.status} ${error.statusText}`;
+    }
+    return String(error);
   }
 
 }
