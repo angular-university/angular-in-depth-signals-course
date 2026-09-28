@@ -164,17 +164,17 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 ## Section 9 — Services
 
 - Services — Section Introduction
-  - the fetching code from the HTTP section is duplicated in every component that needs it; a service makes it reusable
+  - a service holds code that more than one component needs: stateless data access, or stateful shared state
 - Creating a Service with @Service() and inject()
   - @Service() is the default for new singletons; the DI deep dive covers @Injectable and providers
-- Signal-Based State Services — Design Patterns
-  - a service that owns writable state and exposes it read-only with asReadonly(), with the mutation methods next to it
+- A Stateless Service — Moving the HTTP Calls Into a CoursesService
+  - the fetching code from the HTTP sections is duplicated in every component that needs it; the service makes it reusable
+  - the service only has methods returning promises; the component keeps its own resource(), whose loader calls the service
+  - writing through the service, then reloading the component's resource
+- A Stateful Service — an Auth Service Shared Across Components
+  - the service owns writable state and exposes it read-only with asReadonly(), with the mutation methods next to it
   - asReadonly() stops set() and update(), it does not stop deep mutation of the value
-- Sharing Signal State Across Components
-- Moving httpResource() Into a Data Service
-- A Data Service — Reads with httpResource(), Writes with HttpClient
-  - reloading the resource after a write
-- Optimistic Updates with resource() and linkedSignal()
+  - two components injecting the same singleton see the same state
 
 ## Section 10 — Security
 

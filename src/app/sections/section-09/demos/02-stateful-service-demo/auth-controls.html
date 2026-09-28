@@ -1,0 +1,7 @@
+<div class="panel plain">
+  <small>auth-controls</small>
+  <div class="actions">
+    <button [disabled]="auth.loggedIn()" (click)="logIn()">Log in</button>
+    <button [disabled]="!auth.loggedIn()" (click)="logOut()">Log out</button>
+  </div>
+</div>

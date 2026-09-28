@@ -1,0 +1,15 @@
+<div class="panel">
+  <small>{{ course.status() }}</small>
+  @if (course.isLoading()) {
+    <p>Loading...</p>
+  } @else if (course.error()) {
+    <p>{{ course.error()?.message }}</p>
+  } @else if (course.hasValue()) {
+    <p>{{ course.value().title }}</p>
+  }
+</div>
+
+<div class="actions">
+  <input #titleInput value="New title" />
+  <button (click)="save(titleInput.value)">Save</button>
+</div>
