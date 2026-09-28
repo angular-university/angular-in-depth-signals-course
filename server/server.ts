@@ -5,6 +5,7 @@ import { getCourses } from './routes/get-courses.js';
 import { getCourse } from './routes/get-course.js';
 import { saveCourse } from './routes/save-course.js';
 import { uploadFile } from './routes/upload-file.js';
+import { getProfile } from './routes/get-profile.js';
 
 const app = express();
 const port = 9000;
@@ -17,6 +18,7 @@ app.get('/api/courses', getCourses);
 app.get('/api/courses/:id', getCourse);
 app.put('/api/courses/:id', saveCourse);
 app.post('/api/uploads', uploadFile);
+app.get('/api/profile', getProfile);
 
 app.listen(port, () => {
   console.log(`Server listening on http://localhost:${port}`);
