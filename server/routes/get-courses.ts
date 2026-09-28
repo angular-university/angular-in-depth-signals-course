@@ -4,7 +4,7 @@ import { COURSES } from '../db-data.js';
 const RESPONSE_DELAY_MS = 1500;
 
 export function getCourses(req: Request, res: Response) {
-  const query = String(req.query['q'] ?? '').toLowerCase();
+  const query = String(req.query['search'] ?? '').trim().toLowerCase();
 
   const courses = Object.values(COURSES)
     .filter((course) => course.title.toLowerCase().includes(query))

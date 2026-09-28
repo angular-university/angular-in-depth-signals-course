@@ -12,15 +12,10 @@ export class DebouncedDemo {
 
   debouncedQuery = debounced(this.query, 500);
 
-  courses = httpResource<Course[]>(() => this.searchRequest());
-
-  searchRequest() {
-    const q = this.debouncedQuery.value();
-    if (!q) {
-      return undefined;
-    }
-    return { url: '/api/courses', params: { q } };
-  }
+  courses = httpResource<Course[]>(() => ({
+    url: '/api/courses',
+    params: { search: this.debouncedQuery.value() },
+  }));
 
   setQuery(query: string) {
     this.query.set(query);
