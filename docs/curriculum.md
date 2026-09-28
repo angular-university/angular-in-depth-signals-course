@@ -149,10 +149,9 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Calling HttpClient Directly — GET, POST, PUT, PATCH and DELETE
 - Error Handling Strategies for HTTP Calls
   - errors from HttpClient calls, handled where the call is made
-- The observe Option and the HTTP Event Stream
-  - observe: 'body' | 'response' | 'events', and HttpResponse / HttpHeaderResponse
-  - HttpEventType, HttpStatusCode, HttpSentEvent and HttpUserEvent — the prerequisite for progress events
 - Uploading Files with Progress
+  - observe: 'body' (the default) | 'response' | 'events'; 'response' only for a header or status from a successful call
+  - the HTTP event stream: HttpEventType, HttpStatusCode, HttpSentEvent and HttpUserEvent
   - posting a file as FormData, with reportUploadProgress and reportDownloadProgress turning on progress events
   - upload progress needs provideHttpClient(withXhr()), since the default fetch backend can't report it
   - exposing progress and errors as signals, and cancelling the upload by unsubscribing
