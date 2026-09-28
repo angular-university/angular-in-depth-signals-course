@@ -1,0 +1,14 @@
+<div class="split">
+  <div class="panel plain">
+    <small>interpolation</small>
+    <p>{{ html }}</p>
+  </div>
+  <div class="panel plain">
+    <small>[innerHTML]</small>
+    <p [innerHTML]="html"></p>
+  </div>
+  <div class="panel">
+    <small>bypassSecurityTrustHtml()</small>
+    <p [innerHTML]="trustedHtml"></p>
+  </div>
+</div>
