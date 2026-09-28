@@ -4,11 +4,18 @@
     <p class="counter">{{ id() }}</p>
   </div>
   <div class="panel">
-    <small>title</small>
-    <p>{{ course.value()?.title }}</p>
+    <small>{{ course.status() }}</small>
+    @if (course.isLoading()) {
+      <p>Loading...</p>
+    } @else if (course.error()) {
+      <p>{{ course.error()?.message }}</p>
+    } @else if (course.hasValue()) {
+      <p>{{ course.value().title }}</p>
+    }
   </div>
 </div>
 
 <div class="actions">
   <button (click)="next()">Next</button>
+  <button (click)="reload()">Reload</button>
 </div>
