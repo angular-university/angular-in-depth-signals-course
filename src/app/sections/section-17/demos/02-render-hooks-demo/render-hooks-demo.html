@@ -1,0 +1,19 @@
+<div class="split">
+  <div class="panel plain">
+    <small>afterNextRender()</small>
+    <p>{{ width() }}px wide</p>
+  </div>
+  <div class="panel">
+    <small>afterRenderEffect()</small>
+    <p>{{ height() }}px tall</p>
+  </div>
+  <div class="panel plain" #measured>
+    @for (line of lines(); track line) {
+      <p>{{ line }}</p>
+    }
+  </div>
+</div>
+
+<div class="actions">
+  <button (click)="addLine()">Add line</button>
+</div>

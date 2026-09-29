@@ -294,15 +294,18 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Component Lifecycle in a Signals Application — Complete Overview
   - the hooks that survive but rarely earn their keep — ngAfterViewInit, ngAfterContentInit, ngDoCheck and the *Checked variants
   - ExpressionChangedAfterItHasBeenCheckedError — still thrown in dev mode when those hooks write state
-- ngOnInit and ngOnDestroy In Detail
-- Why Signal Inputs and computed() Replace ngOnChanges
+  - signal inputs and computed() replace ngOnChanges
+- ngOnInit, ngOnDestroy and DestroyRef — What Still Needs a Hook
+  - most ngOnInit work moves to field initializers, the constructor or computed()
+  - inject(DestroyRef).onDestroy() replaces ngOnDestroy, and works in services and helper functions too
 - afterNextRender() and afterEveryRender()
   - the render phases — earlyRead, write, mixedReadWrite and read, why they run in that order, and how each phase's return value is passed to the next
   - avoiding layout thrashing, plus AfterRenderRef and the manualCleanup option
 - afterRenderEffect() — Reactive DOM Work After Render
-  - the same phases, with each phase's value handed to the next as a signal
+  - the phases from the previous lesson, with each phase's value handed to the next as a signal
 - Interacting with Third-Party DOM Libraries the Right Way
-  - Renderer2 — createElement, setAttribute, addClass, setStyle and listen(), and when nativeElement is fine instead
+  - nativeElement inside afterNextRender() is the right tool in a browser-only app
+  - Renderer2 — createElement, setAttribute, addClass, setStyle and listen() — only when the code must also run outside the browser, like SSR
 
 ## Section 18 — Internationalization (i18n)
 
@@ -330,3 +333,11 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 ## Section 20 — Conclusion
 
 - Course Conclusion and Key Takeaways
+  - signals are the single model for state: writable state, derived state, async state and effects all use the same primitives
+  - templates stay declarative: control flow, bindings and pipes describe what to show, and the framework works out when to update
+  - components communicate through a small, explicit API of inputs, outputs and two-way bindings
+  - services hold code that more than one component needs: stateless data access or stateful shared state, scoped as wide or narrow as the feature
+  - reads are declarative and reactive, writes are imperative and explicit
+  - composition over inheritance: projection, templates, directives and host directives build flexible components from small parts
+  - load only what is needed, and contain what can fail, so one broken or slow part never takes the page down
+  - security is on by default; bypassing it is a deliberate, local decision
