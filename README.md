@@ -4,6 +4,8 @@ This repository contains the code of the [Angular In Depth (Signals Edition)](ht
 
 This course repository is updated to Angular v22.
 
+<img src="https://d3vigmphadbn9b.cloudfront.net/course-images/large-images/angular-in-depth-with-signals.jpg" width="600" alt="Angular In Depth (Signals Edition)">
+
 # Repository Structure
 
 The `main` branch holds the finished code of every section, stacked on one page in the order of the course.
