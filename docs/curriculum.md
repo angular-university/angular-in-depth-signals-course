@@ -339,6 +339,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - rxResource() — Resources Backed by Observables
   - stream returns an observable, which can emit more than once
   - a params change unsubscribes from the previous stream
+  - for single HTTP requests use httpResource(); rxResource() is for sources that emit more than once
 - Event Streams — Where RxJS Still Wins
   - a plain search no longer needs RxJS: debounced() and httpResource() already debounce and cancel stale requests
   - choosing a flattening operator: switchMap, concatMap, mergeMap and exhaustMap
