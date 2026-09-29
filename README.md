@@ -4,23 +4,13 @@ This repository contains the code of the [Angular In Depth (Signals Edition)](ht
 
 This course repository is updated to Angular v22.
 
-# Repository Branches
+# Repository Structure
 
-Each section of the course is independent, and so is its code.
+The `main` branch holds the finished code of every section, stacked on one page in the order of the course.
 
-- `main` — every section, stacked on one page in the order of the course.
-- `1-start` — the starting point: the shared building blocks and none of the demos.
-  Begin here and build a section's demos as you follow along.
-- `section-01`, `section-02`, ... — one branch per section, each holding just that
-  section's finished demos. Jump straight to the section you came for.
+Each section is independent, and lives in its own folder, `src/app/sections/section-NN/`, with its demos numbered in lesson order.
 
-After cloning, switch to the starting point with:
-
-    git checkout 1-start
-
-or go straight to a section with:
-
-    git checkout section-01
+To start from a clean slate, delete the demos you don't want, or remove sections from `src/app/app.html`.
 
 # Installation pre-requisites
 
