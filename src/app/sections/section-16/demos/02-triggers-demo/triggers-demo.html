@@ -1,0 +1,28 @@
+<div class="stack">
+  <div class="panel">
+    <h4>on viewport</h4>
+    @defer (on viewport) {
+      <deferred-panel />
+    } @placeholder {
+      <p>Placeholder</p>
+    }
+  </div>
+
+  <div class="panel">
+    <h4>on hover</h4>
+    @defer (on hover) {
+      <deferred-panel />
+    } @placeholder {
+      <p>Placeholder</p>
+    }
+  </div>
+
+  <div class="panel">
+    <h4>on interaction</h4>
+    @defer (on interaction) {
+      <deferred-panel />
+    } @placeholder {
+      <button>Load</button>
+    }
+  </div>
+</div>

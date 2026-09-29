@@ -277,17 +277,14 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 
 - @defer — Section Introduction
 - How Does @defer Work Under the Hood?
-- The @placeholder Block and the minimum Parameter
-- The @loading Block — after and minimum Parameters
-- The @error Block — Handling Failed Chunk Loads
-- The idle and immediate Triggers
-- The timer Trigger and Prefetch Triggers
-- The viewport Trigger In Detail
-- The interaction and hover Triggers
-- Custom Triggers with the when Clause
+  - the deferred dependencies go into a separate lazy chunk, which is why they must be standalone and not referenced elsewhere
+- The @placeholder, @loading and @error Blocks — with the after and minimum Parameters
+- Triggers — idle, immediate, timer, viewport, interaction and hover
+- Prefetching and Custom Triggers with when
 - @defer Best Practices and Bundle Size Analysis
 - Error Boundaries with @boundary and @error
   - wrapping a subtree so a render-time error swaps in fallback content instead of taking the page down, with the error bound in @error
+  - $reset re-renders the subtree once the cause is fixed
   - why local boundaries around what you can afford to lose beat a single one at the root
   - what it catches — synchronous exceptions during rendering, not async failures like a raw subscribe(); an errored resource.value() read in a template does throw during render
   - developer preview as of v22.2

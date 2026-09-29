@@ -1,0 +1,14 @@
+<div class="panel">
+  @boundary {
+    <fragile-value [count]="count()" />
+  } @error (let error = $error; let reset = $reset) {
+    <p>{{ error.message }}</p>
+    <div class="actions">
+      <button (click)="retry(reset)">Reset</button>
+    </div>
+  }
+</div>
+
+<div class="actions">
+  <button (click)="increment()">Increment</button>
+</div>

@@ -1,0 +1,15 @@
+<div class="panel">
+  @defer (when shown(); prefetch on idle) {
+    <deferred-panel />
+  } @placeholder (minimum 500ms) {
+    <p>Placeholder</p>
+  } @loading (after 100ms; minimum 1s) {
+    <p>Loading...</p>
+  } @error {
+    <p>Failed to load</p>
+  }
+</div>
+
+<div class="actions">
+  <button (click)="show()">Show</button>
+</div>
