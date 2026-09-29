@@ -205,6 +205,10 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 
 ## Section 12 — Pipes Deep Dive
 
+- Pipes — Section Introduction
+  - why pipes exist: a template can only call its own component's members, so a pipe is how a reusable function gets into any template through imports
+  - pipes inject what they need, like LOCALE_ID, and pure pipes only re-run when their input changes
+  - chaining pipes, left to right: text | slice:0:7 | uppercase
 - Angular Built-In Pipes — Complete Catalog
 - The Date, Currency, Decimal and Percent Pipes In Detail
 - Locale Data and LOCALE_ID — Making the Pipes Work Outside en-US
@@ -216,7 +220,6 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Custom Pipes — Step-by-Step Implementation
 - Pure vs Impure Pipes In Detail
 - Formatting Data Outside the Template — formatDate, formatNumber, formatCurrency and formatPercent
-- Pipes vs computed() — Choosing the Right Tool
 
 ## Section 13 — Content Projection and Content Queries
 

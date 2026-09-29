@@ -1,0 +1,17 @@
+<div class="rows">
+  <code>formatDate(date)</code>
+  <span>{{ formattedDate }}</span>
+
+  <code>formatNumber(amount)</code>
+  <span>{{ formattedNumber() }}</span>
+
+  <code>formatCurrency(amount)</code>
+  <span>{{ formattedCurrency() }}</span>
+
+  <code>formatPercent(ratio)</code>
+  <span>{{ formattedPercent }}</span>
+</div>
+
+<div class="actions">
+  <input #amountInput type="number" [value]="amount()" (input)="setAmount(amountInput.valueAsNumber)" />
+</div>
