@@ -1,0 +1,8 @@
+<div class="panel">
+  <small>truncate: 10</small>
+  <p>{{ text() | truncate: 10 }}</p>
+</div>
+
+<div class="actions">
+  <input #textInput [value]="text()" (input)="setText(textInput.value)" />
+</div>

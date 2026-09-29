@@ -1,0 +1,20 @@
+<div class="rows">
+  <code>data | json</code>
+  <span>{{ data | json }}</span>
+
+  <code>list | slice:1:3</code>
+  <span>{{ list | slice: 1 : 3 }}</span>
+
+  <code>data | keyvalue</code>
+  <span>
+    @for (entry of data | keyvalue; track entry.key) {
+      {{ entry.key }}={{ entry.value }}
+    }
+  </span>
+
+  <code>text | uppercase</code>
+  <span>{{ text | uppercase }}</span>
+
+  <code>text | titlecase</code>
+  <span>{{ text | titlecase }}</span>
+</div>

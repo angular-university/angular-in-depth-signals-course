@@ -206,7 +206,6 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 ## Section 12 — Pipes Deep Dive
 
 - Angular Built-In Pipes — Complete Catalog
-  - including I18nPluralPipe and I18nSelectPipe
 - The Date, Currency, Decimal and Percent Pipes In Detail
 - Locale Data and LOCALE_ID — Making the Pipes Work Outside en-US
   - only en-US locale data ships by default, and registerLocaleData() is what fixes the runtime error
@@ -315,6 +314,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Understanding i18n Unique Identifiers
 - i18n Pluralization Support
 - i18n Alternative Expressions (select) Support
+- The I18nPluralPipe and I18nSelectPipe — Plural and Select at Runtime, Without Translation Files
 - i18n in Attributes and the $localize API
 - Extracting and Merging Translation Files
 - Running a Translated Application with the Angular CLI
