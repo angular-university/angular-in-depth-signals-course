@@ -340,7 +340,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
   - stream returns an observable, which can emit more than once
   - a params change unsubscribes from the previous stream
 - Event Streams — Where RxJS Still Wins
-  - debounceTime(), distinctUntilChanged() and switchMap() to cancel stale requests
+  - a plain search no longer needs RxJS: debounced() and httpResource() already debounce and cancel stale requests
   - choosing a flattening operator: switchMap, concatMap, mergeMap and exhaustMap
 - takeUntilDestroyed() and Manual Subscriptions
   - when a manual subscribe() is still needed, and cleaning it up with takeUntilDestroyed() or DestroyRef

@@ -1,6 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
-import { interval, map } from 'rxjs';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'rx-resource-demo',
@@ -8,15 +8,12 @@ import { interval, map } from 'rxjs';
 })
 export class RxResourceDemo {
 
-  step = signal(1);
-
-  multiples = rxResource({
-    params: () => this.step(),
-    stream: ({ params }) => interval(1000).pipe(map((tick) => (tick + 1) * params)),
+  seconds = rxResource({
+    stream: () => interval(1000),
   });
 
-  next() {
-    this.step.update((value) => value + 1);
+  reload() {
+    this.seconds.reload();
   }
 
 }
