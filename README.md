@@ -10,7 +10,7 @@ The `main` branch holds the finished code of every section, stacked on one page 
 
 Each section is independent, and lives in its own folder, `src/app/sections/section-NN/`, with its demos numbered in lesson order.
 
-To start from a clean slate, delete the demos you don't want, or remove sections from `src/app/app.html`.
+To focus on some sections only, comment out the others in `src/app/app.html`, for example `<!-- <section-02 /> -->`.
 
 # Installation pre-requisites
 
