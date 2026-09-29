@@ -1,0 +1,9 @@
+<div class="panel">
+  @if (store.selected()) {
+    <small>detail</small>
+    <lesson-detail />
+  } @else {
+    <small>list</small>
+    <lessons-list />
+  }
+</div>

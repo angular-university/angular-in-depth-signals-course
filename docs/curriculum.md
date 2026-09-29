@@ -249,29 +249,29 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 ## Section 15 — Dependency Injection Deep Dive
 
 - Introduction to the Angular Dependency Injection System
-- Custom Services — @Service vs @Injectable
+- @Service vs @Injectable and Tree-Shakeable Providers
   - @Service() for new singletons, @Injectable when you need explicit providers or non-root scoping
-- The inject() Function In Detail
-- Understanding Providers and Injection Tokens
-- Simplified Provider Configuration Explained
-  - the provideX() function convention, and why the framework moved to it
+  - providedIn: 'root' and why an unused service is dropped from the bundle
+- Providers and Injection Tokens — InjectionToken<T>
+  - inject(TOKEN, { optional: true }) returns null instead of throwing when nothing provides the token
 - useClass, useValue, useExisting and useFactory Providers
-- Tree-Shakeable Providers and providedIn: 'root'
-- Injection Tokens In Detail — InjectionToken<T>
-- Understanding Hierarchical Dependency Injection
-- Element Injectors vs Environment Injectors
-- Component-Level Providers and Service Instance Scoping
+- Multi Providers and Provider Arrays
+- The provideX() Convention, ApplicationConfig and Bootstrapping
+  - the provideX() function convention, and why the framework moved to it
+  - environment initializers and provideAppInitializer
+- Hierarchical Injection — Component-Scoped Services and the Master-Detail Pattern
+  - element injectors vs environment injectors, and component-level providers
+  - a store provided by a master-detail shell: the list and the detail share one instance, and it is destroyed with the shell
+  - @Service({ autoProvided: false }) so the store can only exist where a component provides it
+  - with the router, the same scoping comes from providers on a parent route
 - providers vs viewProviders — What Projected Content Can and Cannot See
   - projected content can inject from the receiving component's providers, but not from its viewProviders, which only its own template sees
 - The optional, self, skipSelf and host Injection Options
-- Injection Contexts In Detail — Where inject() Is Legal and Why
+- inject() and Injection Contexts — Where inject() Is Legal and Why
   - field initializers, constructors and provider factories; NG0203 everywhere else, including ngOnInit and anything after an await
   - the escape hatches — capturing Injector for injector.get(), runInInjectionContext() for callbacks, assertInInjectionContext() in your own helpers
 - Debugging Dependency Injection — Error Codes and the DevTools Injector Tree
   - reading a NullInjectorError dependency path, plus NG0200, NG0203, NG0204, NG0205 and NG0207
-- Multi Providers and Provider Arrays
-- Application Bootstrapping and ApplicationConfig
-- Environment Initializers and provideAppInitializer
 
 ## Section 16 — Deferred Loading and Error Boundaries
 
