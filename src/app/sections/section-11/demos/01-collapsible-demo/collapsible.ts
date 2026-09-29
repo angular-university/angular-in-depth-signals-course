@@ -5,6 +5,7 @@ import { Directive, computed, input, linkedSignal, output } from '@angular/core'
   exportAs: 'collapsible',
   host: {
     '[class]': 'hostClass()',
+    '(click)': 'toggle()',
   },
 })
 export class Collapsible {

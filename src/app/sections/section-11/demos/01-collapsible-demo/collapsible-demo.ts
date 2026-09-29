@@ -8,10 +8,10 @@ import { Collapsible } from './collapsible';
 })
 export class CollapsibleDemo {
 
-  event = signal('');
+  lastToggle = signal('');
 
-  setEvent(event: string) {
-    this.event.set(event);
+  setLastToggle(toggle: string) {
+    this.lastToggle.set(toggle);
   }
 
 }
