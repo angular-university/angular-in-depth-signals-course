@@ -5,6 +5,7 @@ import { Directive, computed, input, linkedSignal, output } from '@angular/core'
   exportAs: 'collapsible',
   host: {
     '[class]': 'hostClass()',
+    '[attr.aria-expanded]': 'open()',
     '(click)': 'toggle()',
   },
 })

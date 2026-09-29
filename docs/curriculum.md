@@ -197,7 +197,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Introduction to Angular Attribute Directives
 - Host Bindings In Detail — DOM Properties vs Attributes
 - Host Listeners — Handling Events in Directives
-  - global event targets on the host — (window:resize), (document:click)
+  - the global event targets from event binding, (window:resize) and (document:click), work in host too
 - Directives with Signal Inputs and Outputs
 - The exportAs Syntax — When To Use It and Why
 - Directive Composition with hostDirectives
