@@ -236,17 +236,15 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 ## Section 14 — Advanced Templates and Structural Directives
 
 - Angular Templates Introduction with ng-template
-- Template Instantiation with ngTemplateOutlet
-- Passing Context Data to Templates
-- ng-container — Grouping Without Extra DOM Elements
-- Templates as Component Inputs — Building Customizable Components
+  - ng-container — grouping without extra DOM elements
+- Rendering Templates with ngTemplateOutlet and Passing Context Data
+- Templates as Component Inputs — Building a Customizable Component
+  - a default rendering the consumer can override with its own template
   - never put <ng-content> inside @if, @for or @switch — Angular instantiates the projected content either way; project an ng-template instead
 - TemplateRef and ViewContainerRef Explained
-- Structural Directives — Understanding the Star Syntax
-- Structural Directives — Step-by-Step Implementation
-- Structural Directive Type Guards and Template Type Checking
-- Building a Reusable Component API — A Practical Example
-  - projection, templates and inputs combined so consumers can override any part of the rendering
+- Structural Directives — the Star Syntax and a Simple Custom Directive
+  - the built-in control flow replaced *ngIf and *ngFor, so custom structural directives are now rare
+  - role-based rendering with *myAllowRole: unlike a [hidden] attribute directive, denied content is never created
 
 ## Section 15 — Dependency Injection Deep Dive
 

@@ -13,10 +13,11 @@ import { Section10 } from './sections/section-10/section-10';
 import { Section11 } from './sections/section-11/section-11';
 import { Section12 } from './sections/section-12/section-12';
 import { Section13 } from './sections/section-13/section-13';
+import { Section14 } from './sections/section-14/section-14';
 
 @Component({
   selector: 'root',
-  imports: [Toolbar, Section01, Section02, Section03, Section04, Section05, Section06, Section07, Section08, Section09, Section10, Section11, Section12, Section13],
+  imports: [Toolbar, Section01, Section02, Section03, Section04, Section05, Section06, Section07, Section08, Section09, Section10, Section11, Section12, Section13, Section14],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

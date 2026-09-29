@@ -1,0 +1,10 @@
+<ng-template #defaultItem let-item>
+  <p>{{ item }}</p>
+</ng-template>
+
+@for (item of items(); track item) {
+  <ng-container
+    [ngTemplateOutlet]="itemTemplate() ?? defaultItem"
+    [ngTemplateOutletContext]="{ $implicit: item }"
+  />
+}

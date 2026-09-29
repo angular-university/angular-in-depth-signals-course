@@ -1,0 +1,10 @@
+<div class="panel">
+  <small>{{ roleService.role() }}</small>
+  <p *myAllowRole="'admin'">Admin content</p>
+  <p *myAllowRole="'viewer'">Viewer content</p>
+</div>
+
+<div class="actions">
+  <button (click)="setAdmin()">Admin</button>
+  <button (click)="setViewer()">Viewer</button>
+</div>

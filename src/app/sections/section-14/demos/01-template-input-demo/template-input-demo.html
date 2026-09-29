@@ -1,0 +1,14 @@
+<ng-template #customItem let-item>
+  <p class="counter featured">{{ item }}</p>
+</ng-template>
+
+<div class="split">
+  <div class="panel plain">
+    <small>default template</small>
+    <template-list [items]="items" />
+  </div>
+  <div class="panel">
+    <small>itemTemplate</small>
+    <template-list [items]="items" [itemTemplate]="customItem" />
+  </div>
+</div>
