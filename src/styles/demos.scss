@@ -391,3 +391,8 @@
   max-height: 1.4em;
   overflow: hidden;
 }
+
+.demo :where([aria-selected='true']) {
+  outline: 2px solid var(--color-success);
+  outline-offset: 3px;
+}

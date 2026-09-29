@@ -1,0 +1,14 @@
+<div class="split">
+  <card>
+    <p header>Header</p>
+    <p>Body</p>
+    <small footer>Custom footer</small>
+  </card>
+  <card>
+    <ng-container ngProjectAs="[header]">
+      <p>Header</p>
+      <small>Subheader</small>
+    </ng-container>
+    <p>Body</p>
+  </card>
+</div>

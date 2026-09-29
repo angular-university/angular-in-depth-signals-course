@@ -1,0 +1,9 @@
+<div class="actions">
+  @for (tab of tabs(); track tab) {
+    <button role="tab" [attr.aria-selected]="tab.active()" (click)="select(tab)">{{ tab.label() }}</button>
+  }
+</div>
+
+<div class="panel">
+  <ng-content />
+</div>

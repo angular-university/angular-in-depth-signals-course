@@ -1,0 +1,13 @@
+<item-list>
+  @for (label of labels(); track label) {
+    <list-item [label]="label" />
+  }
+  <div>
+    <list-item label="Nested" />
+  </div>
+</item-list>
+
+<div class="actions">
+  <button (click)="add()">Add</button>
+  <button (click)="remove()">Remove</button>
+</div>

@@ -227,10 +227,6 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Multi-Slot Projection with the select Attribute
 - Default Fallback Content for ng-content
 - Projecting Content with ngProjectAs
-- Projected Content Belongs to the Parent — Ownership, Change Detection and Injection
-  - projected content is checked with the parent, so an OnPush wrapper does not protect it
-  - it resolves dependencies against the declaring component's injector, not the receiving component's
-  - never put <ng-content> inside @if, @for or @switch — Angular instantiates it either way; use a template fragment
 - contentChild() — Querying Projected Content
 - contentChildren() In Detail
 - How Deep Can We Query? Understanding Query Boundaries
@@ -244,6 +240,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Passing Context Data to Templates
 - ng-container — Grouping Without Extra DOM Elements
 - Templates as Component Inputs — Building Customizable Components
+  - never put <ng-content> inside @if, @for or @switch — Angular instantiates the projected content either way; project an ng-template instead
 - TemplateRef and ViewContainerRef Explained
 - Structural Directives — Understanding the Star Syntax
 - Structural Directives — Step-by-Step Implementation
@@ -267,6 +264,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Element Injectors vs Environment Injectors
 - Component-Level Providers and Service Instance Scoping
 - providers vs viewProviders — What Projected Content Can and Cannot See
+  - projected content can inject from the receiving component's providers, but not from its viewProviders, which only its own template sees
 - The optional, self, skipSelf and host Injection Options
 - Injection Contexts In Detail — Where inject() Is Legal and Why
   - field initializers, constructors and provider factories; NG0203 everywhere else, including ngOnInit and anything after an await
