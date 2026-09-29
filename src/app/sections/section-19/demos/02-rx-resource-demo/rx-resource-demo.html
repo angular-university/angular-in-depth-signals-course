@@ -1,0 +1,14 @@
+<div class="split">
+  <div class="panel plain">
+    <small>step</small>
+    <p class="counter">{{ step() }}</p>
+  </div>
+  <div class="panel">
+    <small>{{ multiples.status() }}</small>
+    <p class="counter featured">{{ multiples.value() }}</p>
+  </div>
+</div>
+
+<div class="actions">
+  <button (click)="next()">Next</button>
+</div>

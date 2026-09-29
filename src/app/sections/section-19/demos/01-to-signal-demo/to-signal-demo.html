@@ -1,0 +1,21 @@
+<div class="stack">
+  <div class="panel">
+    <small>ticks</small>
+    <p class="counter">{{ ticks() }}</p>
+  </div>
+
+  <div class="split">
+    <div class="panel plain">
+      <small>previous</small>
+      <p class="counter">{{ previous() }}</p>
+    </div>
+    <div class="panel">
+      <small>count</small>
+      <p class="counter featured">{{ count() }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="actions">
+  <button (click)="increment()">Increment</button>
+</div>

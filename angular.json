@@ -30,7 +30,11 @@
             ],
             "styles": [
               "src/styles.scss"
-            ]
+            ],
+            "polyfills": [
+              "@angular/localize/init"
+            ],
+            "i18nMissingTranslation": "warning"
           },
           "configurations": {
             "production": {
@@ -52,6 +56,11 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "fr": {
+              "localize": [
+                "fr"
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -67,12 +76,23 @@
             },
             "development": {
               "buildTarget": "angular-in-depth-signals-course:build:development"
+            },
+            "fr": {
+              "buildTarget": "angular-in-depth-signals-course:build:development,fr"
             }
           },
           "defaultConfiguration": "development"
         },
         "test": {
           "builder": "@angular/build:unit-test"
+        }
+      },
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "fr": {
+            "translation": "src/locale/messages.fr.xlf"
+          }
         }
       }
     }

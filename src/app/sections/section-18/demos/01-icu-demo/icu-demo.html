@@ -1,0 +1,27 @@
+<div class="split">
+  <div class="panel plain">
+    <small>plural</small>
+    <p i18n="items|Number of items@@itemCount">
+      {count(), plural, =0 {No items} =1 {One item} other {{{ count() }} items}}
+    </p>
+  </div>
+  <div class="panel">
+    <small>select with a nested plural</small>
+    <p i18n="Items visible to a role@@roleItems">
+      {role(), select, admin {Admins see {count(), plural, =0 {no items} =1 {one item} other {{{ count() }} items}}} other {Viewers see nothing}}
+    </p>
+  </div>
+  <div class="panel plain">
+    <small>$localize</small>
+    <p>{{ summary() }}</p>
+  </div>
+</div>
+
+<div class="actions">
+  <button i18n="@@addButton" i18n-title="@@addButtonTitle" title="Add one item" (click)="increment()">Add</button>
+  <button i18n="@@removeButton" (click)="decrement()">Remove</button>
+  <select #roleSelect (change)="setRole(roleSelect.value)">
+    <option value="admin" i18n="@@adminRole">Admin</option>
+    <option value="viewer" i18n="@@viewerRole">Viewer</option>
+  </select>
+</div>

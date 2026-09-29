@@ -17,10 +17,12 @@ import { Section14 } from './sections/section-14/section-14';
 import { Section15 } from './sections/section-15/section-15';
 import { Section16 } from './sections/section-16/section-16';
 import { Section17 } from './sections/section-17/section-17';
+import { Section18 } from './sections/section-18/section-18';
+import { Section19 } from './sections/section-19/section-19';
 
 @Component({
   selector: 'root',
-  imports: [Toolbar, Section01, Section02, Section03, Section04, Section05, Section06, Section07, Section08, Section09, Section10, Section11, Section12, Section13, Section14, Section15, Section16, Section17],
+  imports: [Toolbar, Section01, Section02, Section03, Section04, Section05, Section06, Section07, Section08, Section09, Section10, Section11, Section12, Section13, Section14, Section15, Section16, Section17, Section18, Section19],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

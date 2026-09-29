@@ -310,25 +310,41 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 ## Section 18 — Internationalization (i18n)
 
 - Introduction to Angular Internationalization
-- Understanding i18n Unique Identifiers
-- i18n Pluralization Support
-- i18n Alternative Expressions (select) Support
+  - translations are compiled in: one build per locale, and switching language means loading a different build
+  - runtime translation libraries are the alternative when the language must change without a reload
+  - adding @angular/localize to a project
+- Marking Text for Translation
+  - text in elements and attributes, and strings in TypeScript
+  - meaning, description and custom ids give translators context and keep ids stable
+- Plural and Select ICU Expressions, Including Nesting
 - The I18nPluralPipe and I18nSelectPipe — Plural and Select at Runtime, Without Translation Files
-- i18n in Attributes and the $localize API
-- Extracting and Merging Translation Files
-- Running a Translated Application with the Angular CLI
+- Extracting Translations and Translating the File
+  - the supported file formats
+- Configuring, Building and Serving Each Locale
+  - each locale build sets LOCALE_ID, so the pipes format for that locale
+  - what happens to missing translations
+- Deploying a Translated Application
+  - one output folder per locale, each with its own base href, and switching language by URL
 
 ## Section 19 — RxJS Interoperability
 
-- Observables — A Practical Introduction for Angular Developers
 - Signals vs Observables — When To Use Which
-- The Async Pipe — Passing Observable Data to the View
-- toSignal() — Consuming Observables as Signals
-- toObservable() — Converting Signals Back Into Streams
-- rxResource() — RxJS-Based Async Resources
-- outputFromObservable() and outputToObservable()
-- takeUntilDestroyed() and Subscription Management
-- Event Streams — The Use Cases Where RxJS Still Wins
+  - a signal always has a current value; an observable is a stream of events over time
+  - state belongs in signals; RxJS earns its place for timing, cancellation and combining events
+  - the async pipe still works, but toSignal() replaces it in a signals-first app
+- toSignal() and toObservable() — Bridging Both Worlds
+  - toSignal() subscribes for you and unsubscribes on destroy; initialValue, or requireSync for synchronous sources like a BehaviorSubject
+  - toObservable() emits the latest value after change detection, so synchronous sets in a row are coalesced
+  - round-tripping through toObservable() to use an operator signals lack, like pairwise()
+- rxResource() — Resources Backed by Observables
+  - stream returns an observable, which can emit more than once
+  - a params change unsubscribes from the previous stream
+- Event Streams — Where RxJS Still Wins
+  - debounceTime(), distinctUntilChanged() and switchMap() to cancel stale requests
+  - choosing a flattening operator: switchMap, concatMap, mergeMap and exhaustMap
+- takeUntilDestroyed() and Manual Subscriptions
+  - when a manual subscribe() is still needed, and cleaning it up with takeUntilDestroyed() or DestroyRef
+  - outputFromObservable() and outputToObservable() for streams at the component boundary
 
 ## Section 20 — Conclusion
 

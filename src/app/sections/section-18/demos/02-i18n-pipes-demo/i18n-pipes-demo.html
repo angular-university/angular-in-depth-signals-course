@@ -1,0 +1,18 @@
+<div class="split">
+  <div class="panel plain">
+    <small>i18nPlural</small>
+    <p>{{ count() | i18nPlural: countMapping }}</p>
+  </div>
+  <div class="panel">
+    <small>i18nSelect</small>
+    <p>{{ role() | i18nSelect: roleMapping }}</p>
+  </div>
+</div>
+
+<div class="actions">
+  <button (click)="increment()">Add</button>
+  <select #roleSelect (change)="setRole(roleSelect.value)">
+    <option value="admin">admin</option>
+    <option value="viewer">viewer</option>
+  </select>
+</div>
