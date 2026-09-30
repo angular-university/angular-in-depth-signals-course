@@ -18,7 +18,7 @@ export class SafeNavigationDemo {
       return;
     }
 
-    this.course.set({ title: 'Angular In Depth' });
+    this.course.set({ title: 'Definitive Angular' });
   }
 
   toggleNickname() {

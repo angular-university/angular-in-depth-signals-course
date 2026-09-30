@@ -70,7 +70,7 @@ export const COURSES: Record<number, Course> = {
 
   24: {
     id: 24,
-    title: 'Angular In Depth (Signals Edition)',
+    title: 'Definitive Angular (Signals Edition)',
     description: 'A deep dive into Angular internals — change detection, DI, routing, hydration and performance using Signals',
     iconUrl: 'https://d3vigmphadbn9b.cloudfront.net/course-images/large-images/angular-in-depth-with-signals.jpg',
     category: 'BEGINNER',
