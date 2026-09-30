@@ -1,4 +1,4 @@
-# Angular In Depth (Signals Edition) — Curriculum
+# Definitive Angular (Signals Edition) — Curriculum
 
 Signals-first, zoneless-only, standalone-only. No legacy decorator or NgModule material.
 Out of scope: Router, Forms, Testing, SSR.
@@ -7,10 +7,9 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 
 ## Section 0 — Course Introduction and Setup
 
-- Angular In Depth (Signals Edition) — Helicopter View
+- Definitive Angular (Signals Edition) — Helicopter View
 - A Tour of the Course Repository — How the Demos Are Organised
   - one folder and one page per section, each standalone, so you can start anywhere
-  - shared course card and mock data for familiarity; only the HTTP, HttpClient and Services sections call the backend
 - Installing Node.js and npm
 - Installing the Angular CLI
 - Creating our First Project with ng new
