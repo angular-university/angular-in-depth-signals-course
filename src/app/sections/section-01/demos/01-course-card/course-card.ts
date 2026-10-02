@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, signal} from '@angular/core';
 import { MOCK_COURSES } from '../../../../shared/mock-courses';
 
 @Component({
@@ -8,6 +8,6 @@ import { MOCK_COURSES } from '../../../../shared/mock-courses';
 })
 export class CourseCard {
 
-  course = MOCK_COURSES[1];
+  course = signal(MOCK_COURSES[1]);
 
 }
