@@ -8,8 +8,8 @@ export class FirstSignalDemo {
 
   students = signal(0);
 
-  enrolOne() {
-    this.students.update((current) => current + 1);
+  async enrolOne() {
+    this.students.update(val => val + 1);
   }
 
   reset() {
