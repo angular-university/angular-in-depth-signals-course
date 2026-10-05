@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
 })
 export class InterpolationDemo {
 
-  title = 'Definitive Angular (Signals Edition)';
+   readonly title = 'Definitive Angular (Signals Edition)';
 
 }
