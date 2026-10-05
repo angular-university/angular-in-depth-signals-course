@@ -1,8 +1,6 @@
 <div
-  class="stack"
-  (window:resize)="onResize()"
-  (document:click)="countPageClick()"
->
+  class="stack">
+
   <div class="panel">
     <h4>(click)</h4>
     <button (click)="countClick()">Click me</button>
@@ -33,17 +31,16 @@
 
   <div class="panel">
     <h4>(keyup) and $event</h4>
-    <input placeholder="Press any key" (keyup)="key.set($event.key)" />
-    <p>{{ key() }}</p>
+    <input placeholder="Press any key"/>
+    <p></p>
   </div>
 
   <div class="panel">
     <h4>(keyup.enter)</h4>
     <input
       #enterInput
-     
+
       placeholder="Type, then Enter"
-      (keyup.enter)="submitted.set(enterInput.value)"
     />
     <p>{{ submitted() }}</p>
   </div>
@@ -52,9 +49,8 @@
     <h4>(keyup.shift.enter)</h4>
     <input
       #shiftInput
-     
+
       placeholder="Type, then Shift + Enter"
-      (keyup.shift.enter)="shiftSubmitted.set(shiftInput.value)"
     />
     <p>{{ shiftSubmitted() }}</p>
   </div>
@@ -68,4 +64,5 @@
     <h4>(document:click)</h4>
     <p>Page clicks: {{ pageClicks() }}</p>
   </div>
+
 </div>

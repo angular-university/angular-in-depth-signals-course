@@ -6,11 +6,23 @@ import { Component, signal } from '@angular/core';
 })
 export class EventBindingDemo {
 
+
+
   clicks = signal(0);
 
   countClick() {
     this.clicks.update((current) => current + 1);
   }
+
+
+
+
+
+
+
+
+
+
 
   hovering = signal(false);
 
