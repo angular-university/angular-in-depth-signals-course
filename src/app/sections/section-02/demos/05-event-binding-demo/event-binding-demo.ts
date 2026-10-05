@@ -8,6 +8,10 @@ export class EventBindingDemo {
 
   clicks = signal(0);
 
+  countClick() {
+    this.clicks.update((current) => current + 1);
+  }
+
   hovering = signal(false);
 
   level = signal('Beginner');
@@ -20,18 +24,14 @@ export class EventBindingDemo {
 
   width = signal(window.innerWidth);
 
-  pageClicks = signal(0);
-
-  countClick() {
-    this.clicks.update((current) => current + 1);
+  onResize() {
+    this.width.set(window.innerWidth);
   }
+
+  pageClicks = signal(0);
 
   countPageClick() {
     this.pageClicks.update((current) => current + 1);
-  }
-
-  onResize() {
-    this.width.set(window.innerWidth);
   }
 
 }
