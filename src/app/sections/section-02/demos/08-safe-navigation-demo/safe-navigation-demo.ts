@@ -8,18 +8,18 @@ export class SafeNavigationDemo {
 
   course = signal<{ title: string } | null>(null);
 
-  nickname = signal<string | null>(null);
-
-  lesson = signal<{ title: string } | undefined>({ title: 'Signals Deep Dive' });
-
   toggleCourse() {
     if (this.course()) {
       this.course.set(null);
       return;
     }
-
     this.course.set({ title: 'Definitive Angular' });
   }
+
+
+
+
+  nickname = signal<string | null>(null);
 
   toggleNickname() {
     if (this.nickname()) {
@@ -29,5 +29,8 @@ export class SafeNavigationDemo {
 
     this.nickname.set('Ada');
   }
+
+
+  lesson = signal<{ title: string } | undefined>({ title: 'Signals Deep Dive' });
 
 }
