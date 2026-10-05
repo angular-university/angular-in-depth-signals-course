@@ -31,8 +31,8 @@
 
   <div class="panel">
     <h4>(keyup) and $event</h4>
-    <input placeholder="Press any key"/>
-    <p></p>
+    <input placeholder="Press any key" (keyup)="key.set($event.key)" />
+    <p>{{ key() }}</p>
   </div>
 
   <div class="panel">
@@ -41,6 +41,7 @@
       #enterInput
 
       placeholder="Type, then Enter"
+      (keyup.enter)="submitted.set(enterInput.value)"
     />
     <p>{{ submitted() }}</p>
   </div>
@@ -51,6 +52,7 @@
       #shiftInput
 
       placeholder="Type, then Shift + Enter"
+      (keyup.shift.enter)="shiftSubmitted.set(shiftInput.value)"
     />
     <p>{{ shiftSubmitted() }}</p>
   </div>
