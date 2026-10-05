@@ -1,5 +1,7 @@
 <div
-  class="stack">
+  class="stack"
+  (window:resize)="onResize()"
+  (document:click)="countPageClick()">
 
   <div class="panel">
     <h4>(click)</h4>
