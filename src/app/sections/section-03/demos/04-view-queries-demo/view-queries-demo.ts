@@ -8,23 +8,19 @@ import { Hello } from './hello';
 })
 export class ViewQueriesDemo {
 
-  child = viewChild('hello', {read: Hello});
+  children = viewChildren('child');
+
+  queryChildren() {
+    console.log("Query children result: ", this.children());
+  }
+
+
+
+
+
+  child = viewChild.required('hello', {read: Hello});
 
   query() {
     console.log("Query result: ", this.child());
   }
-
-
-
-
-
-
-  children = viewChildren<ElementRef<HTMLElement>>('child');
-
-  texts = signal('');
-
-  readChildren() {
-    this.texts.set(this.children().map((child) => child.nativeElement.textContent).join(', '));
-  }
-
 }
