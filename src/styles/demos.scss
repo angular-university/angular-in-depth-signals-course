@@ -397,3 +397,8 @@
   outline: 2px solid var(--color-success);
   outline-offset: 3px;
 }
+
+.demo .panel > :has(> .panel) {
+  align-self: stretch;
+  margin-top: 16px;
+}

@@ -1,4 +1,4 @@
-import { Component, model } from '@angular/core';
+import {Component, input, model, signal} from '@angular/core';
 
 @Component({
   selector: 'counter',

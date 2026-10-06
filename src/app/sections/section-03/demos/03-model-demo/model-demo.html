@@ -1,11 +1,9 @@
-<div class="split">
-  <counter [(count)]="count" />
-
-  <div class="panel">
-    <h4>Parent</h4>
-    <p class="counter">{{ count() }}</p>
-    <div class="actions">
-      <button (click)="addTen()">Add 10</button>
-    </div>
+<div class="panel">
+  <h4>Parent</h4>
+  <p class="counter">{{ count() }}</p>
+  <div class="actions">
+    <button (click)="addTen()">Add 10</button>
   </div>
+
+  <counter [(count)]="count" />
 </div>
