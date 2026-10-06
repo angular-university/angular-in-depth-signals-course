@@ -10,6 +10,12 @@ export class ViewQueriesDemo {
 
   box = viewChild.required<ElementRef<HTMLInputElement>>('box');
 
+  focus() {
+    this.box().nativeElement.focus();
+  }
+
+
+
   children = viewChildren<ElementRef<HTMLElement>>('child');
 
   texts = signal('');
@@ -19,10 +25,6 @@ export class ViewQueriesDemo {
   helloElement = viewChild.required('hello', { read: ElementRef });
 
   result = signal('');
-
-  focus() {
-    this.box().nativeElement.focus();
-  }
 
   readChildren() {
     this.texts.set(this.children().map((child) => child.nativeElement.textContent).join(', '));
