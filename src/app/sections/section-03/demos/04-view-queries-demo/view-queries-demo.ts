@@ -10,9 +10,9 @@ export class ViewQueriesDemo {
 
   box = viewChild.required<ElementRef<HTMLInputElement>>('box');
 
-  children = viewChildren('child');
+  children = viewChildren<ElementRef<HTMLElement>>('child');
 
-  ids = signal([1, 2, 3]);
+  texts = signal('');
 
   helloComponent = viewChild.required<Hello>('hello');
 
@@ -24,12 +24,8 @@ export class ViewQueriesDemo {
     this.box().nativeElement.focus();
   }
 
-  add() {
-    this.ids.update((current) => [...current, current.length + 1]);
-  }
-
-  remove() {
-    this.ids.update((current) => current.slice(0, -1));
+  readChildren() {
+    this.texts.set(this.children().map((child) => child.nativeElement.textContent).join(', '));
   }
 
   readComponent() {
