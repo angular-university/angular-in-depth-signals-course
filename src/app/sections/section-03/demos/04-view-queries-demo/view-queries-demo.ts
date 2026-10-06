@@ -14,10 +14,6 @@ export class ViewQueriesDemo {
     console.log("Query children result: ", this.children());
   }
 
-
-
-
-
   child = viewChild.required('hello', {read: Hello});
 
   query() {
