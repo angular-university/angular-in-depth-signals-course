@@ -8,10 +8,10 @@ import { Hello } from './hello';
 })
 export class ViewQueriesDemo {
 
-  child = viewChild('input');
+  child = viewChild('hello', {read: Hello});
 
   query() {
-    console.log(this.child());
+    console.log("Query result: ", this.child());
   }
 
 
