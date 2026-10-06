@@ -1,14 +1,25 @@
 <div class="stack">
   <div class="panel">
     <h4>input()</h4>
-    <greeting [name]="name()" />
+    <greeting [text]="name()" />
     <div class="actions">
       <input #nameInput [value]="name()" />
       <button (click)="applyName(nameInput.value)">Apply</button>
     </div>
   </div>
+</div>
 
-  <div class="panel">
+
+
+
+
+
+
+
+
+<!--
+
+   <div class="panel">
     <h4>booleanAttribute</h4>
     <on-off [on]="on()" />
     <div class="actions">
@@ -37,4 +48,5 @@
       <button (click)="applyText(textInput.value)">Apply</button>
     </div>
   </div>
-</div>
+
+ -->

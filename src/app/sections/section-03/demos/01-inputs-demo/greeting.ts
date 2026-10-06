@@ -6,6 +6,6 @@ import { Component, input } from '@angular/core';
 })
 export class Greeting {
 
-  name = input('');
+  name = input.required({alias: "text"});
 
 }

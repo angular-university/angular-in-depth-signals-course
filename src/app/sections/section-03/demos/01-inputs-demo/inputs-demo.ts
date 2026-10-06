@@ -13,23 +13,32 @@ export class InputsDemo {
 
   name = signal('Angular');
 
-  on = signal('true');
-
-  value = signal('21');
-
-  text = signal('signals');
-
   applyName(name: string) {
     this.name.set(name);
   }
+
+
+
+
+
+
+
+
+
+
+  on = signal('true');
 
   applyOn(on: string) {
     this.on.set(on);
   }
 
+  value = signal('21');
+
   applyValue(value: string) {
     this.value.set(value);
   }
+
+  text = signal('signals');
 
   applyText(text: string) {
     this.text.set(text);
