@@ -1,12 +1,10 @@
-<div class="stack">
-  <div class="panel">
-    <h4>viewChild()</h4>
-    <input #box value="Focus me" />
-    <div class="actions">
-      <button (click)="focus()">Focus</button>
-    </div>
+<div class="panel">
+  <h4>viewChild()</h4>
+  <input #input value="Hello" />
+  <hello #hello />
+  <div class="actions">
+    <button (click)="query()">Query</button>
   </div>
-
 </div>
 
 
@@ -28,16 +26,6 @@
     <p>{{ texts() }}</p>
     <div class="actions">
       <button (click)="readChildren()">Read children</button>
-    </div>
-  </div>
-
-  <div class="panel">
-    <h4>read</h4>
-    <hello #hello />
-    <p>{{ result() }}</p>
-    <div class="actions">
-      <button (click)="readComponent()">Read component</button>
-      <button (click)="readElement()">Read ElementRef</button>
     </div>
   </div>
 

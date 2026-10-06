@@ -8,11 +8,14 @@ import { Hello } from './hello';
 })
 export class ViewQueriesDemo {
 
-  box = viewChild.required<ElementRef<HTMLInputElement>>('box');
+  child = viewChild('input');
 
-  focus() {
-    this.box().nativeElement.focus();
+  query() {
+    console.log(this.child());
   }
+
+
+
 
 
 
@@ -20,22 +23,8 @@ export class ViewQueriesDemo {
 
   texts = signal('');
 
-  helloComponent = viewChild.required<Hello>('hello');
-
-  helloElement = viewChild.required('hello', { read: ElementRef });
-
-  result = signal('');
-
   readChildren() {
     this.texts.set(this.children().map((child) => child.nativeElement.textContent).join(', '));
-  }
-
-  readComponent() {
-    this.result.set(this.helloComponent().name);
-  }
-
-  readElement() {
-    this.result.set(this.helloElement().nativeElement.outerHTML);
   }
 
 }
