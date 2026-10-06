@@ -9,44 +9,44 @@
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-<!--
-
-   <div class="panel">
-    <h4>booleanAttribute</h4>
-    <on-off [on]="on()" />
-    <div class="actions">
-      <select #onSelect>
-        <option value="true">true</option>
-        <option value="false">false</option>
-      </select>
-      <button (click)="applyOn(onSelect.value)">Apply</button>
-    </div>
+<div class="panel">
+  <h4>Boolean transform</h4>
+  <on-off [on]="on()" />
+  <div class="actions">
+    <select #onSelect>
+      <option value="true">on</option>
+      <option value="false">off</option>
+    </select>
+    <button (click)="applyOn(onSelect.value)">Apply</button>
   </div>
+</div>
 
-  <div class="panel">
-    <h4>numberAttribute</h4>
-    <doubler [value]="value()" />
-    <div class="actions">
-      <input #valueInput type="number" [value]="value()" />
-      <button (click)="applyValue(valueInput.value)">Apply</button>
-    </div>
+<div class="panel">
+  <h4>numberAttribute</h4>
+  <doubler [value]="value()" />
+  <div class="actions">
+    <input #valueInput type="number" [value]="value()" />
+    <button (click)="applyValue(valueInput.value)">Apply</button>
   </div>
+</div>
 
-  <div class="panel">
-    <h4>Custom transform</h4>
-    <uppercased [text]="text()" />
-    <div class="actions">
-      <input #textInput [value]="text()" />
-      <button (click)="applyText(textInput.value)">Apply</button>
-    </div>
+<div class="panel">
+  <h4>Custom transform</h4>
+  <uppercased [text]="text()" />
+  <div class="actions">
+    <input #textInput [value]="text()" />
+    <button (click)="applyText(textInput.value)">Apply</button>
   </div>
+</div>
 
- -->
+
+
+
+
+
+
+
+
+
+
+

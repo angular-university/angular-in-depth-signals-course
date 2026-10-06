@@ -11,18 +11,11 @@ import { Uppercased } from './uppercased';
 })
 export class InputsDemo {
 
-  name = signal('Angular');
+  value = signal('21');
 
-  applyName(name: string) {
-    this.name.set(name);
+  applyValue(value: string) {
+    this.value.set(value);
   }
-
-
-
-
-
-
-
 
 
 
@@ -32,11 +25,21 @@ export class InputsDemo {
     this.on.set(on);
   }
 
-  value = signal('21');
 
-  applyValue(value: string) {
-    this.value.set(value);
+
+
+
+
+
+
+
+  name = signal('Angular');
+
+  applyName(name: string) {
+    this.name.set(name);
   }
+
+
 
   text = signal('signals');
 
