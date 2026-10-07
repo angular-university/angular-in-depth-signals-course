@@ -334,11 +334,13 @@
 }
 
 .demo .list > .first {
-  border-left-color: var(--color-accent);
+  border-left: 6px solid var(--color-accent);
+  font-weight: 700;
 }
 
 .demo .list > .last {
-  border-left-color: var(--color-primary-light);
+  border-left: 6px solid var(--color-primary-light);
+  font-weight: 700;
 }
 
 .demo :where(label) {
