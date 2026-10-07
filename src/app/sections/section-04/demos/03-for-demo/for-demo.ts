@@ -6,7 +6,7 @@ import { Component, signal } from '@angular/core';
 })
 export class ForDemo {
 
-  items = signal([
+  items = signal<{id:number, label:string}[]>([
     { id: 1, label: 'Item 1' },
     { id: 2, label: 'Item 2' },
     { id: 3, label: 'Item 3' },
