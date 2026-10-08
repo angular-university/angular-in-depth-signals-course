@@ -5,6 +5,14 @@
     <padded-box />
   </div>
 
+  <div class="panel" [class.light]="light()">
+    <h4>:host-context(.light)</h4>
+    <themed-text />
+    <div class="actions">
+      <button (click)="toggleLight()">Toggle theme</button>
+    </div>
+  </div>
+
 </div>
 
 
@@ -20,13 +28,7 @@
 
 
 
-  <div class="panel" [class.light]="light()">
-    <h4>:host-context(.light)</h4>
-    <themed-text />
-    <div class="actions">
-      <button (click)="toggleLight()">Toggle theme</button>
-    </div>
-  </div>
+
 
   <div class="panel deep">
     <h4>::ng-deep</h4>
