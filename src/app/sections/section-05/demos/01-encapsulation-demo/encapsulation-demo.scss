@@ -1,3 +1,7 @@
+:host {
+  --text-color: #6c1c96;
+}
+
 p {
-  color: var(--color-success);
+  color: var(--text-color);
 }
