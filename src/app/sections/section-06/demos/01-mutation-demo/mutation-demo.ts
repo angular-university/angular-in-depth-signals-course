@@ -8,16 +8,11 @@ import { ItemCount } from './item-count';
 })
 export class MutationDemo {
 
-  pushed = signal<string[]>([]);
+  items = signal<string[]>([]);
 
-  updated = signal<string[]>([]);
-
-  addPushed() {
-    this.pushed().push('item');
-  }
-
-  addUpdated() {
-    this.updated.update((items) => [...items, 'item']);
+  add() {
+    this.items().push('item');
+    // this.items.update((items) => [...items, 'item']);
   }
 
 }
