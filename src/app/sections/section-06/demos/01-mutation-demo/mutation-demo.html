@@ -1,8 +1,21 @@
-<div class="panel">
-  <small>length</small>
-  <item-count [items]="items()" />
-</div>
+<div class="stack">
 
-<div class="actions">
-  <button (click)="add()">Add</button>
+  <div class="panel">
+    <h4>Array</h4>
+    <small>length</small>
+    <item-count [items]="items()" />
+    <div class="actions">
+      <button (click)="add()">Add</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>Object</h4>
+    <small>count</small>
+    <data-count [data]="data()" />
+    <div class="actions">
+      <button (click)="increment()">Increment</button>
+    </div>
+  </div>
+
 </div>

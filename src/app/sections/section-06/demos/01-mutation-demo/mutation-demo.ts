@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { ItemCount } from './item-count';
+import { DataCount } from './data-count';
 
 @Component({
   selector: 'mutation-demo',
-  imports: [ItemCount],
+  imports: [ItemCount, DataCount],
   templateUrl: './mutation-demo.html',
 })
 export class MutationDemo {
@@ -12,7 +13,20 @@ export class MutationDemo {
 
   add() {
     this.items().push('item');
-    // this.items.update((items) => [...items, 'item']);
+  }
+
+
+
+
+
+
+
+
+  data = signal({ count: 0 });
+
+  increment() {
+    this.data().count++;
+    // this.data.update((data) => ({ ...data, count: data.count + 1 }));
   }
 
 }
