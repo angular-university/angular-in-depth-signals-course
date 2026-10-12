@@ -6,16 +6,18 @@ import { Component, computed, signal } from '@angular/core';
 })
 export class ComputedDemo {
 
-  count = signal(0);
+  a = signal(0);
 
-  doubled = computed(() => this.count() * 2);
+  b = signal(0);
 
-  increment() {
-    this.count.update((current) => current + 1);
+  sum = computed(() => this.a() + this.b());
+
+  incrementA() {
+    this.a.update((current) => current + 1);
   }
 
-  reset() {
-    this.count.set(0);
+  incrementB() {
+    this.b.update((current) => current + 1);
   }
 
 }
