@@ -6,16 +6,28 @@ import { Component, linkedSignal, signal } from '@angular/core';
 })
 export class LinkedSignalDemo {
 
-  count = signal(0);
+  title = signal('Hello World');
 
-  doubled = linkedSignal(() => this.count() * 2);
+  slug = linkedSignal(() => slugify(this.title()));
 
-  increment() {
-    this.count.update((current) => current + 1);
+  setTitle(value: string) {
+    this.title.set(value);
   }
 
-  setDoubled(value: number) {
-    this.doubled.set(value);
+  setSlug(value: string) {
+    this.slug.set(value);
   }
 
 }
+
+function slugify(value: string) {
+  return value.toLowerCase().replaceAll(' ', '-');
+}
+
+
+
+
+// slug = linkedSignal({
+//   source: this.title,
+//   computation: (title, previous) => slugify(title),
+// });

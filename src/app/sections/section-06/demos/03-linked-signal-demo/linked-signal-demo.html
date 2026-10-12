@@ -1,17 +1,8 @@
-<div class="split">
-  <div class="panel plain">
-    <small>count</small>
-    <p class="counter">{{ count() }}</p>
-    <div class="actions">
-      <button (click)="increment()">Increment</button>
-    </div>
-  </div>
-  <div class="panel">
-    <small>doubled</small>
-    <p class="counter featured">{{ doubled() }}</p>
-    <div class="actions">
-      <input #doubledInput type="number" value="100" />
-      <button (click)="setDoubled(doubledInput.valueAsNumber)">Set</button>
-    </div>
-  </div>
+<div class="panel">
+  <small>title</small>
+  <input #titleInput [value]="title()"
+         (input)="setTitle(titleInput.value)" />
+  <small>slug</small>
+  <input #slugInput [value]="slug()"
+         (input)="setSlug(slugInput.value)" />
 </div>
