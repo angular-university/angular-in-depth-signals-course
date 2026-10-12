@@ -1,8 +1,8 @@
 <div class="stack">
-
   <div class="panel">
     <h4>Array</h4>
     <small>length</small>
+    <p>Item counter parent: {{ items().length }}</p>
     <item-count [items]="items()" />
     <div class="actions">
       <button (click)="add()">Add</button>
@@ -12,10 +12,20 @@
   <div class="panel">
     <h4>Object</h4>
     <small>count</small>
+    <p>Item counter parent: {{ data().count }}</p>
     <data-count [data]="data()" />
     <div class="actions">
       <button (click)="increment()">Increment</button>
     </div>
   </div>
-
 </div>
+
+
+
+
+
+
+
+
+
+

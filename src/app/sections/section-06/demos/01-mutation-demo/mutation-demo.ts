@@ -12,21 +12,23 @@ export class MutationDemo {
   items = signal<string[]>([]);
 
   add() {
-    this.items().push('item');
+    this.items.update(val => [...val, 'Item']);
   }
-
-
-
-
-
-
 
 
   data = signal({ count: 0 });
 
   increment() {
-    this.data().count++;
-    // this.data.update((data) => ({ ...data, count: data.count + 1 }));
+    this.data.update(val => ({...val, count: val.count + 1}));
   }
 
 }
+
+
+
+
+
+
+
+
+// this.data.update((data) => ({ ...data, count: data.count + 1 }));
