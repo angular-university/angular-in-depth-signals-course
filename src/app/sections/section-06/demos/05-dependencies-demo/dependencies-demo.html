@@ -1,0 +1,28 @@
+<div class="stack">
+  <div class="panel">
+    <h4>A read inside an if</h4>
+    <div class="split">
+      <div class="panel plain">
+        <small>count</small>
+        <p class="counter">{{ count() }}</p>
+      </div>
+      <div class="panel">
+        <small>value</small>
+        <p class="counter featured">{{ value() }}</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button (click)="increment()">Increment</button>
+      <button (click)="toggle()">Toggle</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>A read after an await</h4>
+    <small>count</small>
+    <p class="counter featured">{{ asyncCount() }}</p>
+    <div class="actions">
+      <button (click)="incrementAsync()">Increment</button>
+    </div>
+  </div>
+</div>

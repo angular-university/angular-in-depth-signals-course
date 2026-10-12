@@ -8,13 +8,22 @@ export class EffectDemo {
 
   count = signal(0);
 
+  authToken = signal('');
+
   source = signal(0);
 
   doubled = signal(0);
 
   constructor() {
+
     effect(() => {
       console.log(`count is now ${this.count()}`);
+    });
+
+    this.authToken.set(localStorage.getItem('authToken') ?? '');
+
+    effect(() => {
+      localStorage.setItem('authToken', this.authToken());
     });
 
     effect(() => {
