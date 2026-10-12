@@ -8,7 +8,13 @@ export class LinkedSignalDemo {
 
   title = signal('Hello World');
 
-  slug = linkedSignal(() => slugify(this.title()));
+  slug = linkedSignal({
+    source: () => ({ title: this.title() }),
+    computation: (source, previous) => {
+      console.log('previous', previous);
+      return slugify(source.title);
+    },
+  });
 
   setTitle(value: string) {
     this.title.set(value);
