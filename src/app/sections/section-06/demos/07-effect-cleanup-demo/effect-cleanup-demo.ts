@@ -12,11 +12,10 @@ export class EffectCleanupDemo {
 
   constructor() {
     effect((onCleanup) => {
-      if (!this.running()) {
-        return;
+      if (this.running()) {
+        const id = setInterval(() => this.tick(), 1000);
+        onCleanup(() => clearInterval(id));
       }
-      const id = setInterval(() => this.tick(), 1000);
-      onCleanup(() => clearInterval(id));
     });
   }
 
