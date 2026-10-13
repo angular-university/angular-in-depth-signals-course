@@ -1,4 +1,4 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 
 @Component({
   selector: 'dependencies-demo',
@@ -12,20 +12,14 @@ export class DependenciesDemo {
 
   value = computed(() => {
     console.log('value recomputed');
-    if (!this.enabled()) {
+    const enabled = this.enabled();
+    const count = this.count();
+    if (enabled) {
+      return count;
+    } else {
       return 0;
     }
-    return this.count();
   });
-
-  asyncCount = signal(0);
-
-  constructor() {
-    effect(async () => {
-      await Promise.resolve();
-      console.log(`asyncCount is ${this.asyncCount()}`);
-    });
-  }
 
   increment() {
     this.count.update((current) => current + 1);
@@ -33,10 +27,6 @@ export class DependenciesDemo {
 
   toggle() {
     this.enabled.update((current) => !current);
-  }
-
-  incrementAsync() {
-    this.asyncCount.update((current) => current + 1);
   }
 
 }
