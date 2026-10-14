@@ -11,15 +11,15 @@ export class HttpClientDemo {
 
   http = inject(HttpClient);
 
-  course = signal<Course | undefined>(undefined);
+  course = signal<Course | null>(null);
 
   error = signal('');
 
   async load(id: number) {
     try {
+      this.error.set('');
       const course = await firstValueFrom(this.http.get<Course>(`/api/courses/${id}`));
       this.course.set(course);
-      this.error.set('');
     } catch (error) {
       this.error.set(this.describe(error));
     }
@@ -27,9 +27,9 @@ export class HttpClientDemo {
 
   async save(id: number, title: string) {
     try {
+      this.error.set('');
       const course = await firstValueFrom(this.http.put<Course>(`/api/courses/${id}`, { title }));
       this.course.set(course);
-      this.error.set('');
     } catch (error) {
       this.error.set(this.describe(error));
     }
