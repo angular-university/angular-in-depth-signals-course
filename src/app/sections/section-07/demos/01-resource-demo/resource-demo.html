@@ -4,6 +4,26 @@
     <p class="counter">{{ id() }}</p>
   </div>
   <div class="panel">
+    <p>{{ course.value()?.title ?? 'No title'}}</p>
+  </div>
+</div>
+
+<div class="actions">
+  <button (click)="next()">Next</button>
+  <button (click)="reload()">Reload</button>
+</div>
+
+
+
+
+
+
+
+
+
+<!--
+
+  <div class="panel">
     <small>{{ course.status() }}</small>
     @if (course.isLoading()) {
       <p>Loading...</p>
@@ -13,9 +33,5 @@
       <p>{{ course.value().title }}</p>
     }
   </div>
-</div>
 
-<div class="actions">
-  <button (click)="next()">Next</button>
-  <button (click)="reload()">Reload</button>
-</div>
+-->
