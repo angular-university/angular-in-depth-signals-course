@@ -4,7 +4,16 @@
     <p class="counter">{{ id() }}</p>
   </div>
   <div class="panel">
-    <p>{{ course.value()?.title ?? 'No title'}}</p>
+    <div class="panel">
+      <small>{{ course.status() }}</small>
+      @if (course.isLoading()) {
+        <p>Loading...</p>
+      } @else if (course.error()) {
+        <p>{{ course.error()?.message }}</p>
+      } @else if (course.hasValue()) {
+        <p>{{ course.value().title }}</p>
+      }
+    </div>
   </div>
 </div>
 
@@ -19,19 +28,3 @@
 
 
 
-
-
-<!--
-
-  <div class="panel">
-    <small>{{ course.status() }}</small>
-    @if (course.isLoading()) {
-      <p>Loading...</p>
-    } @else if (course.error()) {
-      <p>{{ course.error()?.message }}</p>
-    } @else if (course.hasValue()) {
-      <p>{{ course.value().title }}</p>
-    }
-  </div>
-
--->
