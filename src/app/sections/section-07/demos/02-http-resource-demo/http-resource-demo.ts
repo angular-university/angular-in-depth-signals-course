@@ -10,7 +10,10 @@ export class HttpResourceDemo {
 
   id = signal(1);
 
-  course = httpResource<Course>(() => `/api/courses/${this.id()}`);
+  course = httpResource<Course>(() => ({
+    url: `/api/courses/${this.id()}`,
+    method: 'GET'
+  }));
 
   next() {
     this.id.update((current) => current + 1);
@@ -21,3 +24,8 @@ export class HttpResourceDemo {
   }
 
 }
+
+
+
+
+
