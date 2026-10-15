@@ -26,20 +26,6 @@ export class HttpClientDemo {
     }
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   async saveCourse(id: number, title: string) {
     try {
       this.error.set('');
