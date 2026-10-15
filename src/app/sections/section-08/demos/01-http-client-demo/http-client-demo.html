@@ -8,10 +8,10 @@
 
 <div class="actions">
   <input #idInput type="number" value="1" />
-  <button (click)="load(idInput.valueAsNumber)">Load</button>
+  <button (click)="loadCourse(idInput.valueAsNumber)">Load</button>
 </div>
 
 <div class="actions">
   <input #titleInput value="New title" />
-  <button (click)="save(idInput.valueAsNumber, titleInput.value)">Save</button>
+  <button (click)="saveCourse(idInput.valueAsNumber, titleInput.value)">Save</button>
 </div>
