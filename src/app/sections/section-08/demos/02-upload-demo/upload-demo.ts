@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { HttpClient, HttpEvent, HttpEventType } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 
@@ -14,9 +14,9 @@ export class UploadDemo {
 
   error = signal('');
 
-  upload = signal<Subscription | undefined>(undefined);
+  uploading = signal(false);
 
-  uploading = computed(() => this.upload() !== undefined);
+  subscription: Subscription | undefined;
 
   start(files: FileList | null) {
     const file = files?.[0];
@@ -27,13 +27,14 @@ export class UploadDemo {
     body.append('file', file);
     this.progress.set(0);
     this.error.set('');
-    const upload = this.http
+    this.uploading.set(true);
+
+    this.subscription = this.http
       .post('/api/uploads', body, { observe: 'events', reportUploadProgress: true })
       .subscribe({
         next: (event) => this.onEvent(event),
         error: () => this.onError(),
       });
-    this.upload.set(upload);
   }
 
   onEvent(event: HttpEvent<unknown>) {
@@ -42,18 +43,18 @@ export class UploadDemo {
       return;
     }
     if (event.type === HttpEventType.Response) {
-      this.upload.set(undefined);
+      this.uploading.set(false);
     }
   }
 
   onError() {
     this.error.set('Upload failed');
-    this.upload.set(undefined);
+    this.uploading.set(false);
   }
 
   cancel() {
-    this.upload()?.unsubscribe();
-    this.upload.set(undefined);
+    this.subscription?.unsubscribe();
+    this.uploading.set(false);
   }
 
 }
