@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { HttpClient, HttpContext, HttpErrorResponse } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
-import { SKIP_AUTH } from './auth-interceptor';
+//import { SKIP_AUTH } from './auth-interceptor';
 
 interface Profile {
   authorization: string;
@@ -17,28 +17,15 @@ export class InterceptorsDemo {
 
   received = signal('');
 
-  request() {
-    return this.send(new HttpContext());
-  }
-
-  requestSkipAuth() {
-    return this.send(new HttpContext().set(SKIP_AUTH, true));
-  }
-
-  async send(context: HttpContext) {
+  async request(skipAuth = false) {
     try {
-      const profile = await firstValueFrom(this.http.get<Profile>('/api/profile', { context }));
+      const profile = await firstValueFrom(
+        this.http.get<Profile>('/api/profile'));
       this.received.set(profile.authorization);
     } catch (error) {
-      this.received.set(this.describe(error));
+      const { status, statusText } = error as HttpErrorResponse;
+      this.received.set(`${status} ${statusText}`);
     }
-  }
-
-  describe(error: unknown): string {
-    if (error instanceof HttpErrorResponse) {
-      return `${error.status} ${error.statusText}`;
-    }
-    return String(error);
   }
 
   logIn() {
