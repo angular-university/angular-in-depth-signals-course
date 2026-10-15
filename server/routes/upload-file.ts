@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { randomUUID } from 'node:crypto';
 
 const CHUNK_DELAY_MS = 30;
 
@@ -13,6 +14,7 @@ export function uploadFile(req: Request, res: Response) {
 
   req.on('end', () => {
     req.log.info(`Received upload of ${size} bytes`);
-    res.status(200).json({ size });
+    const id = randomUUID();
+    res.status(201).json({ id, url: `/api/uploads/${id}`, size });
   });
 }

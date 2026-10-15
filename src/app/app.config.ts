@@ -5,7 +5,7 @@ import {provideCssVarNamespacing} from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideHttpClient(),
+    provideHttpClient(withXhr()),
     //provideCssVarNamespacing("my-prefix")
   ],
 };
