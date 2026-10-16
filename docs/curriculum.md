@@ -176,76 +176,7 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
   - asReadonly() stops set() and update(), it does not stop deep mutation of the value
   - two components injecting the same singleton see the same state
 
-## Section 10 — Security
-
-- Angular Security — Section Introduction
-- How Angular Protects You By Default — Sanitization and the Security Contexts
-  - the SecurityContext enum and the Sanitizer class underneath DomSanitizer
-- Binding HTML with [innerHTML] — What Angular Strips, and Why
-- DomSanitizer and the bypassSecurityTrust* Methods
-  - the narrow cases where bypassing is correct, and how to keep the bypass close to the value
-- Content Security Policy in an Angular Application
-  - CSP_NONCE — the token Angular uses to nonce the styles it injects
-- Trusted Types Support Explained
-- XSRF / CSRF Protection with the HTTP Client
-  - withXsrfConfiguration() and withNoXsrfProtection(), HttpXsrfTokenExtractor, and the cookie/header convention behind them
-- Security Best Practices — A Practical Checklist
-
-## Section 11 — Attribute Directives and Directive Composition
-
-- Introduction to Angular Attribute Directives
-- Host Bindings In Detail — DOM Properties vs Attributes
-- Host Listeners — Handling Events in Directives
-  - the global event targets from event binding, (window:resize) and (document:click), work in host too
-- Directives with Signal Inputs and Outputs
-- The exportAs Syntax — When To Use It and Why
-- Directive Composition with hostDirectives
-  - Angular guarantees no ordering of a lifecycle hook between a component and the directives on its element
-
-## Section 12 — Pipes Deep Dive
-
-- Pipes — Section Introduction
-  - why pipes exist: a template can only call its own component's members, so a pipe is how a reusable function gets into any template through imports
-  - pipes inject what they need, like LOCALE_ID, and pure pipes only re-run when their input changes
-  - chaining pipes, left to right: text | slice:0:7 | uppercase
-- Angular Built-In Pipes — Complete Catalog
-- The Date, Currency, Decimal and Percent Pipes In Detail
-- Locale Data and LOCALE_ID — Making the Pipes Work Outside en-US
-  - only en-US locale data ships by default, and registerLocaleData() is what fixes the runtime error
-  - the getLocale* family — getLocaleDateFormat, getLocaleCurrencyCode, getLocaleDirection
-- The JSON, Slice, KeyValue and Case Pipes
-- Configuring Built-In Pipes Through DI
-  - DATE_PIPE_DEFAULT_OPTIONS, DATE_PIPE_DEFAULT_TIMEZONE and DEFAULT_CURRENCY_CODE
-- Custom Pipes — Step-by-Step Implementation
-- Pure vs Impure Pipes In Detail
-- Formatting Data Outside the Template — formatDate, formatNumber, formatCurrency and formatPercent
-
-## Section 13 — Content Projection and Content Queries
-
-- Content Projection with ng-content In Detail
-- Multi-Slot Projection with the select Attribute
-- Default Fallback Content for ng-content
-- Projecting Content with ngProjectAs
-- contentChild() — Querying Projected Content
-- contentChildren() In Detail
-- How Deep Can We Query? Understanding Query Boundaries
-- Building a Component That Coordinates Its Children
-  - a parent that queries its projected children and drives their state — tabs / accordion style
-
-## Section 14 — Advanced Templates and Structural Directives
-
-- Angular Templates Introduction with ng-template
-  - ng-container — grouping without extra DOM elements
-- Rendering Templates with ngTemplateOutlet and Passing Context Data
-- Templates as Component Inputs — Building a Customizable Component
-  - a default rendering the consumer can override with its own template
-  - never put <ng-content> inside @if, @for or @switch — Angular instantiates the projected content either way; project an ng-template instead
-- TemplateRef and ViewContainerRef Explained
-- Structural Directives — the Star Syntax and a Simple Custom Directive
-  - the built-in control flow replaced *ngIf and *ngFor, so custom structural directives are now rare
-  - role-based rendering with *myAllowRole: unlike a [hidden] attribute directive, denied content is never created
-
-## Section 15 — Dependency Injection Deep Dive
+## Section 10 — Dependency Injection Deep Dive
 
 - Introduction to the Angular Dependency Injection System
 - @Service vs @Injectable and Tree-Shakeable Providers
@@ -263,8 +194,6 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
   - a store provided by a master-detail shell: the list and the detail share one instance, and it is destroyed with the shell
   - @Service({ autoProvided: false }) so the store can only exist where a component provides it
   - with the router, the same scoping comes from providers on a parent route
-- providers vs viewProviders — What Projected Content Can and Cannot See
-  - projected content can inject from the receiving component's providers, but not from its viewProviders, which only its own template sees
 - The optional, self, skipSelf and host Injection Options
 - inject() and Injection Contexts — Where inject() Is Legal and Why
   - field initializers, constructors and provider factories; NG0203 everywhere else, including ngOnInit and anything after an await
@@ -272,7 +201,25 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Debugging Dependency Injection — Error Codes and the DevTools Injector Tree
   - reading a NullInjectorError dependency path, plus NG0200, NG0203, NG0204, NG0205 and NG0207
 
-## Section 16 — Deferred Loading and Error Boundaries
+## Section 11 — Pipes Deep Dive
+
+- Pipes — Section Introduction
+  - why pipes exist: a template can only call its own component's members, so a pipe is how a reusable function gets into any template through imports
+  - pipes inject what they need, like LOCALE_ID, and pure pipes only re-run when their input changes
+  - chaining pipes, left to right: text | slice:0:7 | uppercase
+- Angular Built-In Pipes — Complete Catalog
+- The Date, Currency, Decimal and Percent Pipes In Detail
+- Locale Data and LOCALE_ID — Making the Pipes Work Outside en-US
+  - only en-US locale data ships by default, and registerLocaleData() is what fixes the runtime error
+  - the getLocale* family — getLocaleDateFormat, getLocaleCurrencyCode, getLocaleDirection
+- The JSON, Slice, KeyValue and Case Pipes
+- Configuring Built-In Pipes Through DI
+  - DATE_PIPE_DEFAULT_OPTIONS, DATE_PIPE_DEFAULT_TIMEZONE and DEFAULT_CURRENCY_CODE
+- Custom Pipes — Step-by-Step Implementation
+- Pure vs Impure Pipes In Detail
+- Formatting Data Outside the Template — formatDate, formatNumber, formatCurrency and formatPercent
+
+## Section 12 — Deferred Loading and Error Boundaries
 
 - @defer — Section Introduction
 - How Does @defer Work Under the Hood?
@@ -288,7 +235,43 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
   - what it catches — synchronous exceptions during rendering, not async failures like a raw subscribe(); an errored resource.value() read in a template does throw during render
   - developer preview as of v22.2
 
-## Section 17 — Lifecycle and Render Hooks
+## Section 13 — Content Projection and Content Queries
+
+- Content Projection with ng-content In Detail
+- Multi-Slot Projection with the select Attribute
+- Default Fallback Content for ng-content
+- Projecting Content with ngProjectAs
+- contentChild() — Querying Projected Content
+- contentChildren() In Detail
+- How Deep Can We Query? Understanding Query Boundaries
+- Building a Component That Coordinates Its Children
+  - a parent that queries its projected children and drives their state — tabs / accordion style
+
+## Section 14 — Attribute Directives and Directive Composition
+
+- Introduction to Angular Attribute Directives
+- Host Bindings In Detail — DOM Properties vs Attributes
+- Host Listeners — Handling Events in Directives
+  - the global event targets from event binding, (window:resize) and (document:click), work in host too
+- Directives with Signal Inputs and Outputs
+- The exportAs Syntax — When To Use It and Why
+- Directive Composition with hostDirectives
+  - Angular guarantees no ordering of a lifecycle hook between a component and the directives on its element
+
+## Section 15 — Advanced Templates and Structural Directives
+
+- Angular Templates Introduction with ng-template
+  - ng-container — grouping without extra DOM elements
+- Rendering Templates with ngTemplateOutlet and Passing Context Data
+- Templates as Component Inputs — Building a Customizable Component
+  - a default rendering the consumer can override with its own template
+  - never put <ng-content> inside @if, @for or @switch — Angular instantiates the projected content either way; project an ng-template instead
+- TemplateRef and ViewContainerRef Explained
+- Structural Directives — the Star Syntax and a Simple Custom Directive
+  - the built-in control flow replaced *ngIf and *ngFor, so custom structural directives are now rare
+  - role-based rendering with *myAllowRole: unlike a [hidden] attribute directive, denied content is never created
+
+## Section 16 — Lifecycle and Render Hooks
 
 - Component Lifecycle in a Signals Application — Complete Overview
   - the hooks that survive but rarely earn their keep — ngAfterViewInit, ngAfterContentInit, ngDoCheck and the *Checked variants
@@ -305,6 +288,21 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - Interacting with Third-Party DOM Libraries the Right Way
   - nativeElement inside afterNextRender() is the right tool in a browser-only app
   - Renderer2 — createElement, setAttribute, addClass, setStyle and listen() — only when the code must also run outside the browser, like SSR
+
+## Section 17 — Security
+
+- Angular Security — Section Introduction
+- How Angular Protects You By Default — Sanitization and the Security Contexts
+  - the SecurityContext enum and the Sanitizer class underneath DomSanitizer
+- Binding HTML with [innerHTML] — What Angular Strips, and Why
+- DomSanitizer and the bypassSecurityTrust* Methods
+  - the narrow cases where bypassing is correct, and how to keep the bypass close to the value
+- Content Security Policy in an Angular Application
+  - CSP_NONCE — the token Angular uses to nonce the styles it injects
+- Trusted Types Support Explained
+- XSRF / CSRF Protection with the HTTP Client
+  - withXsrfConfiguration() and withNoXsrfProtection(), HttpXsrfTokenExtractor, and the cookie/header convention behind them
+- Security Best Practices — A Practical Checklist
 
 ## Section 18 — Internationalization (i18n)
 

@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { FormattingPipesDemo } from './demos/01-formatting-pipes-demo/formatting-pipes-demo';
-import { PipeConfigDemo } from './demos/02-pipe-config-demo/pipe-config-demo';
-import { UtilityPipesDemo } from './demos/03-utility-pipes-demo/utility-pipes-demo';
-import { CustomPipeDemo } from './demos/04-custom-pipe-demo/custom-pipe-demo';
-import { FormatFunctionsDemo } from './demos/05-format-functions-demo/format-functions-demo';
+import { DeferBlocksDemo } from './demos/01-defer-blocks-demo/defer-blocks-demo';
+import { TriggersDemo } from './demos/02-triggers-demo/triggers-demo';
+import { BoundaryDemo } from './demos/03-boundary-demo/boundary-demo';
 
 @Component({
   selector: 'section-12',
-  imports: [FormattingPipesDemo, PipeConfigDemo, UtilityPipesDemo, CustomPipeDemo, FormatFunctionsDemo],
+  imports: [DeferBlocksDemo, TriggersDemo, BoundaryDemo],
   templateUrl: './section-12.html',
 })
 export class Section12 {

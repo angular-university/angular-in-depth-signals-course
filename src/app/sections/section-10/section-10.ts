@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { InnerHtmlDemo } from './demos/01-inner-html-demo/inner-html-demo';
-import { XsrfDemo } from './demos/02-xsrf-demo/xsrf-demo';
+import { ProvidersDemo } from './demos/01-providers-demo/providers-demo';
+import { ScopedServiceDemo } from './demos/02-scoped-service-demo/scoped-service-demo';
+import { InjectionContextDemo } from './demos/03-injection-context-demo/injection-context-demo';
 
 @Component({
   selector: 'section-10',
-  imports: [InnerHtmlDemo, XsrfDemo],
+  imports: [ProvidersDemo, ScopedServiceDemo, InjectionContextDemo],
   templateUrl: './section-10.html',
 })
 export class Section10 {
