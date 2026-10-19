@@ -9,4 +9,8 @@ export class LessonDetail {
 
   store = inject(LessonsStore);
 
+  constructor() {
+    console.log('detail store id', this.store.id);
+  }
+
 }

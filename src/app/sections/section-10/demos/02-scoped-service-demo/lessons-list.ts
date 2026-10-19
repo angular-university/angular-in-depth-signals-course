@@ -9,6 +9,10 @@ export class LessonsList {
 
   store = inject(LessonsStore);
 
+  constructor() {
+    console.log('list store id', this.store.id);
+  }
+
   select(lesson: string) {
     this.store.select(lesson);
   }

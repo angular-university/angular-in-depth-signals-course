@@ -1,5 +1,6 @@
-import { signal } from '@angular/core';
+import {Injectable, signal} from '@angular/core';
 
+@Injectable()
 export class LessonsStore {
 
   lessons = ['Signals', 'Resources', 'Services'];
@@ -8,7 +9,9 @@ export class LessonsStore {
 
   selected = this.#selected.asReadonly();
 
-  constructor(readonly id = 'default') {}
+  private static count = 0;
+
+  id = ++LessonsStore.count;
 
   select(lesson: string) {
     this.#selected.set(lesson);
