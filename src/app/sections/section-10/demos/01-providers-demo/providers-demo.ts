@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { GREETING, MESSAGE,  } from './tokens';
+import { GREETING, MESSAGE, PLUGINS } from './tokens';
 import { Formatter, UppercaseFormatter } from './formatter';
 
 @Component({
@@ -15,5 +15,7 @@ export class ProvidersDemo {
   sameInstance = inject(UppercaseFormatter) === this.formatter;
 
   message = inject(MESSAGE);
+
+  plugins = inject(PLUGINS);
 
 }
