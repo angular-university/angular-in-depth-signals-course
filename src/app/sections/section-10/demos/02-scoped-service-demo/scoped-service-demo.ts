@@ -13,8 +13,10 @@ import { LessonDetail } from './lesson-detail';
 })
 export class ScopedServiceDemo {
 
+  lessonsStore = inject(LessonsStore);
+
   constructor() {
-    console.log('parent store id', inject(LessonsStore).id);
+    console.log('parent store id', this.lessonsStore.id);
   }
 
 }
