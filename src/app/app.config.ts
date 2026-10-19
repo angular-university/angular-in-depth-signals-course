@@ -4,6 +4,7 @@ import { authInterceptor } from './sections/section-08/demos/03-interceptors-dem
 import {provideCssVarNamespacing} from '@angular/platform-browser';
 import {GREETING, MESSAGE, PLUGINS} from './sections/section-10/demos/01-providers-demo/tokens';
 import {Formatter, UppercaseFormatter} from './sections/section-10/demos/01-providers-demo/formatter';
+import {LessonsStore} from './sections/section-10/demos/02-scoped-service-demo/lessons-store';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,6 +16,7 @@ export const appConfig: ApplicationConfig = {
     { provide: MESSAGE, useFactory: () => `${inject(GREETING)} from a factory` },
     { provide: PLUGINS, useValue: 'first', multi: true },
     { provide: PLUGINS, useValue: 'second', multi:  true},
+    LessonsStore,
     //provideCssVarNamespacing("my-prefix")
   ],
 };

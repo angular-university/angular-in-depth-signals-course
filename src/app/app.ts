@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LessonsStore } from './sections/section-10/demos/02-scoped-service-demo/lessons-store';
 import { Toolbar } from './toolbar/toolbar';
 import { Section01 } from './sections/section-01/section-01';
 import { Section02 } from './sections/section-02/section-02';
@@ -27,5 +28,9 @@ import { Section19 } from './sections/section-19/section-19';
   styleUrl: './app.scss',
 })
 export class App {
+
+  constructor() {
+    console.log('root store id', inject(LessonsStore).id);
+  }
 
 }
