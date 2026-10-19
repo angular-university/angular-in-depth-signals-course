@@ -1,4 +1,5 @@
-import { Component, Injector, LOCALE_ID, inject, runInInjectionContext, signal } from '@angular/core';
+import { Component, Injector, inject, runInInjectionContext, signal } from '@angular/core';
+import { GREETING } from '../01-providers-demo/tokens';
 
 @Component({
   selector: 'injection-context-demo',
@@ -8,25 +9,29 @@ export class InjectionContextDemo {
 
   injector = inject(Injector);
 
-  result = signal('');
+  message = inject(GREETING);
 
-  injectInHandler() {
+  greeting = signal('');
+
+  constructor() {
+    this.greeting.set(this.message);
+  }
+
+  injectWithoutContext() {
     try {
-      this.result.set(inject(LOCALE_ID));
+      const greeting = inject(GREETING);
+      this.greeting.set(`Without context: ${greeting}`);
     } catch (error) {
-      this.result.set(this.firstSentence(error));
+      console.error(error);
+      this.greeting.set('Error: not in an injection context');
     }
   }
 
-  injectInContext() {
-    this.result.set(runInInjectionContext(this.injector, () => inject(LOCALE_ID)));
-  }
-
-  firstSentence(error: unknown): string {
-    if (error instanceof Error) {
-      return error.message.split('.')[0];
-    }
-    return String(error);
+  injectWithContext() {
+    runInInjectionContext(this.injector, () => {
+      const greeting = inject(GREETING);
+      this.greeting.set(`With context: ${greeting}`);
+    });
   }
 
 }
