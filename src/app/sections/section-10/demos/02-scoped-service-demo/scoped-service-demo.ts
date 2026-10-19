@@ -6,7 +6,7 @@ import { LessonDetail } from './lesson-detail';
 @Component({
   selector: 'scoped-service-demo',
   imports: [LessonsList, LessonDetail],
-  providers: [LessonsStore],
+  providers: [{ provide: LessonsStore, useFactory: () => new LessonsStore('parent') }],
   templateUrl: './scoped-service-demo.html',
 })
 export class ScopedServiceDemo {
