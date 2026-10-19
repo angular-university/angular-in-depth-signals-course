@@ -1,18 +1,13 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
-export class Formatter {
-
-  format(text: string) {
-    return text;
-  }
-
+export abstract class Formatter {
+  abstract format(text: string): string;
 }
 
 @Injectable()
 export class UppercaseFormatter extends Formatter {
 
-  override format(text: string) {
+  format(text: string) {
     return text.toUpperCase();
   }
 
