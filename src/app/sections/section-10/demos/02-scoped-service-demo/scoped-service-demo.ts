@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { LessonBrowser } from './lesson-browser';
+import { LessonsStore } from './lessons-store';
+import { LessonsList } from './lessons-list';
+import { LessonDetail } from './lesson-detail';
 
 @Component({
   selector: 'scoped-service-demo',
-  imports: [LessonBrowser],
+  imports: [LessonsList, LessonDetail],
+  providers: [LessonsStore],
   templateUrl: './scoped-service-demo.html',
 })
 export class ScopedServiceDemo {

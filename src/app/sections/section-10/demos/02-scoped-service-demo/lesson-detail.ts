@@ -9,8 +9,4 @@ export class LessonDetail {
 
   store = inject(LessonsStore);
 
-  back() {
-    this.store.back();
-  }
-
 }

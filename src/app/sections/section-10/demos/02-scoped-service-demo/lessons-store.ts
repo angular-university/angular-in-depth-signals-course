@@ -1,25 +1,16 @@
-import { Service, signal } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
-@Service({ autoProvided: false })
+@Injectable()
 export class LessonsStore {
 
   lessons = ['Signals', 'Resources', 'Services'];
 
-  #selected = signal<string | undefined>(undefined);
+  #selected = signal(this.lessons[0]);
 
   selected = this.#selected.asReadonly();
 
-  #lastSelected = signal<string | undefined>(undefined);
-
-  lastSelected = this.#lastSelected.asReadonly();
-
   select(lesson: string) {
     this.#selected.set(lesson);
-    this.#lastSelected.set(lesson);
-  }
-
-  back() {
-    this.#selected.set(undefined);
   }
 
 }

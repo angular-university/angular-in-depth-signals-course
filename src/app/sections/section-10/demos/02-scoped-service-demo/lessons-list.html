@@ -1,5 +1,8 @@
-<div class="actions">
-  @for (lesson of store.lessons; track lesson) {
-    <button [attr.aria-selected]="lesson === store.lastSelected()" (click)="select(lesson)">{{ lesson }}</button>
-  }
+<div class="panel">
+  <small>list</small>
+  <div class="actions">
+    @for (lesson of store.lessons; track lesson) {
+      <button [attr.aria-selected]="lesson === store.selected()" (click)="select(lesson)">{{ lesson }}</button>
+    }
+  </div>
 </div>
