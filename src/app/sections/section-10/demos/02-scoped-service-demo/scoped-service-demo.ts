@@ -13,7 +13,7 @@ import { LessonDetail } from './lesson-detail';
 })
 export class ScopedServiceDemo {
 
-  lessonsStore = inject(LessonsStore);
+  lessonsStore = inject(LessonsStore, {skipSelf:true});
 
   constructor() {
     console.log('parent store id', this.lessonsStore.id);

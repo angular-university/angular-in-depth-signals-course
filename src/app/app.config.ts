@@ -16,7 +16,7 @@ export const appConfig: ApplicationConfig = {
     { provide: MESSAGE, useFactory: () => `${inject(GREETING)} from a factory` },
     { provide: PLUGINS, useValue: 'first', multi: true },
     { provide: PLUGINS, useValue: 'second', multi:  true},
-    //LessonsStore,
+    LessonsStore,
     //provideCssVarNamespacing("my-prefix")
   ],
 };
