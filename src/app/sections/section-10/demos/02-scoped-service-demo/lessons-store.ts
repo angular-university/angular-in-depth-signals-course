@@ -1,6 +1,8 @@
-import {Injectable, signal} from '@angular/core';
+import {Injectable, Service, signal} from '@angular/core';
 
-@Injectable()
+@Service({
+  autoProvided: false
+})
 export class LessonsStore {
 
   lessons = ['Signals', 'Resources', 'Services'];

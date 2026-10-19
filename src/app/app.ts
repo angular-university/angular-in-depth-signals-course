@@ -30,7 +30,7 @@ import { Section19 } from './sections/section-19/section-19';
 export class App {
 
   constructor() {
-    console.log('root store id', inject(LessonsStore).id);
+    //console.log('root store id', inject(LessonsStore).id);
   }
 
 }
