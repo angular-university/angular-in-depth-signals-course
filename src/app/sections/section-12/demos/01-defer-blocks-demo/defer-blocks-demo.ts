@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { DeferredPanel } from './deferred-panel';
 
 @Component({
@@ -7,11 +7,5 @@ import { DeferredPanel } from './deferred-panel';
   templateUrl: './defer-blocks-demo.html',
 })
 export class DeferBlocksDemo {
-
-  shown = signal(false);
-
-  show() {
-    this.shown.set(true);
-  }
 
 }
