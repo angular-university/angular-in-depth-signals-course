@@ -12,7 +12,7 @@ registerLocaleData(localeFr);
 })
 export class FrenchFormat {
 
-  date = new Date(2026, 8, 29, 14, 30);
+  date = new Date(2000, 0, 1, 14, 30);
 
   amount = 1234.5;
 

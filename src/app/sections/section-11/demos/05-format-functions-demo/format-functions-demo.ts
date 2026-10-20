@@ -9,7 +9,7 @@ export class FormatFunctionsDemo {
 
   locale = inject(LOCALE_ID);
 
-  date = new Date(2026, 8, 29, 14, 30);
+  date = new Date(2000, 0, 1, 14, 30);
 
   ratio = 0.256;
 
