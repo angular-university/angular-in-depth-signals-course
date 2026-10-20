@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { TruncatePipe } from './truncate-pipe';
 
 @Component({
@@ -8,10 +8,6 @@ import { TruncatePipe } from './truncate-pipe';
 })
 export class CustomPipeDemo {
 
-  text = signal('Custom pipes transform values');
-
-  setText(text: string) {
-    this.text.set(text);
-  }
+  text = 'Custom pipes transform values';
 
 }
