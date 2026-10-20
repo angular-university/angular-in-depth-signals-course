@@ -1,4 +1,4 @@
-import { Component, LOCALE_ID, computed, inject, signal } from '@angular/core';
+import { Component, LOCALE_ID, inject } from '@angular/core';
 import { formatCurrency, formatDate, formatNumber, formatPercent } from '@angular/common';
 
 @Component({
@@ -13,18 +13,14 @@ export class FormatFunctionsDemo {
 
   ratio = 0.256;
 
-  amount = signal(1234.5);
+  amount = 1234.5;
 
   formattedDate = formatDate(this.date, 'mediumDate', this.locale);
 
-  formattedNumber = computed(() => formatNumber(this.amount(), this.locale, '1.0-0'));
+  formattedNumber = formatNumber(this.amount, this.locale, '1.0-0');
 
-  formattedCurrency = computed(() => formatCurrency(this.amount(), this.locale, '$', 'USD'));
+  formattedCurrency = formatCurrency(this.amount, this.locale, '$', 'USD');
 
   formattedPercent = formatPercent(this.ratio, this.locale);
-
-  setAmount(amount: number) {
-    this.amount.set(amount);
-  }
 
 }

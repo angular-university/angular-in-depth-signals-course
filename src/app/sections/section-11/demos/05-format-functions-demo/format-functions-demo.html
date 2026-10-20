@@ -3,15 +3,11 @@
   <span>{{ formattedDate }}</span>
 
   <code>formatNumber(amount)</code>
-  <span>{{ formattedNumber() }}</span>
+  <span>{{ formattedNumber }}</span>
 
   <code>formatCurrency(amount)</code>
-  <span>{{ formattedCurrency() }}</span>
+  <span>{{ formattedCurrency }}</span>
 
   <code>formatPercent(ratio)</code>
   <span>{{ formattedPercent }}</span>
-</div>
-
-<div class="actions">
-  <input #amountInput type="number" [value]="amount()" (input)="setAmount(amountInput.valueAsNumber)" />
 </div>
