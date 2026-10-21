@@ -1,9 +1,14 @@
 <div class="panel">
-  @defer (when shown()) {
-    <deferred-panel />
+  @defer (when shown(); prefetch when loaded()) {
+    <when-panel />
   } @placeholder {
     <p>Placeholder</p>
   }
+</div>
+
+<div class="actions">
+  <button (click)="load()">Load</button>
+  <button (click)="unload()">Unload</button>
 </div>
 
 <div class="actions">

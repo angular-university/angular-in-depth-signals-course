@@ -1,14 +1,24 @@
 import { Component, signal } from '@angular/core';
-import { DeferredPanel } from '../01-defer-blocks-demo/deferred-panel';
+import { WhenPanel } from './when-panel';
 
 @Component({
   selector: 'when-prefetch-demo',
-  imports: [DeferredPanel],
+  imports: [WhenPanel],
   templateUrl: './when-prefetch-demo.html',
 })
 export class WhenPrefetchDemo {
 
+  loaded = signal(false);
+
   shown = signal(false);
+
+  load() {
+    this.loaded.set(true);
+  }
+
+  unload() {
+    this.loaded.set(false);
+  }
 
   show() {
     this.shown.set(true);
