@@ -13,19 +13,61 @@
   }
 </div>
 
-
-
-
-
-
-
-
-
-
 <!--
+  TRIGGERS: try each example below by swapping it into the @defer line above.
+  A trigger fires only once, so reload the page before trying the next one.
+  Keep the DevTools Network tab open to see when the deferred chunk downloads.
+
+  1. No trigger (same as on idle)
+     @defer {
+     The content loads as soon as the browser is idle after the page renders.
+
+  2. on idle
+     @defer (on idle) {
+     Same as no trigger: idle is the default.
+
+  3. on immediate
+     @defer (on immediate) {
+     The content loads right after the page renders, without waiting for idle.
+
+  4. on timer
+     @defer (on timer(3s)) {
+     The placeholder stays for 3 seconds, then the chunk loads.
+
+  5. on viewport
+     @defer (on viewport) {
+     The chunk loads when the placeholder scrolls into view. Start with the page
+     scrolled to the top so the placeholder is off screen. The placeholder must
+     have a single root element.
+
+  6. on hover
+     @defer (on hover) {
+     Nothing loads until the mouse moves over the placeholder.
+
+  7. on interaction
+     @defer (on interaction) {
+     Nothing loads until you click the placeholder or press a key on it.
+
+  8. Trigger on another element (template reference)
+     <button #load>Load</button>
+     @defer (on interaction(load)) {
+     Clicking the button outside the block loads it. This also works with
+     viewport(ref) and hover(ref), and with an <input #field /> using
+     interaction(field): clicking into it or typing a key loads the block.
 
   9. Several triggers (whichever fires first wins)
      @defer (on hover; on timer(5s)) {
-     Show: hover loads it early, otherwise it loads after 5 seconds.
+     Hover loads it early, otherwise it loads after 5 seconds.
 
+  10. Prefetch trigger plus render trigger
+      @defer (on timer(8s); prefetch on timer(3s)) {
+      A plain trigger decides when the content is shown; a prefetch trigger only
+      downloads the chunk. At 3 seconds the chunk appears in the Network tab but
+      the placeholder stays. At 8 seconds the content renders with no new
+      request. Both timers start together when the block is created, so
+      "download at 3s, show 5s later" is timer(8s), not timer(5s).
+
+  11. @error
+      The @error block shows only if the chunk fails to download. Reload, then
+      switch the Network tab to Offline before the trigger fires.
 -->
