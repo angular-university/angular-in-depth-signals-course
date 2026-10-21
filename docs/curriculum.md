@@ -226,6 +226,14 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
   - the deferred dependencies go into a separate lazy chunk, which is why they must be standalone and not referenced elsewhere
 - The @placeholder, @loading and @error Blocks — with the after and minimum Parameters
 - Triggers — idle, immediate, timer, viewport, interaction and hover
+  - demoed by swapping the trigger in the @defer blocks demo, one at a time, reloading between each since a trigger fires only once; keep the Network tab open to show the chunk load
+  - no trigger is the same as on idle — idle is the default
+  - on immediate loads right after render, without waiting for idle
+  - on timer(3s) keeps the placeholder for the delay, then loads
+  - on viewport loads when the placeholder scrolls into view; start with it off screen, and the placeholder needs a single root element
+  - on hover and on interaction load only on mouseover or click of the placeholder
+  - a template reference moves the trigger to another element: on interaction(load) with a #load button; also works with viewport(ref) and hover(ref)
+  - several triggers combine with ; and whichever fires first wins, e.g. on hover; on timer(5s)
 - Prefetching and Custom Triggers with when
 - @defer Best Practices and Bundle Size Analysis
 - Error Boundaries with @boundary and @error
