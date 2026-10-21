@@ -1,0 +1,23 @@
+<div class="stack">
+  <div class="panel">
+    <h4>when shown()</h4>
+    @defer (when shown()) {
+      <deferred-panel />
+    } @placeholder {
+      <p>Placeholder</p>
+    }
+    <div class="actions">
+      <button (click)="show()">Show</button>
+      <button (click)="hide()">Hide</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>on interaction; prefetch on idle</h4>
+    @defer (on interaction; prefetch on idle) {
+      <deferred-panel />
+    } @placeholder {
+      <button>Load</button>
+    }
+  </div>
+</div>
