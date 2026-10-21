@@ -1,5 +1,8 @@
 <div class="panel">
-  @defer (on timer(10s); prefetch on timer(5s)) {
+
+  <button #load>Load</button>
+
+  @defer (on timer(5s); on hover(load) ; prefetch on timer(2s)) {
     <deferred-panel />
   } @placeholder {
     <p>Placeholder</p>
@@ -21,42 +24,8 @@
 
 <!--
 
-
-  3. on immediate
-     @defer (on immediate) {
-     Show: the content loads right after the page renders, without waiting for idle.
-
-  4. on timer
-     @defer (on timer(3s)) {
-     Show: the placeholder stays for 3 seconds, then the chunk loads.
-
-  5. on viewport
-     @defer (on viewport) {
-     Show: start scrolled away so the placeholder is off screen. Scroll it into
-     view and the chunk loads. The placeholder must have a single root element.
-
-  6. on hover
-     @defer (on hover) {
-     Show: nothing loads until the mouse moves over the placeholder.
-
-  7. on interaction
-     @defer (on interaction) {
-     Show: nothing loads until you click the placeholder.
-
-  8. Trigger on another element (template reference)
-     <button #load>Load</button>
-     @defer (on interaction(load)) {
-     Show: clicking the button outside the block loads it. This also works with
-     viewport(ref) and hover(ref).
-
   9. Several triggers (whichever fires first wins)
      @defer (on hover; on timer(5s)) {
      Show: hover loads it early, otherwise it loads after 5 seconds.
 
-  10. Prefetch trigger plus render trigger
-      @defer (on timer(8s); prefetch on timer(3s)) {
-      Show: at 3 seconds the chunk appears in the Network tab but the placeholder
-      stays. At 8 seconds the content renders with no new request. Both timers
-      start together when the block is created, not one after the other, so
-      "download at 3s, show 5s later" is timer(8s), not timer(5s).
 -->
