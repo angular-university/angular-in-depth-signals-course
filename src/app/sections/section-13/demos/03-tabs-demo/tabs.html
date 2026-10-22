@@ -1,6 +1,8 @@
 <div class="actions">
   @for (tab of tabs(); track tab) {
-    <button role="tab" [attr.aria-selected]="tab.active()" (click)="select(tab)">{{ tab.label() }}</button>
+    <button [class.active]="tab.active()" (click)="select(tab)">
+      {{ tab.label() }}
+    </button>
   }
 </div>
 
