@@ -3,9 +3,6 @@ import { Tabs } from './tabs';
 
 @Component({
   selector: 'tab',
-  host: {
-    '[hidden]': '!active()',
-  },
   templateUrl: './tab.html',
 })
 export class Tab {
