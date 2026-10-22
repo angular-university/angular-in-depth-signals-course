@@ -7,9 +7,9 @@ import { Tabs } from './tabs';
 })
 export class Tab {
 
-  tabs = inject(Tabs);
-
   label = input('');
+
+  tabs = inject(Tabs);
 
   active = computed(() => this.tabs.selected() === this);
 
