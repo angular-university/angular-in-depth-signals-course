@@ -1,10 +1,8 @@
 <item-list>
+  <list-title #title text="List" />
   @for (label of labels(); track label) {
     <list-item [label]="label" />
   }
-  <div>
-    <list-item label="Nested" />
-  </div>
 </item-list>
 
 <div class="actions">

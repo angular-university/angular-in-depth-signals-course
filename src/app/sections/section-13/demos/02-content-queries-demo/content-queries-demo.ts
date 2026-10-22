@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { ItemList } from './item-list';
 import { ListItem } from './list-item';
+import { ListTitle } from './list-title';
 
 @Component({
   selector: 'content-queries-demo',
-  imports: [ItemList, ListItem],
+  imports: [ItemList, ListItem, ListTitle],
   templateUrl: './content-queries-demo.html',
 })
 export class ContentQueriesDemo {

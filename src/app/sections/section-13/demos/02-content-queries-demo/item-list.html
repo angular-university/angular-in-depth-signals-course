@@ -1,15 +1,11 @@
 <div class="split">
   <div class="panel plain">
     <small>contentChild()</small>
-    <p>{{ first()?.label() }}</p>
+    <ng-content select="list-title" />
   </div>
   <div class="panel">
     <small>contentChildren()</small>
     <p class="counter featured">{{ items().length }}</p>
-  </div>
-  <div class="panel">
-    <small>descendants: true</small>
-    <p class="counter featured">{{ allItems().length }}</p>
   </div>
   <div class="panel plain">
     <small>projected</small>
