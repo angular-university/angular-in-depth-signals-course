@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CollapsibleText } from './collapsible-text';
+import {Collapsible} from '../01-collapsible-demo/collapsible';
 
 @Component({
   selector: 'host-directives-demo',
