@@ -6,7 +6,7 @@ import { Collapsible } from '../01-collapsible-demo/collapsible';
   hostDirectives: [
     {
       directive: Collapsible,
-      inputs: ['expanded', 'collapsedClass'],
+      inputs: ['expanded'],
       outputs: ['opened', 'closed'],
     },
   ],

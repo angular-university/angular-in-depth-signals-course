@@ -390,11 +390,6 @@
   line-height: 1.4;
 }
 
-.demo :where(.clamped) {
-  max-height: 1.4em;
-  overflow: hidden;
-}
-
 .demo :where(button.active) {
   outline: 2px solid var(--color-success);
   outline-offset: 3px;
