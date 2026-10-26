@@ -6,15 +6,15 @@ import { RoleService } from './role-service';
 })
 export class AllowRole {
 
-  template = inject(TemplateRef);
-
-  container = inject(ViewContainerRef);
-
   roleService = inject(RoleService);
 
   myAllowRole = input('');
 
   allowed = computed(() => this.roleService.role() === this.myAllowRole());
+
+  template = inject(TemplateRef);
+
+  container = inject(ViewContainerRef);
 
   render = effect(() => {
     this.container.clear();
