@@ -1,5 +1,5 @@
-<ng-template #defaultItem let-item="item" let-i="index">
-  <p>{{ i }}. {{ item }}</p>
+<ng-template #defaultItem let-label="item" let-idx="index">
+  <p>{{ idx }}. {{ label }}</p>
 </ng-template>
 
 @for (item of items(); track item; let index = $index) {
