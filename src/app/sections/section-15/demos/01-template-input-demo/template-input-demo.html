@@ -1,5 +1,5 @@
-<ng-template #customItem let-item>
-  <p class="counter featured">{{ item }}</p>
+<ng-template #customItem let-item="item" let-index="index">
+  <p class="counter featured">{{ index }}. {{ item }}</p>
 </ng-template>
 
 <div class="split">

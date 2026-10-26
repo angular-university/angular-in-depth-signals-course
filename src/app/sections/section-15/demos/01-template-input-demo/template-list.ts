@@ -10,6 +10,6 @@ export class TemplateList {
 
   items = input<string[]>([]);
 
-  itemTemplate = input<TemplateRef<{ $implicit: string }>>();
+  itemTemplate = input<TemplateRef<{ item: string; index: number }>>();
 
 }
