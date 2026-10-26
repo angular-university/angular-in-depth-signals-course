@@ -1,4 +1,4 @@
-import { Directive, TemplateRef, ViewContainerRef, effect, inject, input } from '@angular/core';
+import { Directive, TemplateRef, ViewContainerRef, computed, effect, inject, input } from '@angular/core';
 import { RoleService } from './role-service';
 
 @Directive({
@@ -14,14 +14,14 @@ export class AllowRole {
 
   myAllowRole = input('');
 
-  render = effect(() => this.renderView(this.roleService.role() === this.myAllowRole()));
+  allowed = computed(() => this.roleService.role() === this.myAllowRole());
 
-  renderView(allowed: boolean) {
+  render = effect(() => {
     this.container.clear();
-    if (!allowed) {
+    if (!this.allowed()) {
       return;
     }
     this.container.createEmbeddedView(this.template);
-  }
+  });
 
 }
