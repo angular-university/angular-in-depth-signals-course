@@ -16,12 +16,14 @@ export class AllowRole {
 
   container = inject(ViewContainerRef);
 
-  render = effect(() => {
-    this.container.clear();
-    if (!this.allowed()) {
-      return;
-    }
-    this.container.createEmbeddedView(this.template);
-  });
+  constructor() {
+    effect(() => {
+      this.container.clear();
+      if (!this.allowed()) {
+        return;
+      }
+      this.container.createEmbeddedView(this.template);
+    });
+  }
 
 }
