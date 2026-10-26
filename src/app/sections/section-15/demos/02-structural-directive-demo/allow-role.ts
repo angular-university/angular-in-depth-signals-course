@@ -1,16 +1,16 @@
 import { Directive, TemplateRef, ViewContainerRef, computed, effect, inject, input } from '@angular/core';
-import { RoleService } from './role-service';
+import { UserProfile } from './user-profile';
 
 @Directive({
   selector: '[myAllowRole]',
 })
 export class AllowRole {
 
-  roleService = inject(RoleService);
+  userProfile = inject(UserProfile);
 
   myAllowRole = input('');
 
-  allowed = computed(() => this.roleService.role() === this.myAllowRole());
+  allowed = computed(() => this.userProfile.role() === this.myAllowRole());
 
   template = inject(TemplateRef);
 

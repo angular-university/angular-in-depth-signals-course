@@ -1,7 +1,7 @@
 import { Service, signal } from '@angular/core';
 
 @Service()
-export class RoleService {
+export class UserProfile {
 
   #role = signal('viewer');
 

@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { AllowRole } from './allow-role';
-import { RoleService } from './role-service';
+import { UserProfile } from './user-profile';
 
 @Component({
   selector: 'structural-directive-demo',
@@ -9,14 +9,14 @@ import { RoleService } from './role-service';
 })
 export class StructuralDirectiveDemo {
 
-  roleService = inject(RoleService);
+  userProfile = inject(UserProfile);
 
   setAdmin() {
-    this.roleService.setRole('admin');
+    this.userProfile.setRole('admin');
   }
 
   setViewer() {
-    this.roleService.setRole('viewer');
+    this.userProfile.setRole('viewer');
   }
 
 }
