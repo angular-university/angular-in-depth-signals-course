@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { ticker } from './ticker';
+import { Component, DestroyRef, inject, signal } from '@angular/core';
 
 @Component({
   selector: 'ticking-counter',
@@ -7,6 +6,15 @@ import { ticker } from './ticker';
 })
 export class TickingCounter {
 
-  ticks = ticker(1000);
+  ticks = signal(0);
+
+  constructor() {
+    const id = setInterval(() => this.tick(), 1000);
+    inject(DestroyRef).onDestroy(() => clearInterval(id));
+  }
+
+  tick() {
+    this.ticks.update((current) => current + 1);
+  }
 
 }
