@@ -8,9 +8,9 @@ export class AfterRenderEffectDemo {
 
   canvas = viewChild.required<ElementRef<HTMLCanvasElement>>('canvas');
 
-  runs = 0;
-
   size = signal(40);
+
+  runs = 0;
 
   constructor() {
     afterRenderEffect(() => {
