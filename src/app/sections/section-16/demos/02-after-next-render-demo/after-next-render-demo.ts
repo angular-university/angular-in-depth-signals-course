@@ -8,22 +8,25 @@ export class AfterNextRenderDemo {
 
   injector = inject(Injector);
 
-  field = viewChild.required<ElementRef<HTMLInputElement>>('field');
+  input = viewChild.required<ElementRef<HTMLInputElement>>('input');
 
-  lineElements = viewChildren<ElementRef<HTMLElement>>('line');
+  items = viewChildren<ElementRef<HTMLElement>>('item');
 
   lines = signal(['Line 1', 'Line 2', 'Line 3']);
 
   constructor() {
-    afterNextRender(() => this.field().nativeElement.focus());
+    afterNextRender(() => this.input().nativeElement.focus());
   }
 
   addLine() {
     this.lines.update((lines) => [...lines, `Line ${lines.length + 1}`]);
-    afterNextRender(
-      () => this.lineElements().at(-1)?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' }),
-      { injector: this.injector },
-    );
+    afterNextRender(() => {
+      const last = this.items().at(-1);
+      last?.nativeElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+      });
+    }, { injector: this.injector });
   }
 
 }

@@ -1,14 +1,14 @@
 <div class="stack">
   <div class="panel">
     <h4>Focus</h4>
-    <input #field />
+    <input #input />
   </div>
 
   <div class="panel">
     <h4>Scroll into view</h4>
     <div class="panel plain scroll">
       @for (line of lines(); track line) {
-        <p #line>{{ line }}</p>
+        <p #item>{{ line }}</p>
       }
     </div>
     <div class="actions">
