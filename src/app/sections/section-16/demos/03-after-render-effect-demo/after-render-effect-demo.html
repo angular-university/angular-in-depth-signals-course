@@ -4,5 +4,5 @@
 
 <div class="actions">
   <input #slider type="range" min="10" max="90" [value]="size()" (input)="setSize(slider.value)" />
-  <button (click)="drawCircle()">Draw circle</button>
+  <button (click)="drawCircle(size())">Draw circle</button>
 </div>
