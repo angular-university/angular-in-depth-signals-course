@@ -8,12 +8,15 @@ export class AfterRenderEffectDemo {
 
   canvas = viewChild.required<ElementRef<HTMLCanvasElement>>('canvas');
 
+  runs = viewChild.required<ElementRef<HTMLElement>>('runs');
+
   size = signal(40);
 
   constructor() {
     afterRenderEffect(() => {
       const size = this.size();
       this.drawCircle(size);
+      this.countRun();
     });
   }
 
@@ -27,6 +30,11 @@ export class AfterRenderEffectDemo {
     context.beginPath();
     context.arc(100, 100, size, 0, Math.PI * 2);
     context.fill();
+  }
+
+  countRun() {
+    const runs = this.runs().nativeElement;
+    runs.textContent = String(Number(runs.textContent) + 1);
   }
 
   setSize(value: string) {
