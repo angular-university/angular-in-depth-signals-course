@@ -414,3 +414,16 @@
   align-self: stretch;
   margin-top: 16px;
 }
+
+.demo .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-height: 160px;
+  overflow-y: auto;
+  font-size: 11px;
+}
+
+.demo .boxes > * {
+  display: block;
+}

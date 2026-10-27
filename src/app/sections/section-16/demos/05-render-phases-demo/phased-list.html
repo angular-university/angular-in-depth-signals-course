@@ -1,0 +1,11 @@
+<div class="panel">
+  <div class="boxes">
+    @for (item of items; track item) {
+      <phased-box [label]="item" [size]="size()" />
+    }
+  </div>
+</div>
+
+<div class="actions">
+  <button (click)="resize()">Resize</button>
+</div>
