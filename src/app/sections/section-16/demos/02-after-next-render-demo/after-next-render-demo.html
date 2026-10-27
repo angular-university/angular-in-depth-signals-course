@@ -1,0 +1,21 @@
+<div class="stack">
+  <div class="panel">
+    <h4>Focus</h4>
+    @if (inputShown()) {
+      <focused-input />
+    }
+    <div class="actions">
+      <button (click)="toggleInput()">Toggle</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>Scroll into view</h4>
+    @if (listShown()) {
+      <scrolled-list />
+    }
+    <div class="actions">
+      <button (click)="toggleList()">Toggle</button>
+    </div>
+  </div>
+</div>

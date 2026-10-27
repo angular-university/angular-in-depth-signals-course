@@ -159,6 +159,11 @@
   align-self: stretch;
 }
 
+.demo .scroll {
+  max-height: 160px;
+  overflow-y: auto;
+}
+
 .demo .panel > .actions {
   margin-top: 10px;
 }
