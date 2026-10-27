@@ -288,11 +288,16 @@ A few lessons carry indented notes, where the title alone doesn't say what is co
 - ngOnInit, ngOnDestroy and DestroyRef — What Still Needs a Hook
   - most ngOnInit work moves to field initializers, the constructor or computed()
   - inject(DestroyRef).onDestroy() replaces ngOnDestroy, and works in services and helper functions too
-- afterNextRender() and afterEveryRender()
-  - the render phases — earlyRead, write, mixedReadWrite and read, why they run in that order, and how each phase's return value is passed to the next
-  - avoiding layout thrashing, plus AfterRenderRef and the manualCleanup option
+- afterNextRender() — One-Time DOM Work After Render
+  - focusing an input from the constructor, and scrolling a newly added item into view from a click handler with the injector option
+  - the function form, which runs in the mixedReadWrite phase
 - afterRenderEffect() — Reactive DOM Work After Render
-  - the phases from the previous lesson, with each phase's value handed to the next as a signal
+  - drawing on a canvas whenever a signal changes, re-running only when the signals it reads change
+  - the render phases — earlyRead, write, mixedReadWrite and read, why they run in that order across all hooks, and how each phase's value is handed to the next as a signal
+  - avoiding layout thrashing
+- afterEveryRender() — The Last Resort
+  - runs after every render of the app, for DOM work that depends on state signals can't track
+  - AfterRenderRef and the manualCleanup option
 - Interacting with Third-Party DOM Libraries the Right Way
   - nativeElement inside afterNextRender() is the right tool in a browser-only app
   - Renderer2 — createElement, setAttribute, addClass, setStyle and listen() — only when the code must also run outside the browser, like SSR

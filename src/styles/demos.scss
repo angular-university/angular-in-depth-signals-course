@@ -285,6 +285,15 @@
   box-shadow: 0 0 0 3px rgba(228, 0, 53, 0.15);
 }
 
+.demo :where(input[type='range']) {
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  appearance: auto;
+  accent-color: var(--color-primary-light);
+}
+
 .demo :where(input::placeholder) {
   color: #555;
 }

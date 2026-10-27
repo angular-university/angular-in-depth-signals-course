@@ -1,0 +1,7 @@
+<div class="panel">
+  <canvas #canvas width="200" height="200"></canvas>
+</div>
+
+<div class="actions">
+  <input #slider type="range" min="10" max="90" [value]="size()" (input)="setSize(slider.value)" />
+</div>
