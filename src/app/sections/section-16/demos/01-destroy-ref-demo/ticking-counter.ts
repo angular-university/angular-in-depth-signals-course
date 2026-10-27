@@ -10,7 +10,10 @@ export class TickingCounter {
 
   constructor() {
     const id = setInterval(() => this.tick(), 1000);
-    inject(DestroyRef).onDestroy(() => clearInterval(id));
+    inject(DestroyRef).onDestroy(() => {
+      console.log('Clearing interval');
+      clearInterval(id);
+    });
   }
 
   tick() {
