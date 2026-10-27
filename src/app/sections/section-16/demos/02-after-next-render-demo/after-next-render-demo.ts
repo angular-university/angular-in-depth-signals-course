@@ -14,6 +14,10 @@ export class AfterNextRenderDemo {
 
   lines = signal(['Line 1', 'Line 2', 'Line 3']);
 
+  constructor() {
+    afterNextRender(() => this.input().nativeElement.focus());
+  }
+
   addLine() {
     this.lines.update((lines) => [...lines, `Line ${lines.length + 1}`]);
     afterNextRender(() => {
