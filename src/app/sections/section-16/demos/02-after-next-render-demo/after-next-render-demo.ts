@@ -1,24 +1,29 @@
-import { Component, signal } from '@angular/core';
-import { FocusedInput } from './focused-input';
-import { ScrolledList } from './scrolled-list';
+import { Component, ElementRef, Injector, afterNextRender, inject, signal, viewChild, viewChildren } from '@angular/core';
 
 @Component({
   selector: 'after-next-render-demo',
-  imports: [FocusedInput, ScrolledList],
   templateUrl: './after-next-render-demo.html',
 })
 export class AfterNextRenderDemo {
 
-  inputShown = signal(false);
+  injector = inject(Injector);
 
-  listShown = signal(false);
+  field = viewChild.required<ElementRef<HTMLInputElement>>('field');
 
-  toggleInput() {
-    this.inputShown.update((current) => !current);
+  lineElements = viewChildren<ElementRef<HTMLElement>>('line');
+
+  lines = signal(['Line 1', 'Line 2', 'Line 3']);
+
+  constructor() {
+    afterNextRender(() => this.field().nativeElement.focus());
   }
 
-  toggleList() {
-    this.listShown.update((current) => !current);
+  addLine() {
+    this.lines.update((lines) => [...lines, `Line ${lines.length + 1}`]);
+    afterNextRender(
+      () => this.lineElements().at(-1)?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' }),
+      { injector: this.injector },
+    );
   }
 
 }

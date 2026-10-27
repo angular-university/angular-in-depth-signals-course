@@ -160,7 +160,8 @@
 }
 
 .demo .scroll {
-  max-height: 160px;
+  align-self: stretch;
+  max-height: 120px;
   overflow-y: auto;
 }
 

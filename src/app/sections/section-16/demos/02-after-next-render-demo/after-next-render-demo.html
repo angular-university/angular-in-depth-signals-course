@@ -1,21 +1,18 @@
 <div class="stack">
   <div class="panel">
     <h4>Focus</h4>
-    @if (inputShown()) {
-      <focused-input />
-    }
-    <div class="actions">
-      <button (click)="toggleInput()">Toggle</button>
-    </div>
+    <input #field />
   </div>
 
   <div class="panel">
     <h4>Scroll into view</h4>
-    @if (listShown()) {
-      <scrolled-list />
-    }
+    <div class="panel plain scroll">
+      @for (line of lines(); track line) {
+        <p #line>{{ line }}</p>
+      }
+    </div>
     <div class="actions">
-      <button (click)="toggleList()">Toggle</button>
+      <button (click)="addLine()">Add line</button>
     </div>
   </div>
 </div>
