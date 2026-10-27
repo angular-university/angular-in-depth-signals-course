@@ -1,4 +1,4 @@
-import { Component, ElementRef, afterNextRender, afterRenderEffect, signal, viewChild } from '@angular/core';
+import { Component, ElementRef, afterEveryRender, afterNextRender, afterRenderEffect, signal, viewChild } from '@angular/core';
 
 @Component({
   selector: 'render-hooks-demo',
@@ -6,30 +6,50 @@ import { Component, ElementRef, afterNextRender, afterRenderEffect, signal, view
 })
 export class RenderHooksDemo {
 
-  measured = viewChild.required<ElementRef<HTMLElement>>('measured');
+  nextRuns = viewChild.required<ElementRef<HTMLElement>>('nextRuns');
 
-  lines = signal(['Line 1']);
+  everyRuns = viewChild.required<ElementRef<HTMLElement>>('everyRuns');
 
-  width = signal(0);
+  effectRuns = viewChild.required<ElementRef<HTMLElement>>('effectRuns');
 
-  height = signal(0);
+  nextCount = signal(0);
+
+  everyCount = signal(0);
+
+  effectCount = signal(0);
 
   constructor() {
     afterNextRender({
-      read: () => this.width.set(this.measured().nativeElement.offsetWidth),
+      write: () => this.addRun(this.nextRuns()),
+    });
+    afterEveryRender({
+      write: () => this.addRun(this.everyRuns()),
     });
     afterRenderEffect({
-      read: () => this.measureHeight(),
+      write: () => this.addEffectRun(),
     });
   }
 
-  measureHeight() {
-    this.lines();
-    this.height.set(this.measured().nativeElement.offsetHeight);
+  addEffectRun() {
+    this.effectCount();
+    this.addRun(this.effectRuns());
   }
 
-  addLine() {
-    this.lines.update((lines) => [...lines, `Line ${lines.length + 1}`]);
+  addRun(runs: ElementRef<HTMLElement>) {
+    const element = runs.nativeElement;
+    element.textContent = String(Number(element.textContent) + 1);
+  }
+
+  incrementNext() {
+    this.nextCount.update((current) => current + 1);
+  }
+
+  incrementEvery() {
+    this.everyCount.update((current) => current + 1);
+  }
+
+  incrementEffect() {
+    this.effectCount.update((current) => current + 1);
   }
 
 }

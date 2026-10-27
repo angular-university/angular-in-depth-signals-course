@@ -1,19 +1,28 @@
-<div class="split">
-  <div class="panel plain">
-    <small>afterNextRender()</small>
-    <p>{{ width() }}px wide</p>
-  </div>
+<div class="stack">
   <div class="panel">
-    <small>afterRenderEffect()</small>
-    <p>{{ height() }}px tall</p>
+    <h4>afterNextRender()</h4>
+    <p class="counter">{{ nextCount() }}</p>
+    <small>runs <span #nextRuns>0</span></small>
+    <div class="actions">
+      <button (click)="incrementNext()">Increment</button>
+    </div>
   </div>
-  <div class="panel plain" #measured>
-    @for (line of lines(); track line) {
-      <p>{{ line }}</p>
-    }
-  </div>
-</div>
 
-<div class="actions">
-  <button (click)="addLine()">Add line</button>
+  <div class="panel">
+    <h4>afterEveryRender()</h4>
+    <p class="counter">{{ everyCount() }}</p>
+    <small>runs <span #everyRuns>0</span></small>
+    <div class="actions">
+      <button (click)="incrementEvery()">Increment</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h4>afterRenderEffect()</h4>
+    <p class="counter">{{ effectCount() }}</p>
+    <small>runs <span #effectRuns>0</span></small>
+    <div class="actions">
+      <button (click)="incrementEffect()">Increment</button>
+    </div>
+  </div>
 </div>
