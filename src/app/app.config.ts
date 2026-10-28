@@ -1,7 +1,7 @@
 import {ApplicationConfig, DEFAULT_CURRENCY_CODE, inject, LOCALE_ID} from '@angular/core';
 import { DATE_PIPE_DEFAULT_OPTIONS, registerLocaleData } from '@angular/common';
 import localeJa from '@angular/common/locales/ja';
-import { provideHttpClient, withInterceptors, withXhr } from '@angular/common/http';
+import { provideHttpClient, withInterceptors, withXhr, withXsrfConfiguration } from '@angular/common/http';
 import { authInterceptor } from './sections/section-08/demos/03-interceptors-demo/auth-interceptor';
 import {provideCssVarNamespacing} from '@angular/platform-browser';
 import {GREETING, MESSAGE, PLUGINS} from './sections/section-10/demos/01-providers-demo/tokens';
@@ -13,7 +13,8 @@ registerLocaleData(localeJa);
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(withXhr(),
-    withInterceptors([authInterceptor])),
+    withInterceptors([authInterceptor]),
+    withXsrfConfiguration({ cookieName: 'CSRF-TOKEN', headerName: 'X-CSRF-TOKEN' })),
     { provide: GREETING, useValue: 'Hello' },
     { provide: Formatter, useClass: UppercaseFormatter },
     { provide: UppercaseFormatter, useExisting: Formatter },

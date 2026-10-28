@@ -1,8 +1,15 @@
-<div class="panel">
-  <small>X-XSRF-TOKEN</small>
-  <p>{{ received() }}</p>
+<div class="split">
+  <div class="panel">
+    <small>HttpClient</small>
+    <p>{{ httpClientStatus() }}</p>
+  </div>
+  <div class="panel plain">
+    <small>fetch()</small>
+    <p>{{ fetchStatus() }}</p>
+  </div>
 </div>
 
 <div class="actions">
-  <button (click)="send()">Send POST</button>
+  <button (click)="sendWithHttpClient()">HttpClient POST</button>
+  <button (click)="sendWithFetch()">fetch() POST</button>
 </div>

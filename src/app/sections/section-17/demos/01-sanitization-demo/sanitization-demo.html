@@ -1,0 +1,23 @@
+<div class="stack">
+  <div class="split">
+    <div class="panel plain">
+      <small>[innerHTML]</small>
+      <p [innerHTML]="html"></p>
+    </div>
+    <div class="panel">
+      <small>bypassSecurityTrustHtml()</small>
+      <p [innerHTML]="trustedHtml"></p>
+    </div>
+  </div>
+
+  <div class="split">
+    <div class="panel plain">
+      <small>[href]</small>
+      <p><a [href]="url">Click me</a></p>
+    </div>
+    <div class="panel">
+      <small>bypassSecurityTrustUrl()</small>
+      <p><a [href]="trustedUrl">Click me</a></p>
+    </div>
+  </div>
+</div>
