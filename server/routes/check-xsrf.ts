@@ -12,5 +12,5 @@ export function checkXsrf(req: Request, res: Response) {
     return;
   }
 
-  res.sendStatus(200);
+  res.status(200).json({ header });
 }

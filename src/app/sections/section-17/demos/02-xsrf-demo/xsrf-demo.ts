@@ -1,6 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
+import { UserService } from './user-service';
+
+interface Echo {
+  header: string;
+}
 
 @Component({
   selector: 'xsrf-demo',
@@ -10,23 +15,17 @@ export class XsrfDemo {
 
   http = inject(HttpClient);
 
-  httpClientStatus = signal('');
+  userService = inject(UserService);
 
-  fetchStatus = signal('');
+  header = signal('');
 
-  async sendWithHttpClient() {
-    try {
-      await firstValueFrom(this.http.post('/api/xsrf', {}, { responseType: 'text' }));
-      this.httpClientStatus.set('200 OK');
-    } catch (error) {
-      const response = error as HttpErrorResponse;
-      this.httpClientStatus.set(`${response.status} ${response.statusText}`);
-    }
+  constructor() {
+    this.userService.load();
   }
 
-  async sendWithFetch() {
-    const response = await fetch('/api/xsrf', { method: 'POST' });
-    this.fetchStatus.set(`${response.status} ${response.statusText}`);
+  async send() {
+    const echo = await firstValueFrom(this.http.post<Echo>('/api/xsrf', {}));
+    this.header.set(echo.header);
   }
 
 }

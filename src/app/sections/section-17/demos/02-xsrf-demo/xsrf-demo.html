@@ -1,15 +1,8 @@
-<div class="split">
-  <div class="panel">
-    <small>HttpClient</small>
-    <p>{{ httpClientStatus() }}</p>
-  </div>
-  <div class="panel plain">
-    <small>fetch()</small>
-    <p>{{ fetchStatus() }}</p>
-  </div>
+<div class="panel">
+  <small>X-My-Xsrf-Token</small>
+  <p>{{ header() }}</p>
 </div>
 
 <div class="actions">
-  <button (click)="sendWithHttpClient()">HttpClient POST</button>
-  <button (click)="sendWithFetch()">fetch() POST</button>
+  <button (click)="send()">Send POST</button>
 </div>

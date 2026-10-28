@@ -1,6 +1,8 @@
 import { Request, Response } from 'express';
 
 export function getProfile(req: Request, res: Response) {
+  res.cookie('my-xsrf-token', 'abc123', { sameSite: 'strict' });
+
   const authorization = req.headers.authorization;
 
   if (!authorization) {

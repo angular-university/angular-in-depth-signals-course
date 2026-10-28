@@ -1,8 +1,7 @@
-import {ApplicationConfig, DEFAULT_CURRENCY_CODE, inject, LOCALE_ID, provideAppInitializer} from '@angular/core';
+import {ApplicationConfig, DEFAULT_CURRENCY_CODE, inject, LOCALE_ID} from '@angular/core';
 import { DATE_PIPE_DEFAULT_OPTIONS, registerLocaleData } from '@angular/common';
 import localeJa from '@angular/common/locales/ja';
-import { HttpClient, provideHttpClient, withInterceptors, withXhr, withXsrfConfiguration } from '@angular/common/http';
-import { firstValueFrom } from 'rxjs';
+import { provideHttpClient, withInterceptors, withXhr, withXsrfConfiguration } from '@angular/common/http';
 import { authInterceptor } from './sections/section-08/demos/03-interceptors-demo/auth-interceptor';
 import {provideCssVarNamespacing} from '@angular/platform-browser';
 import {GREETING, MESSAGE, PLUGINS} from './sections/section-10/demos/01-providers-demo/tokens';
@@ -16,7 +15,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withXhr(),
     withInterceptors([authInterceptor]),
     withXsrfConfiguration({ cookieName: 'my-xsrf-token', headerName: 'X-My-Xsrf-Token' })),
-    provideAppInitializer(() => firstValueFrom(inject(HttpClient).get('/api/csrf-cookie'))),
     { provide: GREETING, useValue: 'Hello' },
     { provide: Formatter, useClass: UppercaseFormatter },
     { provide: UppercaseFormatter, useExisting: Formatter },
