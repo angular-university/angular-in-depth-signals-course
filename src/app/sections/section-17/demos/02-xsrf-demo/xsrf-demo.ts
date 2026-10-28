@@ -1,7 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
-import { UserService } from './user-service';
 
 interface Echo {
   header: string;
@@ -15,12 +14,11 @@ export class XsrfDemo {
 
   http = inject(HttpClient);
 
-  userService = inject(UserService);
-
   header = signal('');
 
   constructor() {
-    this.userService.load();
+    // Only fetches the XSRF cookie, so the first POST already has a token to send
+    this.http.get('/api/xsrf').subscribe();
   }
 
   async send() {
