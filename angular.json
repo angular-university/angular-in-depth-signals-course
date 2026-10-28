@@ -68,10 +68,7 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "options": {
-            "proxyConfig": "proxy.conf.json",
-            "headers": {
-              "Set-Cookie": "CSRF-TOKEN=abc123; Path=/; SameSite=Strict"
-            }
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {

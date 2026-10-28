@@ -7,6 +7,7 @@ import { saveCourse } from './routes/save-course.js';
 import { uploadFile } from './routes/upload-file.js';
 import { getProfile } from './routes/get-profile.js';
 import { checkXsrf } from './routes/check-xsrf.js';
+import { setCsrfCookie } from './routes/set-csrf-cookie.js';
 
 const app = express();
 const port = 9000;
@@ -20,6 +21,7 @@ app.get('/api/courses/:id', getCourse);
 app.put('/api/courses/:id', saveCourse);
 app.post('/api/uploads', uploadFile);
 app.get('/api/profile', getProfile);
+app.get('/api/csrf-cookie', setCsrfCookie);
 app.post('/api/xsrf', checkXsrf);
 
 app.listen(port, () => {
