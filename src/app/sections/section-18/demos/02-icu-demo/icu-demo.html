@@ -18,7 +18,7 @@
 </div>
 
 <div class="actions">
-  <button i18n="@@addButton" i18n-title="@@addButtonTitle" title="Add one item" (click)="increment()">Add</button>
+  <button i18n="@@addButton" (click)="increment()">Add</button>
   <button i18n="@@removeButton" (click)="decrement()">Remove</button>
   <select #roleSelect (change)="setRole(roleSelect.value)">
     <option value="admin" i18n="@@adminRole">Admin</option>

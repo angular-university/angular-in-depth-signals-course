@@ -2,6 +2,15 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" target-language="fr" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="greeting" datatype="html">
+        <source>Hello</source>
+        <target>Bonjour</target>
+        <note priority="1" from="description">Greeting shown to the user</note>
+      </trans-unit>
+      <trans-unit id="searchPlaceholder" datatype="html">
+        <source>Search</source>
+        <target>Rechercher</target>
+      </trans-unit>
       <trans-unit id="itemCount" datatype="html">
         <source> <x id="ICU" equiv-text="{count(), plural, =0 {No items} =1 {One item} other {{{ count() }} items}}" xid="1118798863327598053"/> </source>
         <target> <x id="ICU" equiv-text="{count(), plural, =0 {No items} =1 {One item} other {{{ count() }} items}}" xid="1118798863327598053"/> </target>
@@ -35,14 +44,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/sections/section-18/demos/01-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">11,14</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="addButtonTitle" datatype="html">
-        <source>Add one item</source>
-        <target>Ajouter un élément</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/sections/section-18/demos/01-icu-demo/icu-demo.html</context>
-          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="addButton" datatype="html">
