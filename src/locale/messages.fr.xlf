@@ -38,17 +38,17 @@
         </context-group>
       </trans-unit>
       <trans-unit id="roleName" datatype="html">
-        <source> <x id="ICU" equiv-text="{role(), select, admin {Administrator} other {Viewer}}" xid="5069083652248426233"/> </source>
-        <target> <x id="ICU" equiv-text="{role(), select, admin {Administrator} other {Viewer}}" xid="5069083652248426233"/> </target>
+        <source> <x id="ICU" equiv-text="{role(), select, fullAccess {Administrator} other {Viewer}}" xid="6834251923875772438"/> </source>
+        <target> <x id="ICU" equiv-text="{role(), select, fullAccess {Administrator} other {Viewer}}" xid="6834251923875772438"/> </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">11,14</context>
         </context-group>
         <note priority="1" from="description">Name of the current role</note>
       </trans-unit>
-      <trans-unit id="5069083652248426233" datatype="html">
-        <source>{VAR_SELECT, select, admin {Administrator} other {Viewer}}</source>
-        <target>{VAR_SELECT, select, admin {Administrateur} other {Lecteur}}</target>
+      <trans-unit id="6834251923875772438" datatype="html">
+        <source>{VAR_SELECT, select, fullAccess {Administrator} other {Viewer}}</source>
+        <target>{VAR_SELECT, select, fullAccess {Administrateur} other {Lecteur}}</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">11,13</context>
@@ -72,7 +72,7 @@
       </trans-unit>
       <trans-unit id="adminRole" datatype="html">
         <source>Admin</source>
-        <target>Admin</target>
+        <target>Administrateur</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">24,25</context>

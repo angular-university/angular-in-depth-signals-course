@@ -34,15 +34,15 @@
         </context-group>
       </trans-unit>
       <trans-unit id="roleName" datatype="html">
-        <source> <x id="ICU" equiv-text="{role(), select, admin {Administrator} other {Viewer}}" xid="5069083652248426233"/> </source>
+        <source> <x id="ICU" equiv-text="{role(), select, fullAccess {Administrator} other {Viewer}}" xid="6834251923875772438"/> </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">11,14</context>
         </context-group>
         <note priority="1" from="description">Name of the current role</note>
       </trans-unit>
-      <trans-unit id="5069083652248426233" datatype="html">
-        <source>{VAR_SELECT, select, admin {Administrator} other {Viewer}}</source>
+      <trans-unit id="6834251923875772438" datatype="html">
+        <source>{VAR_SELECT, select, fullAccess {Administrator} other {Viewer}}</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">11,13</context>
@@ -75,14 +75,6 @@
           <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">25,27</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="itemSummary" datatype="html">
-        <source>Showing <x id="count" equiv-text="this.count()"/> items</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.ts</context>
-          <context context-type="linenumber">13</context>
-        </context-group>
-        <note priority="1" from="description">Summary of the item count</note>
       </trans-unit>
     </body>
   </file>

@@ -8,7 +8,7 @@
   <div class="panel">
     <small>select</small>
     <p i18n="Name of the current role@@roleName">
-
+      {role(), select, fullAccess {Administrator} other {Viewer}}
     </p>
   </div>
   <div class="panel plain">
@@ -21,7 +21,7 @@
   <button i18n="@@addButton" (click)="increment()">Add</button>
   <button i18n="@@removeButton" (click)="decrement()">Remove</button>
   <select #roleSelect (change)="setRole(roleSelect.value)">
-    <option value="admin" i18n="@@adminRole">Admin</option>
-    <option value="viewer" i18n="@@viewerRole">Viewer</option>
+    <option value="fullAccess" i18n="@@adminRole">Admin</option>
+    <option value="readOnly" i18n="@@viewerRole">Viewer</option>
   </select>
 </div>

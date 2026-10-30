@@ -8,7 +8,8 @@ export class IcuDemo {
 
   count = signal(0);
 
-  role = signal('admin');
+  role = signal('fullAccess');
+
 
   increment() {
     this.count.update((current) => current + 1);

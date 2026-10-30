@@ -6,10 +6,10 @@
     "itemCount": " {$ICU} ",
     "6358580996267558411": "{VAR_PLURAL, plural, =0 {Aucun élément} =1 {Un élément} other {{INTERPOLATION} éléments}}",
     "roleName": " {$ICU} ",
-    "5069083652248426233": "{VAR_SELECT, select, admin {Administrateur} other {Lecteur}}",
+    "6834251923875772438": "{VAR_SELECT, select, fullAccess {Administrateur} other {Lecteur}}",
     "addButton": "Ajouter",
     "removeButton": "Retirer",
-    "adminRole": "Admin",
+    "adminRole": "Administrateur",
     "viewerRole": "Lecteur",
     "itemSummary": "Affichage de {$count} éléments"
   }
