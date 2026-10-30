@@ -5,17 +5,25 @@
       <trans-unit id="greeting" datatype="html">
         <source>Hello</source>
         <target>Bonjour</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/sections/section-18/demos/01-i18n-demo/i18n-demo.html</context>
+          <context context-type="linenumber">4,7</context>
+        </context-group>
         <note priority="1" from="description">Greeting shown to the user</note>
       </trans-unit>
       <trans-unit id="searchPlaceholder" datatype="html">
         <source>Search</source>
         <target>Rechercher</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/sections/section-18/demos/01-i18n-demo/i18n-demo.html</context>
+          <context context-type="linenumber">8,11</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="itemCount" datatype="html">
         <source> <x id="ICU" equiv-text="{count(), plural, =0 {No items} =1 {One item} other {{{ count() }} items}}" xid="1118798863327598053"/> </source>
         <target> <x id="ICU" equiv-text="{count(), plural, =0 {No items} =1 {One item} other {{{ count() }} items}}" xid="1118798863327598053"/> </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/sections/section-18/demos/01-icu-demo/icu-demo.html</context>
+          <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">5,8</context>
         </context-group>
         <note priority="1" from="description">Number of items</note>
@@ -25,32 +33,32 @@
         <source>{VAR_PLURAL, plural, =0 {No items} =1 {One item} other {<x id="INTERPOLATION"/> items}}</source>
         <target>{VAR_PLURAL, plural, =0 {Aucun élément} =1 {Un élément} other {<x id="INTERPOLATION"/> éléments}}</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/sections/section-18/demos/01-icu-demo/icu-demo.html</context>
+          <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">5,7</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="roleItems" datatype="html">
-        <source> <x id="ICU" equiv-text="{role(), select, admin {Admins see {count(), plural, =0 {no items} =1 {one item} other {{{ count() }} items}}} other {Viewers see nothing}}" xid="1929324671308210802"/> </source>
-        <target> <x id="ICU" equiv-text="{role(), select, admin {Admins see {count(), plural, =0 {no items} =1 {one item} other {{{ count() }} items}}} other {Viewers see nothing}}" xid="1929324671308210802"/> </target>
+      <trans-unit id="roleName" datatype="html">
+        <source> <x id="ICU" equiv-text="{role(), select, admin {Administrator} other {Viewer}}" xid="5069083652248426233"/> </source>
+        <target> <x id="ICU" equiv-text="{role(), select, admin {Administrator} other {Viewer}}" xid="5069083652248426233"/> </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/sections/section-18/demos/01-icu-demo/icu-demo.html</context>
+          <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">11,14</context>
         </context-group>
-        <note priority="1" from="description">Items visible to a role</note>
+        <note priority="1" from="description">Name of the current role</note>
       </trans-unit>
-      <trans-unit id="7616568582266392091" datatype="html">
-        <source>{VAR_SELECT, select, admin {Admins see {VAR_PLURAL, plural, =0 {no items} =1 {one item} other {<x id="INTERPOLATION"/> items}}} other {Viewers see nothing}}</source>
-        <target>{VAR_SELECT, select, admin {Les admins voient {VAR_PLURAL, plural, =0 {aucun élément} =1 {un élément} other {<x id="INTERPOLATION"/> éléments}}} other {Les lecteurs ne voient rien}}</target>
+      <trans-unit id="5069083652248426233" datatype="html">
+        <source>{VAR_SELECT, select, admin {Administrator} other {Viewer}}</source>
+        <target>{VAR_SELECT, select, admin {Administrateur} other {Lecteur}}</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/sections/section-18/demos/01-icu-demo/icu-demo.html</context>
-          <context context-type="linenumber">11,14</context>
+          <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
+          <context context-type="linenumber">11,13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="addButton" datatype="html">
         <source>Add</source>
         <target>Ajouter</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/sections/section-18/demos/01-icu-demo/icu-demo.html</context>
+          <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">21,22</context>
         </context-group>
       </trans-unit>
@@ -58,7 +66,7 @@
         <source>Remove</source>
         <target>Retirer</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/sections/section-18/demos/01-icu-demo/icu-demo.html</context>
+          <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">22,23</context>
         </context-group>
       </trans-unit>
@@ -66,7 +74,7 @@
         <source>Admin</source>
         <target>Admin</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/sections/section-18/demos/01-icu-demo/icu-demo.html</context>
+          <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">24,25</context>
         </context-group>
       </trans-unit>
@@ -74,7 +82,7 @@
         <source>Viewer</source>
         <target>Lecteur</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/sections/section-18/demos/01-icu-demo/icu-demo.html</context>
+          <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">25,27</context>
         </context-group>
       </trans-unit>
@@ -82,7 +90,7 @@
         <source>Showing <x id="count" equiv-text="this.count()"/> items</source>
         <target>Affichage de <x id="count" equiv-text="this.count()"/> éléments</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/sections/section-18/demos/01-icu-demo/icu-demo.ts</context>
+          <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.ts</context>
           <context context-type="linenumber">13</context>
         </context-group>
         <note priority="1" from="description">Summary of the item count</note>
