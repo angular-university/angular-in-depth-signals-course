@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { rxResource } from '@angular/core/rxjs-interop';
-import { interval } from 'rxjs';
+import { Course } from '../../../../model/course';
 
 @Component({
   selector: 'rx-resource-demo',
@@ -8,12 +9,21 @@ import { interval } from 'rxjs';
 })
 export class RxResourceDemo {
 
-  seconds = rxResource({
-    stream: () => interval(1000),
+  http = inject(HttpClient);
+
+  id = signal(1);
+
+  course = rxResource({
+    params: () => this.id(),
+    stream: ({ params }) => this.http.get<Course>(`/api/courses/${params}`),
   });
 
+  next() {
+    this.id.update((current) => current + 1);
+  }
+
   reload() {
-    this.seconds.reload();
+    this.course.reload();
   }
 
 }
