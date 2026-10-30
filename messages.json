@@ -1,0 +1,16 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "greeting": "Hello",
+    "searchPlaceholder": "Search",
+    "itemCount": " {$ICU} ",
+    "6358580996267558411": "{VAR_PLURAL, plural, =0 {No items} =1 {One item} other {{INTERPOLATION} items}}",
+    "roleName": " {$ICU} ",
+    "5069083652248426233": "{VAR_SELECT, select, admin {Administrator} other {Viewer}}",
+    "addButton": "Add",
+    "removeButton": "Remove",
+    "adminRole": "Admin",
+    "viewerRole": "Viewer",
+    "itemSummary": "Showing {$count} items"
+  }
+}
