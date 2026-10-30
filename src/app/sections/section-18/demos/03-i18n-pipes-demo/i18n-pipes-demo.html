@@ -10,10 +10,10 @@
 </div>
 
 <div class="actions">
-  <button (click)="increment()">Add</button>
-  <button (click)="decrement()">Remove</button>
+  <button i18n="@@addButton" (click)="increment()">Add</button>
+  <button i18n="@@removeButton" (click)="decrement()">Remove</button>
   <select #roleSelect (change)="setRole(roleSelect.value)">
-    <option value="fullAccess">Admin</option>
-    <option value="readOnly">Viewer</option>
+    <option value="fullAccess" i18n="@@adminRole">Admin</option>
+    <option value="readOnly" i18n="@@viewerRole">Viewer</option>
   </select>
 </div>

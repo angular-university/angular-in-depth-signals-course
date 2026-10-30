@@ -95,6 +95,26 @@
         </context-group>
         <note priority="1" from="description">Summary of the item count</note>
       </trans-unit>
+      <trans-unit id="pipeNoItems" datatype="html">
+        <source>No items</source>
+        <target>Aucun élément</target>
+      </trans-unit>
+      <trans-unit id="pipeOneItem" datatype="html">
+        <source>One item</source>
+        <target>Un élément</target>
+      </trans-unit>
+      <trans-unit id="pipeManyItems" datatype="html">
+        <source># items</source>
+        <target># éléments</target>
+      </trans-unit>
+      <trans-unit id="pipeAdminRole" datatype="html">
+        <source>Administrator</source>
+        <target>Administrateur</target>
+      </trans-unit>
+      <trans-unit id="pipeViewerRole" datatype="html">
+        <source>Viewer</source>
+        <target>Lecteur</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

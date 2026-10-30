@@ -54,12 +54,20 @@
           <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">21,22</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/sections/section-18/demos/03-i18n-pipes-demo/i18n-pipes-demo.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="removeButton" datatype="html">
         <source>Remove</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">22,23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/sections/section-18/demos/03-i18n-pipes-demo/i18n-pipes-demo.html</context>
+          <context context-type="linenumber">14,15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="adminRole" datatype="html">
@@ -68,6 +76,10 @@
           <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">24,25</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/sections/section-18/demos/03-i18n-pipes-demo/i18n-pipes-demo.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="viewerRole" datatype="html">
         <source>Viewer</source>
@@ -75,12 +87,51 @@
           <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.html</context>
           <context context-type="linenumber">25,27</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/sections/section-18/demos/03-i18n-pipes-demo/i18n-pipes-demo.html</context>
+          <context context-type="linenumber">17,19</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="itemSummary" datatype="html">
         <source>Showing <x id="count" equiv-text="this.count()"/> items</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.ts</context>
           <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pipeNoItems" datatype="html">
+        <source>No items</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/sections/section-18/demos/03-i18n-pipes-demo/i18n-pipes-demo.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pipeOneItem" datatype="html">
+        <source>One item</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/sections/section-18/demos/03-i18n-pipes-demo/i18n-pipes-demo.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pipeManyItems" datatype="html">
+        <source># items</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/sections/section-18/demos/03-i18n-pipes-demo/i18n-pipes-demo.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pipeAdminRole" datatype="html">
+        <source>Administrator</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/sections/section-18/demos/03-i18n-pipes-demo/i18n-pipes-demo.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pipeViewerRole" datatype="html">
+        <source>Viewer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/sections/section-18/demos/03-i18n-pipes-demo/i18n-pipes-demo.ts</context>
+          <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
     </body>

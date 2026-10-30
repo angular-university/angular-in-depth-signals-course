@@ -11,6 +11,11 @@
     "removeButton": "Retirer",
     "adminRole": "Administrateur",
     "viewerRole": "Lecteur",
-    "itemSummary": "Affichage de {$count} éléments"
+    "itemSummary": "Affichage de {$count} éléments",
+    "pipeNoItems": "Aucun élément",
+    "pipeOneItem": "Un élément",
+    "pipeManyItems": "# éléments",
+    "pipeAdminRole": "Administrateur",
+    "pipeViewerRole": "Lecteur"
   }
 }

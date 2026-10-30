@@ -13,14 +13,14 @@ export class I18nPipesDemo {
   role = signal('fullAccess');
 
   countMapping = {
-    '=0': 'No items',
-    '=1': 'One item',
-    'other': '# items',
+    '=0': $localize`:@@pipeNoItems:No items`,
+    '=1': $localize`:@@pipeOneItem:One item`,
+    'other': $localize`:@@pipeManyItems:# items`,
   };
 
   roleMapping = {
-    'fullAccess': 'Administrator',
-    'other': 'Viewer',
+    'fullAccess': $localize`:@@pipeAdminRole:Administrator`,
+    'other': $localize`:@@pipeViewerRole:Viewer`,
   };
 
   increment() {
