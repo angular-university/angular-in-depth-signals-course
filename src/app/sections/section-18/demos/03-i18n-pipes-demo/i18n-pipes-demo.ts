@@ -8,16 +8,27 @@ import { I18nPluralPipe, I18nSelectPipe } from '@angular/common';
 })
 export class I18nPipesDemo {
 
-  count = signal(1);
+  count = signal(0);
 
-  role = signal('admin');
+  role = signal('fullAccess');
 
-  countMapping = { '=0': 'No items', '=1': 'One item', other: '# items' };
+  countMapping = {
+    '=0': 'No items',
+    '=1': 'One item',
+    'other': '# items',
+  };
 
-  roleMapping = { admin: 'Admins see everything', other: 'Viewers see nothing' };
+  roleMapping = {
+    'fullAccess': 'Administrator',
+    'other': 'Viewer',
+  };
 
   increment() {
     this.count.update((current) => current + 1);
+  }
+
+  decrement() {
+    this.count.update((current) => Math.max(0, current - 1));
   }
 
   setRole(role: string) {

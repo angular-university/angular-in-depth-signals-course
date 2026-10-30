@@ -11,8 +11,9 @@
 
 <div class="actions">
   <button (click)="increment()">Add</button>
+  <button (click)="decrement()">Remove</button>
   <select #roleSelect (change)="setRole(roleSelect.value)">
-    <option value="admin">admin</option>
-    <option value="viewer">viewer</option>
+    <option value="fullAccess">Admin</option>
+    <option value="readOnly">Viewer</option>
   </select>
 </div>

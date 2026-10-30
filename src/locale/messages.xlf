@@ -76,6 +76,13 @@
           <context context-type="linenumber">25,27</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="itemSummary" datatype="html">
+        <source>Showing <x id="count" equiv-text="this.count()"/> items</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/sections/section-18/demos/02-icu-demo/icu-demo.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
