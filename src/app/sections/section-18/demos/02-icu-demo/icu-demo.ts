@@ -10,6 +10,7 @@ export class IcuDemo {
 
   role = signal('fullAccess');
 
+  summary = computed(() => $localize`:@@itemSummary:Showing ${this.count()}:count: items`);
 
   increment() {
     this.count.update((current) => current + 1);
