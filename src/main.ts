@@ -4,10 +4,6 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { App } from './app/app';
 
-const localeData = {
-  fr: () => import('@angular/common/locales/fr'),
-};
-
 start().catch((err) => console.error(err));
 
 async function start() {
@@ -31,9 +27,9 @@ async function loadLocale(locale: string) {
 }
 
 function importLocaleData(locale: string) {
-  if (!(locale in localeData)) {
-    throw new Error(`Unsupported locale: ${locale}`);
+  if (locale === 'fr') {
+    return import('@angular/common/locales/fr');
   }
-  return localeData[locale as keyof typeof localeData]();
+  throw new Error(`Unsupported locale: ${locale}`);
 }
 
