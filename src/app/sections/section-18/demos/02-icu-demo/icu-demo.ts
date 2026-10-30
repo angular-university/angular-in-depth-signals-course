@@ -6,11 +6,9 @@ import { Component, computed, signal } from '@angular/core';
 })
 export class IcuDemo {
 
-  count = signal(1);
+  count = signal(0);
 
   role = signal('admin');
-
-  summary = computed(() => $localize`:Summary of the item count@@itemSummary:Showing ${this.count()}:count: items`);
 
   increment() {
     this.count.update((current) => current + 1);
